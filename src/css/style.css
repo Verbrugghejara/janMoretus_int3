@@ -102,6 +102,16 @@ header {
     height: 481px;
 }
 
+footer {
+    padding: 24px 0;
+    background-color: var(--color-black);
+    /* color: var(--color-white) !important; */
+}
+
+footer p {
+    color: var(--color-white) !important;
+}
+
 .text-year {
     color: var(--color-red);
     font-family: "Playfair Display";
@@ -135,6 +145,7 @@ header {
     color: var(--color-blue);
     font-weight: bold;
 }
+
 .text-manuscript {
     font-size: 12px;
     line-height: 120%;
@@ -203,4 +214,101 @@ header {
 .authors {
     width: 100px;
     height: auto;
+}
+
+button {
+    font-family: "Playfair Display";
+    border-radius: 100px;
+    border: 1px solid var(--color-black);
+    display: inline-flex;
+    padding: 10px 16px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+/* Tablet vanaf 600px */
+@media (min-width: 600px) {
+    header {
+        height: 600px;
+        /* groter header beeld */
+    }
+
+    h1 {
+        font-size: var(--font-size-36-48);
+    }
+
+    h2 {
+        font-size: var(--font-size-36-48);
+    }
+
+    .w-books {
+        width: 300px !important;
+        /* grotere illustratie */
+        min-width: 300px !important;
+    }
+
+    .book {
+        min-width: 50px;
+        max-width: 80px;
+    }
+
+    .love {
+        width: 140px;
+    }
+
+    .authors {
+        width: 140px;
+    }
+
+    .text-book,
+    .text-manuscript {
+        font-size: 14px;
+    }
+
+    .door {
+        transform: scale(1.2);
+    }
+}
+
+/* iPad breedte tot 834px */
+@media (min-width: 768px) and (max-width: 834px) {
+    header {
+        height: 700px;
+    }
+
+    h1 {
+        font-size: var(--font-size-32-56);
+    }
+
+    h2 {
+        font-size: var(--font-size-32-56);
+    }
+
+    section {
+        padding-left: 3rem;
+        padding-right: 3rem;
+    }
+
+    .w-books {
+        width: 350px !important;
+        min-width: 350px !important;
+    }
+
+    .book {
+        min-width: 60px;
+        max-width: 90px;
+    }
+
+    .love {
+        width: 160px;
+    }
+
+    .authors {
+        width: 160px;
+    }
+
+    footer {
+        font-size: var(--font-size-16-20);
+    }
 }
