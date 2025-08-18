@@ -12,34 +12,48 @@
 </head>
 
 <body>
-  <header class="relative pl-6 pr-6 pt-6">
-    <div class="absolute inset-0 w-full h-full overflow-hidden sm:-top-8">
+  <header
+    class="relative pl-6 pr-6 pt-6 md:pl-8 md:pr-8 md:pt-8 lg:pt-4 h-[481px]  md:h-[900px] lg:h-[1000px] xl:h-[1150px] 2xl:h-[1400px]">
+    <div class="absolute inset-0 w-full h-full overflow-hidden sm:-top-8 md:-top-24 lg:-top-48 xl:-top-64 2xl:-top-80">
       <img class="w-full h-full object-cover object-bottom" src="./src/assets/janMoretus.jpg" alt="">
+      <img class="absolute left-0 right-0 -bottom-1 w-full" src="./src/assets/paperRip.png" alt="">
     </div>
-    <img class="absolute left-0 right-0 -bottom-1 w-full z-20" src="./src/assets/paperRip.png" alt="">
     <div class="relative z-10 flex flex-col items-center justify-center">
-      <nav class="flex justify-end w-full mb-2 sm:mb-4">
-        <svg width="33" height="23" viewBox="0 0 33 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <nav class="flex justify-end w-full mb-2 ">
+        <svg class="w-8 h-8 md:w-16 md:h-16 lg:hidden" viewBox="0 0 33 23" fill="none"
+          xmlns="http://www.w3.org/2000/svg">
           <line y1="1.5" x2="33" y2="1.5" stroke="#EEE4D3" stroke-width="3" />
           <line y1="11.5" x2="33" y2="11.5" stroke="#EEE4D3" stroke-width="3" />
           <line y1="21.5" x2="33" y2="21.5" stroke="#EEE4D3" stroke-width="3" />
         </svg>
+        <div class="hidden w-full lg:block">
+          <div class="flex justify-between items-center gap-8">
+            <div class="h-16 w-16 ">
+              <img src="./src/assets/logoMuseum.png" alt="">
+
+            </div>
+            <ul class="flex gap-7 text-lg font-serif">
+              <li><a href="#early-years" class="hover:text-red-700 transition">My Early Years</a></li>
+              <li><a href="#marriage" class="hover:text-red-700 transition">Marriage</a></li>
+              <li><a href="#succession" class="hover:text-red-700 transition">Succession</a></li>
+              <li><a href="#expansion" class="hover:text-red-700 transition">Expansion</a></li>
+              <li><a href="#testament" class="hover:text-red-700 transition">Testament</a></li>
+              <li><a href="#legacy" class="hover:text-red-700 transition">Legacy</a></li>
+            </ul>
+            <a href="" class="ml-8 px-5 py-2 h-6 rounded-full font-bold"
+              style="background-color: var(--color-yellow); font-family: 'Playfair Display';">TICKETS</a>
+          </div>
+        </div>
       </nav>
     </div>
-    <!-- <div class="relative z-10 mt-32 sm:mt-12 w-full flex flex-col items-center"> -->
-    <div class="absolute bottom-26 sm:bottom-36 left-6 right-6 flex flex-col items-center justify-center">
-      <h1>
-        Jan I Moretus</h1>
-      <p class="text-paper text-center pt-4 min-w-[337px] max-w-[480px] sm:max-w-xl text-base sm:text-lg">Yes, that’s
-        me. Sorry for the
-        staring, just happy you’re here.
-        Now you can
-        follow me through
-        my story from young
+    <div
+      class="absolute bottom-26 sm:bottom-36 md:bottom-64 lg:bottom-96 xl:bottom-2/5 2xl:bottom-9/21 left-6 right-6 flex flex-col items-center justify-center">
+      <h1>Jan I Moretus</h1>
+      <p class="text-paper text-center min-w-[337px] max-w-[480px] sm:max-w-xl text-base sm:text-lg">
+        Yes, that’s me. Sorry for the staring, just happy you’re here. Now you can follow me through my story from young
         bookshop helper to master printer of the legendary Officina Plantiniana.
       </p>
-
-      <!-- </div> -->
+      <button class="mt-4" style="border-color: var(--color-white); color: var(--color-white);"><a href=""></a>Let's start my Journey</button>
     </div>
   </header>
   <section class="relative pl-6 pr-6 pb-14">
