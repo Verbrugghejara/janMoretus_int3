@@ -99,8 +99,12 @@ h3 {
     /* 24px */
 }
 
-header {
+/* header {
     height: 481px;
+} */
+
+nav {
+    color: var(--color-white);
 }
 
 footer {
@@ -108,6 +112,7 @@ footer {
     background-color: var(--color-black);
     /* color: var(--color-white) !important; */
 }
+
 
 footer p {
     color: var(--color-white) !important;
@@ -217,6 +222,7 @@ footer p {
     height: auto;
 }
 
+
 button {
     font-family: "Playfair Display";
     border-radius: 100px;
@@ -229,57 +235,13 @@ button {
 }
 
 /* Tablet vanaf 600px */
-@media (min-width: 600px) {
-    header {
-        height: 600px;
-        /* groter header beeld */
-    }
 
-    h1 {
-        font-size: var(--font-size-36-48);
-    }
-
-    h2 {
-        font-size: var(--font-size-36-48);
-    }
-
-    .w-books {
-        width: 300px !important;
-        /* grotere illustratie */
-        min-width: 300px !important;
-    }
-
-    .book {
-        min-width: 50px;
-        max-width: 80px;
-    }
-
-    .love {
-        width: 140px;
-    }
-
-    .authors {
-        width: 140px;
-    }
-
-    .text-book,
-    .text-manuscript {
-        font-size: 14px;
-    }
-
-    .door {
-        transform: scale(1.2);
-    }
-}
 
 /* iPad breedte tot 834px */
-@media (min-width: 768px) and (max-width: 834px) {
-    header {
-        height: 700px;
-    }
+@media (min-width: 768px) {
 
     h1 {
-        font-size: var(--font-size-32-56);
+        font-size: 64px;
     }
 
     h2 {
@@ -311,5 +273,11 @@ button {
 
     footer {
         font-size: var(--font-size-16-20);
+    }
+}
+
+@media (min-width: 1280px) {
+    h1 {
+        font-size: 128px;
     }
 }
