@@ -17,6 +17,7 @@
     --font-size-32-56: clamp(2rem, 1.4863rem + 2.1918vw, 3.5rem);
     --font-size-36-48: clamp(2.25rem, 1.9932rem + 1.0959vw, 3rem);
     --font-size-72-144: clamp(4.5rem, 2.9589rem + 6.5753vw, 9rem);
+    --font-size-144-175: clamp(9rem, 6.5rem + 4vw, 10.9375rem);
 }
 
 
@@ -118,6 +119,11 @@ header {
     font-weight: bold;
 }
 
+.highlightY {
+    color: var(--color-yellow);
+    font-weight: bold;
+}
+
 .book {
     min-width: 60px !important;
 }
@@ -131,4 +137,48 @@ header {
 
 .edge {
     width: 30rem !important;
+}
+
+.bg-year {
+    font-family: "Playfair Display";
+    font-weight: bold;
+    opacity: 0.2;
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: var(--color-yellow);
+    font-size: 175px;
+}
+
+.text-ink {
+    color: var(--color-blue);
+}
+
+.love {
+    width: 100px;
+    height: auto;
+}
+
+.text-28-40 {
+    font-size: var(--font-size-28-40);
+}
+
+.door {
+    display: inline-flex;
+    align-items: center;
+    position: absolute;
+    z-index: 10;
+    /* background-image: url("../assets/door.png"); */
+    background-color: var(--color-white);
+}
+/* 
+.door img {
+    opacity: 0.15 !important;
+} */
+
+.text-letter {
+    color: var(--color-blue) !important;
+    font-size: 12px;
+    line-height: 120%;
 }
