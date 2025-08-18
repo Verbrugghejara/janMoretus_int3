@@ -125,14 +125,29 @@ header {
 }
 
 .book {
-    min-width: 60px !important;
+    min-width: 34px;
+    max-width: 60px;
 }
 
-.book-text {
+.text-book {
     font-size: var(--font-size-16-20);
     line-height: 120%;
     color: var(--color-blue);
     font-weight: bold;
+}
+.text-manuscript {
+    font-size: 12px;
+    line-height: 120%;
+    color: var(--color-blue);
+    font-weight: bold;
+}
+
+.title-manuscript {
+    font-family: "Playfair Display";
+    font-size: var(--font-size-32-48);
+    color: var(--color-yellow);
+    font-weight: bold;
+    opacity: 0.5;
 }
 
 .edge {
@@ -144,11 +159,12 @@ header {
     font-weight: bold;
     opacity: 0.2;
     position: absolute;
-    top: 40%;
+    top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    line-height: 150%;
+    transform: translate(-50%, -53%);
     color: var(--color-yellow);
-    font-size: 175px;
+    font-size: var(--font-size-144-175);
 }
 
 .text-ink {
@@ -172,6 +188,7 @@ header {
     /* background-image: url("../assets/door.png"); */
     background-color: var(--color-white);
 }
+
 /* 
 .door img {
     opacity: 0.15 !important;
@@ -181,4 +198,9 @@ header {
     color: var(--color-blue) !important;
     font-size: 12px;
     line-height: 120%;
+}
+
+.authors {
+    width: 100px;
+    height: auto;
 }
