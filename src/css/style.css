@@ -118,6 +118,17 @@ header {
     font-weight: bold;
 }
 
+.book {
+    min-width: 60px !important;
+}
+
+.book-text {
+    font-size: var(--font-size-16-20);
+    line-height: 120%;
+    color: var(--color-blue);
+    font-weight: bold;
+}
+
 .edge {
-    width: 853px !important;
+    width: 30rem !important;
 }
