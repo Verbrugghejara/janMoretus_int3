@@ -26,6 +26,11 @@ img {
     height: auto;
 }
 
+.w-books {
+    width: 230px !important;
+    min-width: 230px !important;
+}
+
 .picture__grid {
     display: contents;
 }
@@ -40,6 +45,7 @@ body {
     height: 100%;
     background-color: var(--color-white);
     /* margin: 0 24px 0 24px; */
+    overflow-x: hidden;
 }
 
 html {
@@ -58,6 +64,7 @@ p {
     line-height: 150%;
     color: var(--color-black);
 }
+
 .text-paper {
     color: var(--color-white);
 }
@@ -71,12 +78,46 @@ h1 {
     line-height: 120%;
 }
 
+h2 {
+    color: var(--color-black);
+    font-family: "Playfair Display";
+    font-size: var(--font-size-32-48);
+    font-style: normal;
+    font-weight: 700;
+    line-height: 120%;
+    /* 38.4px */
+}
+
+h3 {
+    font-family: "Playfair Display";
+    font-size: var(--font-size-20-28);
+    font-style: normal;
+    font-weight: 700;
+    line-height: 120%;
+    /* 24px */
+}
+
 header {
     height: 481px;
 }
 
-.container {
-    /* max-width: 1200px; */
-    /* margin: 0 auto; */
-    padding: 0 24px;
+.text-year {
+    color: var(--color-red);
+    font-family: "Playfair Display";
+    font-weight: bold;
+    font-size: var(--font-size-72-144);
+}
+
+.bg-dust {
+    background-color: var(--color-beige);
+}
+
+.highlight {
+
+    color: var(--color-red);
+    font-weight: bold;
+}
+
+.edge {
+    width: 853px !important;
 }
