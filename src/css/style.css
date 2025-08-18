@@ -14,8 +14,9 @@
     --font-size-24-32: clamp(1.5rem, 1.3288rem + 0.7306vw, 2rem);
     --font-size-28-40: clamp(1.75rem, 1.4932rem + 1.0959vw, 2.5rem);
     --font-size-32-48: clamp(2rem, 1.6575rem + 1.4612vw, 3rem);
-    --font-size-32-56: clamp(2rem, 1.4863rem + 2.1918vw, 3.5rem);
+    --font-size-32-56: clamp(2rem, 1.4863rem + 4.1918vw, 3.5rem);
     --font-size-36-48: clamp(2.25rem, 1.9932rem + 1.0959vw, 3rem);
+    /* max 48px */
     --font-size-72-144: clamp(4.5rem, 2.9589rem + 6.5753vw, 9rem);
     --font-size-144-175: clamp(9rem, 6.5rem + 4vw, 10.9375rem);
 }
@@ -282,7 +283,7 @@ button {
     }
 
     h2 {
-        font-size: var(--font-size-32-56);
+        font-size: var(--font-size-32-48);
     }
 
     section {
