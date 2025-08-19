@@ -28,10 +28,6 @@ img {
     height: auto;
 }
 
-.w-books {
-    width: 230px !important;
-    min-width: 230px !important;
-}
 
 .picture__grid {
     display: contents;
