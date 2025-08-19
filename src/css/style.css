@@ -176,8 +176,21 @@ footer p {
     font-size: 170px;
 }
 
-.text-ink {
+.bg-year-dark {
+    font-family: "Playfair Display";
+    font-weight: bold;
+    opacity: 0.2;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    line-height: 150%;
+    transform: translate(-50%, -53%);
     color: var(--color-blue);
+    font-size: 170px;
+}
+
+.text-ink {
+    color: var(--color-blue) !important;
 }
 
 .love {
@@ -190,14 +203,6 @@ footer p {
     font-size: var(--font-size-28-40);
 }
 
-.door {
-    display: inline-flex;
-    align-items: center;
-    position: absolute;
-    z-index: 10;
-    /* background-image: url("../assets/door.png"); */
-    background-color: var(--color-white);
-}
 
 /* 
 .door img {
@@ -225,6 +230,22 @@ button {
     justify-content: center;
     align-items: center;
     gap: 10px;
+}
+
+.wall {
+    width: 315px;
+    height: 385px;
+    flex-shrink: 0;
+    aspect-ratio: 9/11;
+    z-index: 0;
+}
+
+.wall2 {
+    width: 341px;
+    height: 417px;
+    z-index: 0;
+    flex-shrink: 0;
+    aspect-ratio: 166/203;
 }
 
 /* Tablet vanaf 640px */
@@ -255,6 +276,17 @@ button {
     .love {
         max-width: 200px;
     }
+/* 
+    .wall {
+        width: 445px;
+        height: auto;
+    }
+
+    .wall2 {
+        width: 471px;
+        height: auto;
+    } */
+
 
 }
 
@@ -269,6 +301,16 @@ button {
 
     .love {
         max-width: 300px;
+    }
+
+    .wall {
+        width: 445px;
+        height: auto;
+    }
+
+    .wall2 {
+        width: 471px;
+        height: auto;
     }
 }
 
@@ -292,6 +334,17 @@ button {
     h3 {
         font-size: 36px;
     }
+
+    .wall {
+        width: 415px;
+        height: auto;
+    }
+
+    .wall2 {
+        width: 441px;
+        height: auto;
+    }
+
 }
 
 @media (min-width: 1536px) {
@@ -307,5 +360,13 @@ button {
 
     .bg-year {
         top: 19%;
+    }
+
+    .wall {
+        width: 515px;
+    }
+
+    .wall2 {
+        width: 541px;
     }
 }
