@@ -13,10 +13,12 @@
 
 <body>
   <header
-    class="relative pl-6 pr-6 pt-6 md:pl-8 md:pr-8 md:pt-8 lg:pt-4 h-[481px] sm:h-[600px]  md:h-[900px] lg:h-[1000px] xl:h-[1150px] 2xl:h-[1400px]">
-    <div class="absolute inset-0 w-full h-full overflow-hidden sm:-top-8 md:-top-24 lg:-top-48 xl:-top-64 2xl:-top-80">
-      <img class="w-full h-full object-cover object-bottom" src="./src/assets/janMoretus.jpg" alt="">
-      <img class="absolute left-0 right-0 -bottom-1 w-full" src="./src/assets/paperRip.png" alt="">
+    class="relative pl-6 pr-6 pt-6 md:pl-8 md:pr-8 md:pt-8 lg:pt-4 h-[481px] sm:h-[600px]  md:h-[700px] lg:h-[800px] xl:h-[900px] 2xl:h-[1050px]">
+    <div class="absolute inset-0 w-full h-full overflow-hidden ">
+      <img
+        class=" absolute w-full h-full object-cover object-bottom sm:-top-8 md:-top-36 lg:-top-48 xl:-top-64 2xl:-top-96"
+        src="./src/assets/janMoretus.jpg" alt="">
+      <img class="absolute left-0 right-0 -bottom-0 w-full z-20" src="./src/assets/paperRip.png" alt="">
     </div>
     <div class="relative z-10 flex flex-col items-center justify-center">
       <nav class="flex justify-end w-full mb-2 ">
@@ -47,20 +49,24 @@
       </nav>
     </div>
     <div
-      class="absolute bottom-26 sm:bottom-36 md:bottom-64 lg:bottom-96 xl:bottom-2/5 2xl:bottom-9/21 left-6 right-6 flex flex-col items-center justify-center">
+      class="absolute bottom-26 sm:bottom-36 md:bottom-44 lg:bottom-48 xl:bottom-60 2xl:bottom-72 left-6 right-6 flex flex-col items-center justify-center">
       <h1>Jan I Moretus</h1>
-      <p class="text-paper text-center min-w-[337px] max-w-[480px] sm:max-w-xl text-base sm:text-lg">
+      <p class="text-paper text-center mt-2 min-w-[337px] max-w-[480px] sm:max-w-xl text-base sm:text-lg">
         Yes, that’s me. Sorry for the staring, just happy you’re here. Now you can follow me through my story from young
         bookshop helper to master printer of the legendary Officina Plantiniana.
       </p>
-      <button class="mt-4" style="border-color: var(--color-white); color: var(--color-white);"><a href=""></a>Let's start my Journey</button>
+      <button class="mt-4" style="border-color: var(--color-white); color: var(--color-white);"><a href=""></a>Let's
+        start my Journey</button>
     </div>
   </header>
-  <section class="relative pl-6 pr-6 pb-14">
-    <img class="opacity-50" src="./src/assets/AntwerpmapY.png" alt="">
-    <div class="absolute inset-0 flex-col text-center items-center justify-center">
-      <p class="text-year">1543</p>
-      <p class="">the year I was born, in the city of&nbsp;<span class="highlight">Antwerp</span>.</p>
+  <section class="relative flex justify-center pl-6 pr-6 md:pl-8 md:pr-8 md:pt-8">
+    <div class="relative  mb-12 lg:mb-28 lg:w-1/2">
+      <img class="w-full h-full object-cover opacity-50 pointer-events-none" style="position:relative;"
+        src="./src/assets/AntwerpmapY.png" alt="">
+      <div class="absolute inset-0 flex flex-col items-center justify-center text-center z-10">
+        <p class="text-year -mt-12 sm:-mt-20 xl:-mt-32">1543</p>
+        <p class="">the year I was born, in the city of&nbsp;<span class="highlight">Antwerp</span>.</p>
+      </div>
     </div>
   </section>
   <img class="" src="./src/assets/paperRip2.png" alt="">
@@ -68,19 +74,22 @@
     <h2>A Life in Ink Begins</h2>
     <div class="">
       <p class="pt-4">From a young age, I was fascinated by words and languages. Through <span
-          class="highlight">self-study</span>, I taught myself to read and speak not
-        only <span class="highlight">Dutch</span>, my native tongue, but also <span class="highlight">French</span>,
-        <span class="highlight">Italian</span>, <span class="highlight">Spanish</span>, and eventually <span
-          class="highlight">Latin</span>. Books were my teachers, and
-        curiosity was my guide.
-      </p>
-      <img class="opacity-50 ml-20 -mt-5 w-books" src="./src/assets/booksBlue.png" alt="">
-      <div class="flex relative pt-6 w-[835px] h-80">
-        <p class="pt-4 w-[215px]">By the time I turned fifteen, in <span class="highlight">1558</span>, I found myself
-          working in the bookshop of <span class="highlight">Christoffel Plantin</span>.</p>
-        <img class="opacity-50 absolute top-6 left-28" style="width: 276px !important;"
-          src="./src/assets/plantinBlu.png" alt="Christoffel Plantin">
-        <img class="opacity-50 absolute bottom-0 -left-7 w-[20rem]" src="./src/assets/top.png" alt="">
+          class="highlight">self-study</span>, I taught myself to read and speak not only <span
+          class="highlight">Dutch</span>, my native tongue, but also <span class="highlight">French</span>, <span
+          class="highlight">Italian</span>, <span class="highlight">Spanish</span>, and eventually <span
+          class="highlight">Latin</span>. Books were my teachers, and curiosity was my guide.</p>
+      <img class="opacity-50 ml-10 sm:ml-20 -mt-5 w-full max-w-[320px] sm:max-w-[420px] md:max-w-[520px] lg:w-books"
+        src="./src/assets/booksBlue.png" alt="">
+      <div class="flex flex-col lg:flex-row relative pt-6 w-full max-w-full lg:max-w-[835px] lg:h-80">
+        <p class="pt-4 w-full max-w-[320px] sm:max-w-[215px] lg:w-[215px]">By the time I turned fifteen, in <span
+            class="highlight">1558</span>, I found myself working in the bookshop of <span class="highlight">Christoffel
+            Plantin</span>.</p>
+        <div class="relative flex-1 min-h-[120px] lg:min-h-0">
+          <img class="opacity-50 absolute top-6 left-1/2 -translate-x-1/2 w-[180px] sm:w-[220px] md:w-[276px]"
+            style="width: 276px !important;" src="./src/assets/plantinBlu.png" alt="Christoffel Plantin">
+          <img class="opacity-50 absolute bottom-0 left-1/2 -translate-x-1/2 w-[12rem] sm:w-[16rem] md:w-[20rem]"
+            src="./src/assets/top.png" alt="">
+        </div>
       </div>
     </div>
   </section>
