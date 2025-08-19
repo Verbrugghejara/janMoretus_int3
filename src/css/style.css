@@ -136,10 +136,6 @@ footer p {
     font-weight: bold;
 }
 
-.book {
-    min-width: 34px;
-    max-width: 60px;
-}
 
 .text-book {
     font-size: var(--font-size-16-20);
@@ -230,8 +226,15 @@ button {
     gap: 10px;
 }
 
-/* Tablet vanaf 600px */
-
+/* Tablet vanaf 640px */
+@media (min-width: 640px) {
+    .text-book {
+        font-size: var(--font-size-20-28);
+        line-height: 120%;
+        color: var(--color-blue);
+        font-weight: bold;
+    }
+}
 
 /* iPad breedte tot 834px */
 @media (min-width: 768px) {
@@ -240,12 +243,15 @@ button {
         font-size: 64px;
     }
 
-    
+
 }
 
 @media (min-width: 1024px) {
     .text-year {
         font-size: 130px;
+    }
+    .zuil {
+        width: 170px;
     }
 }
 
@@ -253,7 +259,8 @@ button {
     h1 {
         font-size: 128px;
     }
-        .text-year {
-            font-size: 200px;
-        }
+
+    .text-year {
+        font-size: 200px;
+    }
 }
