@@ -244,35 +244,12 @@ button {
         font-size: 64px;
     }
 
-    h2 {
-        font-size: var(--font-size-32-48);
-    }
+    
+}
 
-    section {
-        padding-left: 3rem;
-        padding-right: 3rem;
-    }
-
-    .w-books {
-        width: 350px !important;
-        min-width: 350px !important;
-    }
-
-    .book {
-        min-width: 60px;
-        max-width: 90px;
-    }
-
-    .love {
-        width: 160px;
-    }
-
-    .authors {
-        width: 160px;
-    }
-
-    footer {
-        font-size: var(--font-size-16-20);
+@media (min-width: 1024px) {
+    .text-year {
+        font-size: 130px;
     }
 }
 
@@ -280,4 +257,7 @@ button {
     h1 {
         font-size: 128px;
     }
+        .text-year {
+            font-size: 200px;
+        }
 }
