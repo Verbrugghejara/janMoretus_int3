@@ -168,12 +168,12 @@ footer p {
     font-weight: bold;
     opacity: 0.2;
     position: absolute;
-    top: 50%;
+    top: 35%;
     left: 50%;
     line-height: 150%;
     transform: translate(-50%, -53%);
     color: var(--color-yellow);
-    font-size: var(--font-size-144-175);
+    font-size: 170px;
 }
 
 .text-ink {
@@ -181,7 +181,8 @@ footer p {
 }
 
 .love {
-    width: 100px;
+    min-width: 100px;
+    max-width: 120px;
     height: auto;
 }
 
@@ -234,6 +235,10 @@ button {
         color: var(--color-blue);
         font-weight: bold;
     }
+
+    .love {
+        max-width: 200px;
+    }
 }
 
 /* iPad breedte tot 834px */
@@ -243,6 +248,13 @@ button {
         font-size: 64px;
     }
 
+    .bg-year {
+        top: 30%;
+    }
+
+    .love {
+        max-width: 250px;
+    }
 
 }
 
@@ -250,8 +262,13 @@ button {
     .text-year {
         font-size: 130px;
     }
+
     .zuil {
         width: 170px;
+    }
+
+    .love {
+        max-width: 350px;
     }
 }
 
@@ -263,4 +280,11 @@ button {
     .text-year {
         font-size: 200px;
     }
+}
+
+@media (min-width: 1536px) {
+    .love {
+        max-width: 450px;
+    }
+
 }
