@@ -168,7 +168,7 @@ footer p {
     font-weight: bold;
     opacity: 0.2;
     position: absolute;
-    top: 35%;
+    top: 25%;
     left: 50%;
     line-height: 150%;
     transform: translate(-50%, -53%);
@@ -237,7 +237,7 @@ button {
     }
 
     .love {
-        max-width: 200px;
+        max-width: 150px;
     }
 }
 
@@ -249,11 +249,11 @@ button {
     }
 
     .bg-year {
-        top: 30%;
+        top: 25%;
     }
 
     .love {
-        max-width: 250px;
+        max-width: 200px;
     }
 
 }
@@ -268,7 +268,7 @@ button {
     }
 
     .love {
-        max-width: 350px;
+        max-width: 300px;
     }
 }
 
@@ -280,6 +280,14 @@ button {
     .text-year {
         font-size: 200px;
     }
+
+    .love {
+        max-width: 350px;
+    }
+
+    .bg-year {
+        top: 20%;
+    }
 }
 
 @media (min-width: 1536px) {
@@ -287,4 +295,7 @@ button {
         max-width: 450px;
     }
 
+    .bg-year {
+        top: 19%;
+    }
 }
