@@ -221,10 +221,14 @@ footer p {
 }
 
 .authors {
-    width: 100px;
+    min-width: 100px;
     height: auto;
 }
 
+.authors_justus {
+    min-width: 140px;
+    height: auto;
+}
 
 button {
     font-family: "Playfair Display";
@@ -277,6 +281,14 @@ button {
     .title-letter {
         font-size: var(--font-size-24-32);
     }
+
+    .authors {
+        max-width: 180px;
+    }
+
+    .authors_justus {
+        max-width: 240px;
+    }
 }
 
 /* iPad breedte tot 834px */
@@ -294,6 +306,13 @@ button {
         max-width: 200px;
     }
 
+    .authors {
+        max-width: 240px;
+    }
+
+    .authors_justus {
+        max-width: 300px;
+    }
 }
 
 @media (min-width: 1024px) {
@@ -321,6 +340,14 @@ button {
 
     .quotes {
         font-size: 24px;
+    }
+
+    .authors {
+        max-width: 330px;
+    }
+
+    .authors_justus {
+        max-width: 390px;
     }
 }
 
@@ -355,6 +382,14 @@ button {
         height: auto;
     }
 
+    .authors {
+        max-width: 350px;
+    }
+
+    .authors_justus {
+        max-width: 420px;
+    }
+
 }
 
 @media (min-width: 1536px) {
@@ -387,5 +422,13 @@ button {
 
     .title-letter {
         font-size: var(--font-size-24-32) !important;
+    }
+
+    .authors {
+        max-width: 400px;
+    }
+
+    .authors_justus {
+        max-width: 470px;
     }
 }
