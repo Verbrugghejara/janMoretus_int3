@@ -570,8 +570,7 @@
         Because of that, it has survived the centuries as <span class="highlight">a rare jewel of knowledge and
           craft</span>.</p>
     </div>
-    <div
-      class="sm:flex sm:flex-row-reverse sm:items-center sm:justify-center sm:w-full md:gap-8 xl:gap-10 2xl:gap-20">
+    <div class="sm:flex sm:flex-row-reverse sm:items-center sm:justify-center sm:w-full md:gap-8 xl:gap-10 2xl:gap-20">
       <p class="sm:min-w-[300px] sm:max-w-[560px]">Today it is no longer only my workplace. It has become <span
           class="highlight">the
           Plantin Moretus
@@ -585,8 +584,9 @@
 
       </div>
     </div>
-    <p class="relative max-w-[330px] xl:max-w-[415px] md:left-1/7 lg:left-1/5 xl:left-1/8 mb-14 lg:mb-20 xl:mb-40 2xl:mt-20 2xl:left-1/5">I <span
-        class="highlight">invite</span> you to walk in <span class="highlight">my
+    <p
+      class="relative max-w-[330px] xl:max-w-[415px] md:left-1/7 lg:left-1/5 xl:left-1/8 mb-14 lg:mb-20 xl:mb-40 2xl:mt-20 2xl:left-1/5">
+      I <span class="highlight">invite</span> you to walk in <span class="highlight">my
         footsteps</span> and in
       those
       of my father in law Christophe Plantin and discover what we
@@ -610,10 +610,23 @@
 
     </div>
   </section>
-  <footer>
-    <div class="flex justify-between pl-6 pr-6 pb-4">
-      <div class="flex justify-between  w-full">
-        <div>
+  <footer class="">
+    <div class="hidden w-full lg:block" style="color: var(--color-white);">
+      <div class="flex justify-center items-center">
+        <ul class="flex gap-7 text-lg font-serif">
+          <li><a href="#early-years" class="hover:text-red-700 transition">My Early Years</a></li>
+          <li><a href="#marriage" class="hover:text-red-700 transition">Marriage</a></li>
+          <li><a href="#succession" class="hover:text-red-700 transition">Succession</a></li>
+          <li><a href="#expansion" class="hover:text-red-700 transition">Expansion</a></li>
+          <li><a href="#testament" class="hover:text-red-700 transition">Testament</a></li>
+          <li><a href="#legacy" class="hover:text-red-700 transition">Legacy</a></li>
+        </ul>
+      </div>
+    </div>
+    <div
+      class="flex justify-between pl-6 pr-6 relative pb-4 md:pl-8 md:pr-8 md:pt-8 lg:pl-16 lg:pr-16 lg:pt-8 xl:pl-36 xl:pr-36">
+      <div class="flex justify-between  w-full sm:items-center">
+        <div class="sm:w-[200px]">
           <div>
             <p>Mon: <br> Closed</p>
           </div>
@@ -621,7 +634,10 @@
             <p>Tue – Sun: <br> 10:00 – 17:00</p>
           </div>
         </div>
-        <div class="text-end flex items-end">
+        <a href="" class="hidden sm:block px-5 py-2 h-6 rounded-full font-bold"
+          style="background-color: var(--color-yellow); font-family: 'Playfair Display'; color: var(--color-white);">TICKETS</a>
+
+        <div class="text-end flex items-end sm:w-[200px] justify-end">
           <p>Vrijdagmarkt 22 <br>
             2000 Antwerp <br>
             Tel. +32 (0)3 221 14 50</p>
@@ -651,6 +667,7 @@
           fill-rule="evenodd" clip-rule="evenodd" />
       </svg>
     </div>
+
   </footer>
 </body>
 
