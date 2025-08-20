@@ -9,6 +9,7 @@
     --color-yellow: #C98540;
 
 
+    --font-size-12-16: clamp(0.65rem, 0.6644rem + 0.3653vw, 1rem);
     --font-size-16-20: clamp(1rem, 0.9144rem + 0.3653vw, 1.25rem);
     --font-size-20-28: clamp(1.25rem, 1.0788rem + 0.7306vw, 1.75rem);
     --font-size-24-32: clamp(1.5rem, 1.3288rem + 0.7306vw, 2rem);
@@ -211,8 +212,12 @@ footer p {
 
 .text-letter {
     color: var(--color-blue) !important;
-    font-size: 12px;
+    font-size: var(--font-size-12-16);
     line-height: 120%;
+}
+
+.title-letter {
+    font-size: var(--font-size-16-20);
 }
 
 .authors {
@@ -262,6 +267,16 @@ button {
     .love {
         max-width: 150px;
     }
+
+    .text-letter {
+        color: var(--color-blue) !important;
+        font-size: 16px;
+        line-height: 120%;
+    }
+
+    .title-letter {
+        font-size: var(--font-size-24-32);
+    }
 }
 
 /* iPad breedte tot 834px */
@@ -303,6 +318,7 @@ button {
         width: 471px;
         height: auto;
     }
+
     .quotes {
         font-size: 24px;
     }
@@ -362,5 +378,14 @@ button {
 
     .wall2 {
         width: 541px;
+    }
+
+    .text-letter {
+        font-size: 16px !important;
+        line-height: 150%;
+    }
+
+    .title-letter {
+        font-size: var(--font-size-24-32) !important;
     }
 }
