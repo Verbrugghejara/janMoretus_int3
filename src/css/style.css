@@ -146,7 +146,7 @@ footer p {
 }
 
 .text-manuscript {
-    font-size: 12px;
+    font-size: clamp(12px, calc(12px + (4 * ((100vw - 375px) / 265))), 16px);
     line-height: 120%;
     color: var(--color-blue);
     font-weight: bold;
@@ -289,6 +289,14 @@ button {
     .authors_justus {
         max-width: 240px;
     }
+
+    .title-manuscript {
+        font-size: var(--font-size-32-48);
+    }
+
+    .text-manuscript {
+        font-size: 20px;
+    }
 }
 
 /* iPad breedte tot 834px */
@@ -349,6 +357,7 @@ button {
     .authors_justus {
         max-width: 390px;
     }
+
 }
 
 @media (min-width: 1280px) {
@@ -430,5 +439,9 @@ button {
 
     .authors_justus {
         max-width: 470px;
+    }
+
+    .title-manuscript {
+        font-size: 48px !important;
     }
 }
