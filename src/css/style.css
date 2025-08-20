@@ -190,9 +190,7 @@ footer p {
     font-size: 170px;
 }
 
-.text-ink {
-    color: var(--color-blue) !important;
-}
+
 
 .love {
     min-width: 100px;
@@ -216,8 +214,14 @@ footer p {
     line-height: 120%;
 }
 
+.text-will {
+    font-size: clamp(12px, calc(12px + (4 * ((100vw - 375px) / 265))), 14px);
+    color: var(--color-blue);
+}
+
 .title-letter {
     font-size: var(--font-size-16-20);
+    color: var(--color-blue) !important;
 }
 
 .authors {
@@ -296,6 +300,11 @@ button {
 
     .text-manuscript {
         font-size: 20px;
+    }
+
+    .text-will {
+        font-size: 16px;
+        line-height: 150% !important;
     }
 }
 
