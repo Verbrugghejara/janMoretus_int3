@@ -16,8 +16,16 @@
     class="relative pl-6 pr-6 pt-6 md:pl-8 md:pr-8 md:pt-8 lg:pt-4 h-[481px] sm:h-[600px]  md:h-[700px] lg:h-[800px] xl:h-[900px] 2xl:h-[1050px]">
     <div class="absolute inset-0 w-full h-full overflow-hidden ">
       <img
-        class=" absolute w-full h-full object-cover object-bottom sm:-top-8 md:-top-36 lg:-top-48 xl:-top-64 2xl:-top-96"
+        class="xl:hidden absolute w-full h-full object-cover object-bottom sm:-top-8 md:-top-36 lg:-top-48 xl:-top-64 2xl:-top-96"
         src="./src/assets/janMoretus.jpg" alt="">
+      <img id="anchor"
+        class="hidden xl:block absolute z-10 w-full h-full object-cover object-bottom sm:-top-8 md:-top-36 lg:-top-48 xl:-top-64 2xl:-top-96"
+        src="./src/assets/janMoretusEyeless.png" alt="">
+      <div id="eyes"
+        class="hidden xl:flex absolute  left-[52%] top-[20%] translate-x-[-50%] translate-y-[-50%] gap-[4.5vw]">
+        <img id="eye-left" class="eye relative top-[15px]" src="./src/assets/eyes.png" alt="">
+        <img id="eye-right" class="eye relative" src="./src/assets/eyes.png" alt="">
+      </div>
       <img class="absolute left-0 right-0 -bottom-0 w-full z-20" src="./src/assets/paperRip.png" alt="">
     </div>
     <div class="relative z-10 flex flex-col items-center justify-center">
@@ -49,7 +57,7 @@
       </nav>
     </div>
     <div
-      class="absolute bottom-26 sm:bottom-36 md:bottom-44 lg:bottom-48 xl:bottom-60 2xl:bottom-72 left-6 right-6 flex flex-col items-center justify-center">
+      class="absolute z-20 bottom-26 sm:bottom-36 md:bottom-44 lg:bottom-48 xl:bottom-60 2xl:bottom-72 left-6 right-6 flex flex-col items-center justify-center">
       <h1>Jan I Moretus</h1>
       <p class="text-paper text-center mt-2 min-w-[337px] max-w-[480px] sm:max-w-xl text-base sm:text-lg">
         Yes, that’s me. Sorry for the staring, just happy you’re here. Now you can follow me through my story from young
@@ -59,14 +67,12 @@
         start my Journey</button>
     </div>
   </header>
-  <section class="relative flex justify-center pl-6 pr-6 md:pl-8 md:pr-8 md:pt-8">
-    <div class="relative  mb-12 lg:mb-28 lg:w-2/3">
-      <img class="w-full h-full object-cover opacity-50 pointer-events-none" style="position:relative;"
-        src="./src/assets/AntwerpmapY.png" alt="">
-      <div class="absolute inset-0 flex flex-col items-center justify-center text-center z-10">
-        <p class="text-year -mt-12 sm:-mt-20 xl:-mt-32">1543</p>
-        <p class="">the year I was born, in the city of&nbsp;<span class="highlight">Antwerp</span>.</p>
-      </div>
+  <section class="relative flex justify-center pl-6 pr-6 md:pl-8 md:pr-8 md:pt-8 lg:px-16 xl:px-36">
+    <img class="w-full h-full object-cover opacity-50 pointer-events-none" style="position:relative;"
+      src="./src/assets/AntwerpmapY.png" alt="">
+    <div class="absolute inset-0 flex flex-col items-center justify-center text-center z-10">
+      <p class="text-year -mt-12 sm:-mt-20 xl:-mt-32">1543</p>
+      <p class="">the year I was born, in the city of&nbsp;<span class="highlight">Antwerp</span>.</p>
     </div>
   </section>
   <img class="" src="./src/assets/paperRip2.png" alt="">
@@ -669,6 +675,10 @@
     </div>
 
   </footer>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+  <script type="module" src="/src/js/main.js"></script>
 </body>
+
 
 </html>
