@@ -7,32 +7,36 @@ yearsScroll();
 import "../css/style.css";
 gsap.registerPlugin(ScrollTrigger);
 
-const header = document.querySelector("header");
+const header = document.getElementById("eyes");
 const eyeLeft = document.getElementById("eye-left");
 const eyeRight = document.getElementById("eye-right");
 
 function moveEyes(e) {
   const rect = header.getBoundingClientRect();
-  const x = e.clientX - rect.left;
-  const y = e.clientY - rect.top;
-  const xPct = Math.max(0, Math.min(1, x / rect.width));
-  const yPct = Math.max(0, Math.min(1, y / rect.height));
-  const maxX = 40;
-  const maxY = 30;
-  eyeLeft.style.left = xPct * maxX + "px";
-  eyeRight.style.left = xPct * maxX + "px";
-  const topOffset = -10;
-  eyeLeft.style.top = yPct * maxY + topOffset + 15 + "px";
-  eyeRight.style.top = yPct * maxY + topOffset + "px";
+  const xPct = (e.clientX - rect.left) / rect.width; // 0 → links, 1 → rechts
+  const yPct = (e.clientY - rect.top) / rect.height; // 0 → boven, 1 → onder
+
+  // Laat de ogen echt over de hele container bewegen
+  const maxX = 2; // grotere range in %
+  const maxY = 1;
+
+  eyeLeft.style.left = 47 + (xPct - 0.3) * maxX + "%";
+  eyeLeft.style.top = 24 + (yPct - 0.3) * maxY + "%";
+
+  eyeRight.style.left = 57.5 + (xPct - 0.3) * maxX + "%";
+  eyeRight.style.top = 23.5 + (yPct - 0.3) * maxY + "%";
 }
 
-header.addEventListener("mousemove", moveEyes);
+
+// Reset ogen bij muis leave
 header.addEventListener("mouseleave", function () {
-  eyeLeft.style.left = "0px";
-  eyeLeft.style.top = "15px";
-  eyeRight.style.left = "0px";
-  eyeRight.style.top = "0px";
+  eyeLeft.style.left = "47%";
+  eyeLeft.style.top = "24%";
+  eyeRight.style.left = "57.5%";
+  eyeRight.style.top = "23.5%";
 });
+
+header.addEventListener("mousemove", moveEyes);
 
 // =====================
 // 2. Timeline Years Animation
