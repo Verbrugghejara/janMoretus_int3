@@ -12,24 +12,10 @@
 </head>
 
 <body>
-  <header
+  <header id="eyes"
     class="relative pl-6 pr-6 pt-6 md:pl-8 md:pr-8 md:pt-8 lg:pt-4 h-[481px] sm:h-[600px]  md:h-[700px] lg:h-[800px] xl:h-[900px] 2xl:h-[1050px]">
-    <div class="absolute inset-0 w-full h-full overflow-hidden ">
-      <img
-        class="xl:hidden absolute w-full h-full object-cover object-bottom sm:-top-8 md:-top-36 lg:-top-48 xl:-top-64 2xl:-top-96"
-        src="./src/assets/janMoretus.jpg" alt="">
-      <img id="anchor"
-        class="hidden xl:block absolute z-10 w-full h-full object-cover object-bottom sm:-top-8 md:-top-36 lg:-top-48 xl:-top-64 2xl:-top-96"
-        src="./src/assets/janMoretusEyeless.png" alt="">
-      <div id="eyes"
-        class="hidden xl:flex absolute  left-[52%] top-[20%] translate-x-[-50%] translate-y-[-50%] gap-[4.5vw]">
-        <img id="eye-left" class="eye relative top-[15px]" src="./src/assets/eyes.png" alt="">
-        <img id="eye-right" class="eye relative" src="./src/assets/eyes.png" alt="">
-      </div>
-      <img class="absolute left-0 right-0 -bottom-0 w-full z-20" src="./src/assets/paperRip.png" alt="">
-    </div>
-    <div class="relative z-10 flex flex-col items-center justify-center">
-      <nav class="flex justify-end w-full mb-2">
+    <nav class="relative z-50 flex flex-col items-center justify-center">
+      <div class="flex justify-end w-full mb-2">
         <svg class="w-8 h-8 md:w-16 md:h-16 lg:hidden" viewBox="0 0 33 23" fill="none"
           xmlns="http://www.w3.org/2000/svg">
           <line y1="1.5" x2="33" y2="1.5" stroke="#EEE4D3" stroke-width="3" />
@@ -54,29 +40,46 @@
               style="background-color: var(--color-yellow); font-family: 'Playfair Display';">TICKETS</a>
           </div>
         </div>
-      </nav>
-    </div>
-    <div
-      class="absolute z-20 bottom-26 sm:bottom-36 md:bottom-44 lg:bottom-48 xl:bottom-60 2xl:bottom-72 left-6 right-6 flex flex-col items-center justify-center">
-      <h1>Jan I Moretus</h1>
-      <p class="text-paper text-center mt-2 min-w-[337px] max-w-[480px] sm:max-w-xl text-base sm:text-lg">
-        Yes, that’s me. Sorry for the staring, just happy you’re here. Now you can follow me through my story from young
-        bookshop helper to master printer of the legendary Officina Plantiniana.
-      </p>
-      <button class="mt-4" style="border-color: var(--color-white); color: var(--color-white);"><a href=""></a>Let's
-        start my Journey</button>
-    </div>
+      </div>
+    </nav>
+    <div class="absolute inset-0 w-full h-full overflow-hidden ">
+      <img
+        class="xl:hidden absolute w-full h-full object-cover object-bottom sm:-top-8 md:-top-36 lg:-top-48 xl:-top-64 2xl:-top-96"
+        src="./src/assets/janMoretus.jpg" alt="">
+      <div class="relative w-full -top-1/5 2xl:-top-1/3 aspect-[3/4] hidden xl:block">
+        <!-- Jan Moretus afbeelding -->
+        <img id="anchor" class="absolute top-0 left-0 w-full h-full object-cover z-20"
+          src="./src/assets/janMoretusEyeless.png" alt="Jan Moretus">
+
+        <!-- Ogen container -->
+        <div  class="absolute top-0 left-0 w-full h-full z-10">
+          <img id="eye-left" class="absolute top-[24%] left-[47%] -translate-x-1/2 -translate-y-1/2"
+            style="height: 5%; width: auto;" src="./src/assets/eyes.png" alt="Linker oog">
+
+          <img id="eye-right" class="absolute top-[23.5%] left-[57.5%] -translate-x-1/2 -translate-y-1/2"
+            style="height: 5%; width: auto;" src="./src/assets/eyes.png" alt="Rechter oog">
+        </div>
+      </div>
+      <div
+        class="absolute z-20 bottom-26 sm:bottom-36 md:bottom-44 lg:bottom-48 xl:bottom-60 2xl:bottom-72 left-6 right-6 flex flex-col items-center justify-center">
+        <h1>Jan I Moretus</h1>
+        <p class="text-paper text-center mt-2 min-w-[337px] max-w-[480px] sm:max-w-xl text-base sm:text-lg">
+          Yes, that’s me. Sorry for the staring, just happy you’re here. Now you can follow me through my story from
+          young
+          bookshop helper to master printer of the legendary Officina Plantiniana.
+        </p>
+        <button class="mt-4" style="border-color: var(--color-white); color: var(--color-white);"><a href=""></a>Let's
+          start my Journey</button>
+      </div>
+      <img class="absolute left-0 right-0 bottom-0 w-full z-50" src="./src/assets/paperRip.png" alt="">
+
   </header>
   <section id="timeline" class="relative w-full h-[500vh] hidden xl:block">
-    <!-- Wrapper voor sticky content -->
     <div class="sticky top-0 h-screen flex justify-center items-center">
-      <!-- Achtergrond afbeelding -->
       <img id="background" class="absolute w-auto max-w-full max-h-screen object-cover opacity-50 pointer-events-none"
         src="./src/assets/AntwerpmapY.png" alt="Antwerp map" />
 
-      <!-- Jaarlagen container -->
       <div id="year-container" class="flex flex-col items-center justify-center text-center">
-        <!-- jaarcijfers komen hier via JS -->
       </div>
     </div>
   </section>
