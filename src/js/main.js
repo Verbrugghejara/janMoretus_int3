@@ -204,9 +204,84 @@ function checkOrder() {
     const img = item.querySelector(".book-img");
 
     if (correctOrder === index + 1) {
-      img.src = "./src/assets/bookY.png"; 
+      img.src = "./src/assets/bookY.png";
     } else {
-      img.src = "./src/assets/bookV2.png"; 
+      img.src = "./src/assets/bookV2.png";
     }
   });
+}
+
+// =====================
+// Mobile drag & drop
+// =====================
+document.querySelectorAll(".draggable").forEach((item) => {
+  let startX, startY;
+  let placeholder = null;
+
+  item.addEventListener("touchstart", (e) => {
+    draggedItem = item;
+    startX = e.touches[0].clientX;
+    startY = e.touches[0].clientY;
+
+    item.classList.add("scale-110", "rounded-lg");
+
+    placeholder = document.createElement("div");
+    placeholder.className = "w-[50px] h-[100px]";
+    item.parentNode.insertBefore(placeholder, item.nextSibling);
+
+    item.style.position = "absolute";
+    item.style.zIndex = 1000;
+    moveAt(e.touches[0].clientX, e.touches[0].clientY);
+  });
+
+  item.addEventListener("touchmove", (e) => {
+    e.preventDefault();
+    moveAt(e.touches[0].clientX, e.touches[0].clientY);
+
+    const touchX = e.touches[0].clientX;
+    const afterElement = getTouchAfterElement(container, touchX);
+    if (afterElement == null) {
+      container.appendChild(placeholder);
+    } else {
+      container.insertBefore(placeholder, afterElement);
+    }
+  });
+
+  function moveAt(x, y) {
+    item.style.left = x - item.offsetWidth / 2 + "px";
+    item.style.top = y - item.offsetHeight / 2 + "px";
+  }
+
+  item.addEventListener("touchend", () => {
+    placeholder.parentNode.insertBefore(item, placeholder);
+    placeholder.remove();
+
+    item.style.position = "";
+    item.style.left = "";
+    item.style.top = "";
+    item.style.zIndex = "";
+    item.classList.remove("scale-110", "rounded-lg");
+
+    draggedItem = null;
+    checkOrder();
+  });
+});
+
+function getTouchAfterElement(container, x) {
+  const draggableElements = [
+    ...container.querySelectorAll(".draggable:not(.dragging)"),
+  ];
+
+  return draggableElements.reduce(
+    (closest, child) => {
+      const box = child.getBoundingClientRect();
+      const offset = x - box.left - box.width / 2;
+      if (offset < 0 && offset > closest.offset) {
+        return { offset: offset, element: child };
+      } else {
+        return closest;
+      }
+    },
+    { offset: Number.NEGATIVE_INFINITY }
+  ).element;
 }
