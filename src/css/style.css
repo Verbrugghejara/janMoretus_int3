@@ -375,6 +375,10 @@ button {
         font-size: 128px;
     }
 
+    .text-book {
+        font-size: 20px;
+    }
+
     .text-year {
         font-size: 200px;
     }
@@ -461,5 +465,9 @@ button {
 
     .title-manuscript {
         font-size: 48px !important;
+    }
+
+    .text-book {
+        font-size: 24px !important;
     }
 }

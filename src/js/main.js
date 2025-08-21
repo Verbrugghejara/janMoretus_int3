@@ -27,7 +27,6 @@ function moveEyes(e) {
   eyeRight.style.top = 23.5 + (yPct - 0.3) * maxY + "%";
 }
 
-
 // Reset ogen bij muis leave
 header.addEventListener("mouseleave", function () {
   eyeLeft.style.left = "47%";
@@ -144,4 +143,70 @@ function yearsScroll() {
       ">"
     );
   }
+}
+
+// =====================
+// 2. Books
+// =====================
+
+const container = document.getElementById("book-container");
+let draggedItem = null;
+
+document.querySelectorAll(".draggable").forEach((item) => {
+  item.addEventListener("dragstart", (e) => {
+    draggedItem = item;
+
+    const emptyImg = new Image();
+    emptyImg.src = "";
+    e.dataTransfer.setDragImage(emptyImg, 0, 0);
+    item.classList.add("scale-110", "rounded-lg");
+  });
+
+  item.addEventListener("dragend", () => {
+    item.classList.remove("scale-110", "rounded-lg");
+    draggedItem = null;
+    checkOrder();
+  });
+});
+
+container.addEventListener("dragover", (e) => {
+  e.preventDefault();
+  const afterElement = getDragAfterElement(container, e.clientX);
+  if (afterElement == null) {
+    container.appendChild(draggedItem);
+  } else {
+    container.insertBefore(draggedItem, afterElement);
+  }
+});
+
+function getDragAfterElement(container, x) {
+  const draggableElements = [
+    ...container.querySelectorAll(".draggable:not(.opacity-50)"),
+  ];
+  return draggableElements.reduce(
+    (closest, child) => {
+      const box = child.getBoundingClientRect();
+      const offset = x - box.left - box.width / 2;
+      if (offset < 0 && offset > closest.offset) {
+        return { offset: offset, element: child };
+      } else {
+        return closest;
+      }
+    },
+    { offset: Number.NEGATIVE_INFINITY }
+  ).element;
+}
+
+function checkOrder() {
+  const items = [...container.querySelectorAll(".draggable")];
+  items.forEach((item, index) => {
+    const correctOrder = parseInt(item.dataset.order);
+    const img = item.querySelector(".book-img");
+
+    if (correctOrder === index + 1) {
+      img.src = "./src/assets/bookY.png"; 
+    } else {
+      img.src = "./src/assets/bookV2.png"; 
+    }
+  });
 }
