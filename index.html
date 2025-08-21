@@ -29,7 +29,7 @@
       <img class="absolute left-0 right-0 -bottom-0 w-full z-20" src="./src/assets/paperRip.png" alt="">
     </div>
     <div class="relative z-10 flex flex-col items-center justify-center">
-      <nav class="flex justify-end w-full mb-2 ">
+      <nav class="flex justify-end w-full mb-2">
         <svg class="w-8 h-8 md:w-16 md:h-16 lg:hidden" viewBox="0 0 33 23" fill="none"
           xmlns="http://www.w3.org/2000/svg">
           <line y1="1.5" x2="33" y2="1.5" stroke="#EEE4D3" stroke-width="3" />
@@ -67,12 +67,28 @@
         start my Journey</button>
     </div>
   </header>
-  <section class="relative flex justify-center pl-6 pr-6 md:pl-8 md:pr-8 md:pt-8 lg:px-16 xl:px-36">
+  <section id="timeline" class="relative w-full h-[500vh] hidden xl:block">
+    <!-- Wrapper voor sticky content -->
+    <div class="sticky top-0 h-screen flex justify-center items-center">
+      <!-- Achtergrond afbeelding -->
+      <img id="background" class="absolute w-auto max-w-full max-h-screen object-cover opacity-50 pointer-events-none"
+        src="./src/assets/AntwerpmapY.png" alt="Antwerp map" />
+
+      <!-- Jaarlagen container -->
+      <div id="year-container" class="flex flex-col items-center justify-center text-center">
+        <!-- jaarcijfers komen hier via JS -->
+      </div>
+    </div>
+  </section>
+
+
+
+  <section class="relative xl:hidden flex justify-center pl-6 pr-6 md:pl-8 md:pr-8 md:pt-8 lg:px-16 xl:px-36">
     <img class="w-full h-full object-cover opacity-50 pointer-events-none" style="position:relative;"
       src="./src/assets/AntwerpmapY.png" alt="">
     <div class="absolute inset-0 flex flex-col items-center justify-center text-center z-10">
-      <p class="text-year -mt-12 sm:-mt-20 xl:-mt-32">1543</p>
-      <p class="">the year I was born, in the city of&nbsp;<span class="highlight">Antwerp</span>.</p>
+      <p class="title-year -mt-12 sm:-mt-20 xl:-mt-32">1543</p>
+      <p class="text-year">the year I was born, in the city of&nbsp;<span class="highlight">Antwerp</span>.</p>
     </div>
   </section>
   <img class="" src="./src/assets/paperRip2.png" alt="">

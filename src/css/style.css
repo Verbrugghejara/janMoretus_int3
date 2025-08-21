@@ -115,12 +115,13 @@ footer p {
     color: var(--color-white) !important;
 }
 
-.text-year {
+.title-year {
     color: var(--color-red);
     font-family: "Playfair Display";
     font-weight: bold;
-    font-size: var(--font-size-72-144);
+    font-size: var(--font-size-72-144) !important;
 }
+
 
 .bg-dust {
     background-color: var(--color-beige);
@@ -333,7 +334,7 @@ button {
 }
 
 @media (min-width: 1024px) {
-    .text-year {
+    .title-year {
         font-size: 130px;
     }
 
@@ -406,6 +407,14 @@ button {
 
     .authors_justus {
         max-width: 420px;
+    }
+
+    .text-year {
+        font-size: 24px !important;
+    }
+
+    .title-year {
+        font-size: 100px !important;
     }
 
 }
