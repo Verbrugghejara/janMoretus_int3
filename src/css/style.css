@@ -175,7 +175,7 @@ footer p {
     line-height: 150%;
     transform: translate(-50%, -53%);
     color: var(--color-yellow);
-    font-size: 170px;
+    font-size: 170px !important;
 }
 
 .bg-year-dark {
@@ -188,7 +188,7 @@ footer p {
     line-height: 150%;
     transform: translate(-50%, -53%);
     color: var(--color-blue);
-    font-size: 170px;
+    font-size: 170px !important;
 }
 
 
@@ -263,6 +263,44 @@ button {
     flex-shrink: 0;
     aspect-ratio: 166/203;
 }
+
+.text-unlock {
+    font-size: 72px !important;
+    font-weight: bold;
+    color: var(--color-red);
+}
+
+.unlock__list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 50vh;
+
+    font-family: Helvetica, sans-serif;
+    font-weight: bold;
+    text-align: center;
+    font-size: 72px !important;
+    color: var(--color-red);
+
+    margin: 0 clamp(1rem, -0.3699rem + 5.8447vw, 5rem);
+}
+
+.unlock__text-1 {
+    font-size: 46px !important;
+}
+
+.unlock__text-2 {
+    font-size: 36px !important;
+}
+
+.unlock__text-3 {
+    font-size: 24px !important;
+}
+
+/* #lock {
+    transition: transform 0.3s ease;
+} */
+
 
 /* Tablet vanaf 640px */
 @media (min-width: 640px) {
@@ -421,6 +459,12 @@ button {
         font-size: 100px !important;
     }
 
+    .text-feedback {
+        font-size: 24px !important;
+        color: var(--color-red);
+        font-weight: bold;
+    }
+
 }
 
 @media (min-width: 1536px) {
@@ -469,5 +513,9 @@ button {
 
     .text-book {
         font-size: 24px !important;
+    }
+
+    .text-feedback {
+        font-size: 32px !important;
     }
 }
