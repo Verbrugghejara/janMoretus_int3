@@ -285,3 +285,235 @@ function getTouchAfterElement(container, x) {
     { offset: Number.NEGATIVE_INFINITY }
   ).element;
 }
+
+const mask = document.querySelector("#maskOverlay");
+const combinations = document.getElementById("combinations");
+const question1 = document.getElementById("question-1");
+const question2 = document.getElementById("question-2");
+const question3 = document.getElementById("question-3");
+
+mask.style.webkitMaskImage = "none";
+mask.style.maskImage = "none";
+
+ScrollTrigger.create({
+  trigger: "#chapterBlock",
+  start: "-40% -40%",
+  end: "bottom bottom",
+  onEnter: () => {
+    gsap.to(mask, { opacity: 1, duration: 0.3 });
+  },
+  onLeaveBack: () => {
+    gsap.to(mask, { opacity: 0, duration: 0.3 });
+    gsap.killTweensOf(lock);
+    gsap.to(lock, {
+      scale: 1,
+      duration: 0,
+      overwrite: true,
+    });
+    // lock.style.pointerEvents = "auto";
+    // lock.style.cursor = "pointer";
+    fadeInDone = false;
+    combinations.classList.add("hidden");
+    question1.classList.add("hidden");
+    question2.classList.add("hidden");
+    question3.classList.add("hidden");
+  },
+  onLeave: () => {
+    gsap.to(mask, { opacity: 0, duration: 0.3 });
+  },
+  onEnterBack: () => {
+    gsap.to(mask, { opacity: 1, duration: 0.3 });
+  },
+});
+let lockAnimationActive = false;
+const lock = document.getElementById("lock");
+let fadeInDone = false;
+
+function stopLockAnimation() {
+  lockAnimationActive = false;
+  gsap.killTweensOf(lock);
+  gsap.to(lock, {
+    x: 0,
+    rotation: 0,
+    duration: 0.2,
+    ease: "power2.out",
+  });
+}
+function animateLock() {
+  if (!lockAnimationActive) return;
+  gsap.fromTo(
+    lock,
+    { x: -10, rotation: -10 },
+    {
+      x: 10,
+      rotation: 10,
+      duration: 0.12,
+      repeat: 7,
+      transformOrigin: "top top",
+      yoyo: true,
+      ease: "power1.inOut",
+      onComplete: () => {
+        gsap.to(lock, {
+          x: 0,
+          rotation: 0,
+          duration: 0.2,
+          ease: "power2.out",
+          onComplete: () => {
+            if (lockAnimationActive) {
+              setTimeout(animateLock, 2000);
+            }
+            if (fadeInDone) {
+              stopLockAnimation()
+            }
+          },
+        });
+      },
+    }
+  );
+}
+
+gsap.to(
+  {},
+  {
+    scrollTrigger: {
+      trigger: "#chapterBlock",
+      start: "-40% -40%",
+      end: "bottom bottom",
+      scrub: true,
+      onUpdate: (self) => {
+        let progress = self.progress; // 0 → 1
+        let size = 60 - progress * 55; // van 60vmax → 5vmax
+        mask.style.webkitMaskImage = `radial-gradient(circle ${size}vmax at center, transparent 0%, black 100%)`;
+        mask.style.maskImage = `radial-gradient(circle ${size}vmax at center, transparent 0%, black 100%)`;
+      },
+      onLeave: () => {
+        lockAnimationActive = true;
+
+        animateLock();
+
+        // lock.addEventListener("click", stopLockAnimation, { once: true });
+      },
+    },
+  }
+);
+
+lock.addEventListener("click", () => {
+  if (fadeInDone) return;
+  fadeInDone = true;
+  stopLockAnimation(); // nu werkt dit ook
+  gsap.to(lock, {
+    scale: 5,
+    duration: 0.5,
+    yoyo: true,
+    ease: "power2.inOut",
+    transformOrigin: "bottom center",
+  });
+
+  // lock.style.pointerEvents = "none";
+  // lock.style.cursor = "default";
+  // Fade-in animatie met GSAP
+  const unlockInstructions = document.getElementById("unlock-instructions");
+  unlockInstructions.classList.add("hidden");
+  [combinations, question1, question2, question3].forEach((el, i) => {
+    el.classList.remove("hidden");
+    if (el === combinations) el.classList.add("flex");
+    gsap.fromTo(
+      el,
+      { opacity: 0, y: 40 },
+      { opacity: 1, y: 0, duration: 0.7, delay: i * 0.2, ease: "power2.out" }
+    );
+  });
+});
+
+const lockWheel = document.getElementById("lockWheel");
+let isDragging = false;
+let startAngle = 0;
+let currentAngle = 0;
+
+// Combinatiecode
+const correctAngles = [95, 290, 45];
+let currentStep = 0; // Houdt bij welk cijfer van de code we zijn
+
+function getAngle(e, el) {
+  const rect = el.getBoundingClientRect();
+  const cx = rect.left + rect.width / 2;
+  const cy = rect.top + rect.height / 2;
+
+  const x = (e.touches ? e.touches[0].clientX : e.clientX) - cx;
+  const y = (e.touches ? e.touches[0].clientY : e.clientY) - cy;
+
+  return (Math.atan2(y, x) * 180) / Math.PI;
+}
+
+lockWheel.addEventListener("mousedown", startRotate);
+lockWheel.addEventListener("touchstart", startRotate);
+
+function startRotate(e) {
+  e.preventDefault();
+  isDragging = true;
+  startAngle = getAngle(e, lockWheel) - currentAngle;
+
+  document.addEventListener("mousemove", rotate);
+  document.addEventListener("touchmove", rotate);
+  document.addEventListener("mouseup", stopRotate);
+  document.addEventListener("touchend", stopRotate);
+}
+
+function rotate(e) {
+  if (!isDragging) return;
+  currentAngle = getAngle(e, lockWheel) - startAngle;
+  lockWheel.style.transform = `rotate(${currentAngle}deg)`;
+  console.log("Current angle:", currentAngle);
+}
+
+function stopRotate() {
+  isDragging = false;
+  document.removeEventListener("mousemove", rotate);
+  document.removeEventListener("touchmove", rotate);
+
+  checkCodeStep();
+}
+
+function checkCodeStep() {
+  const tolerance = 10;
+  const normalizedAngle = ((currentAngle % 360) + 360) % 360;
+
+  // Check of de huidige hoek overeenkomt met de volgende stap van de code
+  if (Math.abs(normalizedAngle - correctAngles[currentStep]) < tolerance) {
+    currentStep++;
+    console.log("Correct step! CurrentStep:", currentStep);
+
+    if (currentStep === correctAngles.length) {
+      const feedback = document.getElementById("scrollingFeedback");
+      feedback.classList.remove("hidden");
+      feedback.classList.add("flex");
+      const lockImg = document.querySelector("#lock img:first-child");
+      lockImg.src = "./src/assets/lockOpen.png";
+
+      lockWheel.classList.remove("cursor-grab");
+      lockWheel.classList.add(
+        "pointer-events-none",
+        "cursor-default",
+        "top-[72%]"
+      );
+
+      const answer3 = document.getElementById("answer-3");
+
+      answer3.classList.remove("hidden");
+      [question1, question2, question3].forEach((el, i) => {
+        el.classList.add("hidden");
+      });
+      currentStep = 0;
+      const lock1 = document.getElementById("lock-1");
+      lock1.classList.remove("hidden");
+    } else if (currentStep == 1) {
+      const answer1 = document.getElementById("answer-1");
+      // verwijder class hidden van de child
+      answer1.classList.remove("hidden");
+    } else if (currentStep == 2) {
+      const answer2 = document.getElementById("answer-2");
+      // verwijder class hidden van de child
+      answer2.classList.remove("hidden");
+    }
+  }
+}
