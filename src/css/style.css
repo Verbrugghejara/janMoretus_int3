@@ -147,7 +147,7 @@ footer p {
 }
 
 .text-manuscript {
-    font-size: clamp(12px, calc(12px + (4 * ((100vw - 375px) / 265))), 16px);
+    font-size: 12px;
     line-height: 120%;
     color: var(--color-blue);
     font-weight: bold;
@@ -155,7 +155,7 @@ footer p {
 
 .title-manuscript {
     font-family: "Playfair Display";
-    font-size: var(--font-size-32-48);
+    font-size: 24px !important;
     color: var(--color-yellow);
     font-weight: bold;
     opacity: 0.5;
@@ -297,6 +297,22 @@ button {
     font-size: 24px !important;
 }
 
+.button-confirm {
+    background-color: var(--color-red);
+    color: var(--color-white);
+    border: none;
+    padding: 12px 24px;
+    border-radius: 100px;
+    font-family: "Lora";
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.button-confirm:hover {
+    background-color: var(--color-yellow);
+}
+
 /* #lock {
     transition: transform 0.3s ease;
 } */
@@ -369,6 +385,10 @@ button {
 
     .authors_justus {
         max-width: 300px;
+    }
+
+    .title-manuscript {
+        font-size: 32px !important;
     }
 }
 

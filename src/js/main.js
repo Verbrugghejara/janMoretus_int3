@@ -683,3 +683,90 @@ if (isTouchDevice) {
   });
 } else {
 }
+
+// =====================
+// Drag & Drop printing house
+// =====================
+const allowedBooks = [
+  "book-de-constantia",
+  "book-bible-translation",
+  "book-atlas-of-ortelius",
+  "book-medicinal-dodoens",
+  "book-prayer-mass",
+];
+
+const cart = document.getElementById("cart");
+const shelf = document.getElementById("shelf");
+const confirmBtn = document.querySelector(".button-confirm");
+const resultText = confirmBtn.nextElementSibling;
+
+// ---------- Desktop drag & drop ----------
+function drag(ev) {
+  ev.dataTransfer.setData("text/plain", ev.target.id);
+  ev.dataTransfer.effectAllowed = "move";
+}
+
+function allowDrop(ev) {
+  ev.preventDefault();
+  ev.dataTransfer.dropEffect = "move";
+}
+
+shelf.addEventListener("dragover", allowDrop);
+shelf.addEventListener("drop", (ev) => {
+  ev.preventDefault();
+  const id = ev.dataTransfer.getData("text/plain");
+  const book = document.getElementById(id);
+  if (!book) return;
+  if (shelf.querySelectorAll("[draggable='true']").length >= 5) {
+    alert("Je kunt maar 5 boeken in de shelf zetten!");
+    return;
+  }
+  shelf.appendChild(book);
+});
+
+cart.addEventListener("dragover", allowDrop);
+cart.addEventListener("drop", (ev) => {
+  ev.preventDefault();
+  const id = ev.dataTransfer.getData("text/plain");
+  const book = document.getElementById(id);
+  if (!book) return;
+  cart.appendChild(book);
+});
+
+// ---------- Mobile tap only ----------
+document.querySelectorAll("[draggable='true']").forEach((book) => {
+  // Desktop drag
+  book.addEventListener("dragstart", drag);
+
+  // Mobile tap (touch)
+  book.addEventListener("touchend", () => {
+    // Geen preventDefault op touchend
+    if (book.parentElement === cart) {
+      if (shelf.querySelectorAll("[draggable='true']").length >= 5) {
+        alert("Je kunt maar 5 boeken in de shelf zetten!");
+        return;
+      }
+      shelf.appendChild(book);
+    } else if (book.parentElement === shelf) {
+      cart.appendChild(book);
+    }
+  });
+});
+
+// ---------- Confirm button ----------
+confirmBtn.addEventListener("click", () => {
+  const booksOnShelf = shelf.querySelectorAll("[draggable='true']");
+
+  if (booksOnShelf.length < 5) {
+    alert("You must place 5 books on the shelf before confirming!");
+    return;
+  }
+
+  let correct = 0;
+
+  booksOnShelf.forEach((book) => {
+    if (allowedBooks.includes(book.id)) correct++;
+  });
+
+  resultText.textContent = `${correct} of ${allowedBooks.length} correct`;
+});
