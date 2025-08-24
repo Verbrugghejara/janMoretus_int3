@@ -1,13 +1,11 @@
 gsap.registerPlugin(ScrollTrigger);
-import "../css/style.css";
-window.addEventListener("resize", () => {
-  ScrollTrigger.refresh();
+yearsScroll();
 
-  pageHeight = document.body.scrollHeight;
-});
 // =====================
 // 1. Eyes Animation
 // =====================
+import "../css/style.css";
+gsap.registerPlugin(ScrollTrigger);
 
 const header = document.getElementById("eyes");
 const eyeLeft = document.getElementById("eye-left");
@@ -43,8 +41,6 @@ header.addEventListener("mousemove", moveEyes);
 // 2. Timeline Years Animation
 // =====================
 
-yearsScroll();
-
 function yearsScroll() {
   const years = [1543, 1558, 1570, 1583, 1585, 1589, 1590, 1610, 1543];
   const fonts = [
@@ -60,14 +56,12 @@ function yearsScroll() {
   ];
 
   const container = document.getElementById("year-container");
-  const fragment = document.createDocumentFragment();
-
   years.forEach((year, i) => {
     const layer = document.createElement("div");
     layer.className =
-      "year-layer absolute flex flex-col items-center justify-center text-center opacity-0";
+      "year-layer absolute flex flex-col items-center justify-center text-center";
+    layer.style.opacity = 0;
 
-    // Year element
     const yearEl = document.createElement("p");
     yearEl.className =
       "title-year select-none tracking-tight leading-none text-white";
@@ -77,39 +71,35 @@ function yearsScroll() {
     year
       .toString()
       .split("")
-      .forEach((digit) => {
+      .forEach((d) => {
         const span = document.createElement("span");
         span.className = "digit inline-block will-change-transform opacity-0";
-        span.textContent = digit;
+        span.textContent = d;
         yearEl.appendChild(span);
       });
 
-    // Optional subtitle
     const sub = document.createElement("p");
     sub.className = "text-year mt-6 text-xl md:text-2xl text-white/90";
-    if (i === years.length - 1) {
-      sub.innerHTML =
-        "the year I was born, in the city of <span class='highlight'>Antwerp</span>.";
-    }
+    sub.innerHTML =
+      i === years.length - 1
+        ? "the year I was born, in the city of <span class='highlight'>Antwerp</span>."
+        : "";
 
     layer.appendChild(yearEl);
     layer.appendChild(sub);
-    fragment.appendChild(layer);
+    container.appendChild(layer);
   });
-
-  container.appendChild(fragment);
 
   const layers = gsap.utils.toArray(".year-layer");
 
-  // First layer zichtbaar maken
   gsap.set(layers[0], { autoAlpha: 1 });
   gsap.set(layers[0].querySelectorAll(".digit"), { yPercent: 0, opacity: 1 });
 
   const tl = gsap.timeline({
     scrollTrigger: {
-      trigger: "#timeline2",
+      trigger: "#timeline",
       start: "top top",
-      end: "bottom bottom",
+      end: "+=" + years.length * 400,
       scrub: 0.3,
       pin: false,
     },
@@ -120,19 +110,17 @@ function yearsScroll() {
     const next = layers[i];
     const fromTop = i === layers.length - 1;
 
-    // Animate previous layer digits out
     tl.to(
       prev.querySelectorAll(".digit"),
       {
         yPercent: -40,
         autoAlpha: 0,
-        duration: 0.2,
         stagger: 0,
+        duration: 0.2,
       },
       ">"
     );
 
-    // Show next layer
     tl.set(next, { autoAlpha: 1 }, "<");
     tl.set(
       next.querySelectorAll(".digit"),
@@ -143,7 +131,6 @@ function yearsScroll() {
       "<"
     );
 
-    // Animate next layer digits in
     tl.to(
       next.querySelectorAll(".digit"),
       {
@@ -298,9 +285,11 @@ function getTouchAfterElement(container, x) {
     { offset: Number.NEGATIVE_INFINITY }
   ).element;
 }
+
 // =====================
-// Mask & Lock Scroll Animation
+// Maskoverlay & Lockwheel
 // =====================
+
 const mask = document.querySelector("#maskOverlay");
 const combinations = document.getElementById("combinations");
 const question1 = document.getElementById("question-1");
@@ -311,7 +300,7 @@ mask.style.webkitMaskImage = "none";
 mask.style.maskImage = "none";
 
 ScrollTrigger.create({
-  trigger: ".unlock__content",
+  trigger: "#chapterBlock",
   start: "-40% -40%",
   end: "bottom bottom",
   onEnter: () => {
@@ -334,7 +323,7 @@ ScrollTrigger.create({
     question3.classList.add("hidden");
   },
   onLeave: () => {
-    gsap.to(mask, { opacity: 0, duration: 1 });
+    gsap.to(mask, { opacity: 0, duration: 0.3 });
   },
   onEnterBack: () => {
     gsap.to(mask, { opacity: 1, duration: 0.3 });
@@ -343,32 +332,6 @@ ScrollTrigger.create({
 let lockAnimationActive = false;
 const lock = document.getElementById("lock");
 let fadeInDone = false;
-
-gsap.to(
-  {},
-  {
-    scrollTrigger: {
-      trigger: ".unlock__content",
-      start: "-40% -40%",
-      end: "bottom bottom",
-      scrub: true,
-      markers:true,
-      onUpdate: (self) => {
-        let progress = self.progress; // 0 → 1
-        let size = 55 - progress * 50; // van 60vmax → 5vmax
-        mask.style.webkitMaskImage = `radial-gradient(circle ${size}vmax at center, transparent 0%, black 100%)`;
-        mask.style.maskImage = `radial-gradient(circle ${size}vmax at center, transparent 0%, black 100%)`;
-      },
-      onLeave: () => {
-        lockAnimationActive = true;
-
-        animateLock();
-
-        // lock.addEventListener("click", stopLockAnimation, { once: true });
-      },
-    },
-  }
-);
 
 function stopLockAnimation() {
   lockAnimationActive = false;
@@ -413,10 +376,35 @@ function animateLock() {
   );
 }
 
-lock.addEventListener("pointerdown", () => {
+gsap.to(
+  {},
+  {
+    scrollTrigger: {
+      trigger: "#chapterBlock",
+      start: "-40% -40%",
+      end: "bottom bottom",
+      scrub: true,
+      onUpdate: (self) => {
+        let progress = self.progress; // 0 → 1
+        let size = 60 - progress * 55; // van 60vmax → 5vmax
+        mask.style.webkitMaskImage = `radial-gradient(circle ${size}vmax at center, transparent 0%, black 100%)`;
+        mask.style.maskImage = `radial-gradient(circle ${size}vmax at center, transparent 0%, black 100%)`;
+      },
+      onLeave: () => {
+        lockAnimationActive = true;
+
+        animateLock();
+
+        // lock.addEventListener("click", stopLockAnimation, { once: true });
+      },
+    },
+  }
+);
+
+lock.addEventListener("click", () => {
   if (fadeInDone) return;
   fadeInDone = true;
-  stopLockAnimation();
+  stopLockAnimation(); // nu werkt dit ook
   gsap.to(lock, {
     scale: 5,
     duration: 0.5,
@@ -425,6 +413,9 @@ lock.addEventListener("pointerdown", () => {
     transformOrigin: "bottom center",
   });
 
+  // lock.style.pointerEvents = "none";
+  // lock.style.cursor = "default";
+  // Fade-in animatie met GSAP
   const unlockInstructions = document.getElementById("unlock-instructions");
   unlockInstructions.classList.add("hidden");
   [combinations, question1, question2, question3].forEach((el, i) => {
@@ -445,7 +436,8 @@ let currentAngle = 0;
 
 // Combinatiecode
 const correctAngles = [95, 290, 45];
-let currentStep = 0;
+let currentStep = 0; // Houdt bij welk cijfer van de code we zijn
+
 function getAngle(e, el) {
   const rect = el.getBoundingClientRect();
   const cx = rect.left + rect.width / 2;
@@ -475,10 +467,7 @@ function rotate(e) {
   if (!isDragging) return;
   currentAngle = getAngle(e, lockWheel) - startAngle;
   lockWheel.style.transform = `rotate(${currentAngle}deg)`;
-
-  // Bereken een progress percentage op basis van huidige hoek
-  let progress = Math.min(Math.max(currentAngle / 360, 0), 1); // normaliseer tussen 0 en 1
-  updateMask(progress);
+  console.log("Current angle:", currentAngle);
 }
 
 function stopRotate() {
@@ -504,7 +493,7 @@ function checkCodeStep() {
       feedback.classList.add("flex");
       const lockImg = document.querySelector("#lock img:first-child");
       lockImg.src = "./src/assets/lockOpen.png";
-      ScrollTrigger.refresh();
+
       lockWheel.classList.remove("cursor-grab");
       lockWheel.classList.add(
         "pointer-events-none",
@@ -521,8 +510,6 @@ function checkCodeStep() {
       currentStep = 0;
       const lock1 = document.getElementById("lock-1");
       lock1.classList.remove("hidden");
-      const lock2 = document.getElementById("lock-2");
-      lock1.classList.remove("hidden");
     } else if (currentStep == 1) {
       const answer1 = document.getElementById("answer-1");
       // verwijder class hidden van de child
@@ -533,4 +520,166 @@ function checkCodeStep() {
       answer2.classList.remove("hidden");
     }
   }
+}
+
+// =====================
+// Signature
+// =====================
+const quill = document.getElementById("quill");
+const ink = document.getElementById("ink-container");
+const paper = document.getElementById("paper-container");
+const canvas = document.getElementById("signature-canvas");
+const ctx = canvas.getContext("2d");
+
+let quillActive = false;
+let inkLoaded = false;
+let drawing = false;
+let hasDrawn = false;
+
+function resizeCanvas() {
+  const rect = paper.getBoundingClientRect();
+  canvas.width = rect.width;
+  canvas.height = rect.height;
+  canvas.style.width = rect.width + "px";
+  canvas.style.height = rect.height + "px";
+  canvas.style.position = "absolute";
+  canvas.style.top = 0;
+  canvas.style.left = 0;
+  canvas.style.zIndex = 30;
+}
+resizeCanvas();
+window.addEventListener("resize", resizeCanvas);
+
+const quillOffsetX = 60; // afstemmen op jouw afbeelding
+const quillOffsetY = quill.offsetHeight - 5; // afstemmen op punt
+
+quill.addEventListener("click", (e) => {
+  quillActive = true;
+  quill.style.opacity = "1";
+  ink.style.opacity = "1";
+  quill.style.pointerEvents = "none";
+  e.stopPropagation();
+});
+
+paper.addEventListener("mousemove", (e) => {
+  if (quillActive) {
+    const rect = paper.getBoundingClientRect();
+    const x = e.clientX - rect.left - quillOffsetX;
+    const y = e.clientY - rect.top - quillOffsetY;
+
+    const xClient = e.clientX - rect.left;
+    const yClient = e.clientY - rect.top;
+    quill.style.left = `${x}px`;
+    quill.style.top = `${y}px`;
+
+    if (drawing) {
+      ctx.lineTo(xClient, yClient);
+      ctx.stroke();
+    }
+  }
+});
+
+ink.addEventListener("click", (e) => {
+  if (quillActive) {
+    inkLoaded = true;
+    ctx.strokeStyle = "#2C3E50";
+    ctx.lineWidth = 2;
+    ctx.lineCap = "butt";
+
+    quill.src = "./src/assets/quillInkt.png";
+
+    e.stopPropagation();
+  }
+});
+
+canvas.addEventListener("mousedown", (e) => {
+  if (inkLoaded && quillActive) {
+    drawing = true;
+    hasDrawn = true;
+    const rect = canvas.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+    ctx.beginPath();
+    ctx.moveTo(x, y);
+  } else if (quillActive && !inkLoaded) {
+    const feedback = document.getElementById("inkFeedback");
+    feedback.classList.remove("hidden");
+    feedback.classList.add("flex");
+    setTimeout(() => {
+      feedback.classList.add("hidden");
+      feedback.classList.remove("flex");
+    }, 2000);
+  }
+});
+
+canvas.addEventListener("mousemove", (e) => {
+  if (drawing) {
+    const rect = canvas.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+    ctx.lineTo(x, y);
+    ctx.stroke();
+  }
+});
+
+canvas.addEventListener("mouseup", () => {
+  drawing = false;
+});
+canvas.addEventListener("mouseup", () => {
+  drawing = false;
+});
+canvas.addEventListener("mouseleave", () => {
+  drawing = false;
+  if (hasDrawn) {
+    ink.style.opacity = "0.5";
+    quill.remove();
+    const newQuill = document.createElement("img");
+    newQuill.id = "quill";
+    newQuill.src = "./src/assets/quill.png";
+    newQuill.className =
+      "hidden lg:block absolute opacity-50 max-w-[400px] -right-[330px] 2xl:-right-[30vw] bottom-0 w-16 cursor-pointer";
+    newQuill.style.pointerEvents = "none";
+    paper.appendChild(newQuill);
+    quill = newQuill;
+    quillActive = false;
+    hasDrawn = false;
+
+    const quote = document.querySelector(".quote-1");
+    quote.classList.remove("hidden");
+    quote.classList.add("flex");
+  }
+});
+
+// =====================
+// Signature mobile
+// =====================
+const isTouchDevice = "ontouchstart" in window || navigator.maxTouchPoints > 0;
+if (isTouchDevice) {
+  canvas.addEventListener("touchstart", (e) => {
+    e.preventDefault();
+    const rect = canvas.getBoundingClientRect();
+    const touch = e.touches[0];
+    const x = touch.clientX - rect.left;
+    const y = touch.clientY - rect.top;
+    ctx.beginPath();
+    ctx.moveTo(x, y);
+  });
+
+  canvas.addEventListener("touchmove", (e) => {
+    e.preventDefault();
+    const rect = canvas.getBoundingClientRect();
+    const touch = e.touches[0];
+    const x = touch.clientX - rect.left;
+    const y = touch.clientY - rect.top;
+    ctx.lineTo(x, y);
+    ctx.stroke();
+  });
+
+  canvas.addEventListener("touchend", (e) => {
+    e.preventDefault();
+    const quote = document.querySelector(".quote-1");
+    quote.classList.remove("hidden");
+    quote.classList.add("flex");
+  });
+} else {
 }
