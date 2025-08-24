@@ -406,7 +406,8 @@
             class="relative flex flex-col sm:flex-row lg:flex-row-reverse lg:absolute lg:left-0 lg:-top-6 2xl:w-fit 2xl:ml-auto 2xl:gap-12">
             <div class="lg:ml-auto lg:w-fit lg:mt-24">
               <h3 class="mb-4 xl:mb-0 hidden lg:block">His Craft, My Charge</h3>
-              <p class="lg:pt-4 sm:max-w-[300px] md:max-w-[500px] 2xl:max-w-[550px]">He was more than a master printer. He
+              <p class="lg:pt-4 sm:max-w-[300px] md:max-w-[500px] 2xl:max-w-[550px]">He was more than a master printer.
+                He
                 was
                 my teacher, <span class="highlight">my second father</span>. And now he was gone. My eyes rested on the
                 elegant letters of his hand. I knew their meaning, he had confided them to me before. But today, with
@@ -482,7 +483,8 @@
         </div>
 
       </div>
-      <p class="hidden text-center mt-8 max-w-[800px] justify-center mx-auto quotes quote-1" style="font-weight: 600; ">This was
+      <p class="hidden text-center mt-8 max-w-[800px] justify-center mx-auto quotes quote-1" style="font-weight: 600; ">
+        This was
         not a gift. It was a duty. And at the same time,
         the
         greatest honor I could ever receive.</p>
@@ -514,151 +516,149 @@
           <img class="absolute bottom-0" src="./src/assets/rand.png" alt="">
         </div>
       </div>
-      <div class="mb-18">
-        <p class="mt-4 max-w-[500px] lg:hidden lg:ml-auto lg:mr-0 mb-6 sm:-mb-20">
-          Manuscripts are arriving at my Officina from every direction. But not every idea belongs in my printing house.
-          <br>Can you help me select the right works? <br> Drag the correct titles into my Printing House. <br> Leave
-          out
-          the ones
-          that
-          do not
-          fit my mission.
-        </p>
-        <div class="relative h-full lg:mb-[200px] lg:mt-12 2xl:mt-28 lg:flex">
-          <div
-            class="relative flex -mt-12 sm:-mt-6 -left-6 md:-left-8 lg:-left-16 xl:-left-36 items-center w-full h-full">
-            <div
-              class="relative w-full min-w-[380px] max-w-[700px] lg:min-w-[650px] 2xl:max-w-[950px] aspect-[16/9] sm:mt-12">
-              <p class="absolute top-[9%] right-1/3 title-manuscript z-10">Manuscripts</p>
-              <img class="absolute inset-0 w-full h-full object-contain opacity-50 z-0" src="./src/assets/cart2.png"
-                alt="Cart">
+      <div class="relative min-h-[calc(100vh+250px)] mt-8">
 
-              <div class="absolute -bottom-[10%] left-4/9 -translate-x-1/2 w-12/15 gap-1 flex justify-center">
-                <div class="relative">
-                  <img class="book w-20 md:w-28" src="./src/assets/bookV2.png" alt="">
+        <div class="">
+          <p class="max-w-[520px] xl:hidden mx-auto  sm:text-center">
+            <span class="highlight">Manuscripts</span> are arriving at my Officina from every direction. But <span
+              class="highlight">not every idea</span>
+            belongs in my printing
+            house.
+            <br>Can you help me select the <span class="highlight">right works</span>? <br> Drag the <span
+              class="highlight">correct
+              titles</span> into my Printing House. <br>
+            Leave
+            out
+            the ones
+            that
+            <span class="highlight">do not</span>
+            fit my mission.<br>
+            <span class="highlight">Hint:</span> There are 5 correct titles.
+          </p>
+          <div class="relative h-full 2xl:mt-28 lg:flex">
+
+            <div
+              class="relative -left-6 md:-left-8 lg:-left-16 xl:-left-36 items-center w-[380px] h-full sm:w-[640px] sm:h-[400px] md:w-[768px] md:h-[470px] lg:w-[600px] lg:h-[440px] xl:w-[650px] xl:h-[470px] 2xl:w-[800px] 2xl:h-[570px] aspect-[16/9] sm:mt-12">
+              <p class="absolute top-[5%] sm:top-[10%] lg:top-[5%] right-1/3 title-manuscript z-10">Manuscripts</p>
+              <img class="absolute inset-0 w-full h-full object-contain opacity-50 z-0 pointer-events-none"
+                src="./src/assets/cart2.png" alt="Cart">
+
+              <div id="cart"
+                class="absolute -bottom-[10%] sm:bottom-0 lg:bottom-[15%] left-4/9 -translate-x-1/2 w-12/15 gap-1 flex justify-center">
+                <div class="relative h-fit" draggable="true" id="book-de-constantia">
+                  <img class="book max-w-[34.5px] sm:max-w-[58px] md:max-w-[65px] lg:max-w-[55px]  2xl:max-w-[70px]"
+                    src="./src/assets/bookV2.png" alt="">
                   <p
-                    class="text-manuscript absolute top-14/30 left-1/2 -translate-x-1/2 -translate-y-1/2 -rotate-90 w-40 2xl:w-60 text-center">
+                    class="text-manuscript absolute top-14/30 left-1/2 -translate-x-1/2 -translate-y-1/2 -rotate-90 w-36 sm:w-40 2xl:w-60 text-center">
                     De Constantia
                   </p>
                 </div>
 
-                <div class="relative">
-                  <img class="book w-20 md:w-28" src="./src/assets/bookV2.png" alt="">
+                <div class="relative h-fit" draggable="true" id="book-bible-translation">
+                  <img class="book max-w-[34.5px] sm:max-w-[58px] md:max-w-[65px] lg:max-w-[55px]  2xl:max-w-[70px]"
+                    src="./src/assets/bookV2.png" alt="">
                   <p
-                    class="text-manuscript absolute top-14/30 left-1/2 -translate-x-1/2 -translate-y-1/2 -rotate-90 w-40 2xl:w-60 text-center ">
+                    class="text-manuscript absolute top-14/30 left-1/2 -translate-x-1/2 -translate-y-1/2 -rotate-90 w-36 sm:w-40 2xl:w-60 text-center ">
                     Bible <br> Translation
                   </p>
                 </div>
 
-                <div class="relative">
-                  <img class="book w-20 md:w-28" src="./src/assets/bookV2.png" alt="">
+                <div class="relative h-fit" draggable="true" id="book-atlas-of-ortelius">
+                  <img class="book max-w-[34.5px] sm:max-w-[58px] md:max-w-[65px] lg:max-w-[55px]  2xl:max-w-[70px]"
+                    src="./src/assets/bookV2.png" alt="">
                   <p
-                    class="text-manuscript absolute top-14/30 left-1/2 -translate-x-1/2 -translate-y-1/2 -rotate-90 w-40 2xl:w-60 text-center ">
+                    class="text-manuscript absolute top-14/30 left-1/2 -translate-x-1/2 -translate-y-1/2 -rotate-90 w-36 sm:w-40 2xl:w-60 text-center ">
                     Atlas of <br> Ortelius
                   </p>
                 </div>
-                <div class="relative">
-                  <img class="book" src="./src/assets/bookV2.png" alt="">
+                <div class="relative h-fit" draggable="true" id="book-cookbook-of-antwerp">
+                  <img class="book max-w-[34.5px] sm:max-w-[58px] md:max-w-[65px] lg:max-w-[55px]  2xl:max-w-[70px]"
+                    src="./src/assets/bookV2.png" alt="">
                   <p
-                    class="text-manuscript absolute top-14/30 left-1/2 -translate-x-1/2 -translate-y-1/2 -rotate-90 w-40 2xl:w-60 text-center">
+                    class="text-manuscript absolute top-14/30 left-1/2 -translate-x-1/2 -translate-y-1/2 -rotate-90 w-36 sm:w-40 2xl:w-60 text-center">
                     Cookbook <br>
                     of Antwerp</p>
                 </div>
-                <div class="relative">
-                  <img class="book" src="./src/assets/bookV2.png" alt="">
+                <div class="relative h-fit" draggable="true" id="book-medicinal-dodoens">
+                  <img class="book max-w-[34.5px] sm:max-w-[58px] md:max-w-[65px] lg:max-w-[55px]  2xl:max-w-[70px]"
+                    src="./src/assets/bookV2.png" alt="">
                   <p
-                    class="text-manuscript absolute top-14/30 left-1/2 -translate-x-1/2 -translate-y-1/2 -rotate-90 w-40 2xl:w-60 text-center">
+                    class="text-manuscript absolute top-14/30 left-1/2 -translate-x-1/2 -translate-y-1/2 -rotate-90 w-36 sm:w-40 2xl:w-60 text-center">
                     Medicinal
                     plants <br>
                     by Dodoens</p>
                 </div>
-                <div class="relative">
-                  <img class="book" src="./src/assets/bookV2.png" alt="">
+                <div class="relative h-fit" draggable="true" id="book-romantic-tales">
+                  <img class="book max-w-[34.5px] sm:max-w-[58px] md:max-w-[65px] lg:max-w-[55px]  2xl:max-w-[70px]"
+                    src="./src/assets/bookV2.png" alt="">
                   <p
-                    class="text-manuscript absolute top-14/30 left-1/2 -translate-x-1/2 -translate-y-1/2 -rotate-90 w-40 2xl:w-60 text-center">
+                    class="text-manuscript absolute top-14/30 left-1/2 -translate-x-1/2 -translate-y-1/2 -rotate-90 w-36 sm:w-40 2xl:w-60 text-center">
                     Romantic
                     Tales</p>
                 </div>
-                <div class="relative">
-                  <img class="book" src="./src/assets/bookV2.png" alt="">
+                <div class="relative h-fit" draggable="true" id="book-prayer-mass">
+                  <img class="book max-w-[34.5px] sm:max-w-[58px] md:max-w-[65px] lg:max-w-[55px]  2xl:max-w-[70px]"
+                    src="./src/assets/bookV2.png" alt="">
                   <p
-                    class="text-manuscript absolute top-14/30 left-1/2 -translate-x-1/2 -translate-y-1/2 -rotate-90 w-40 2xl:w-60 text-center">
+                    class="text-manuscript absolute top-14/30 left-1/2 -translate-x-1/2 -translate-y-1/2 -rotate-90 w-36 sm:w-40 2xl:w-60 text-center">
                     Prayer book <br>
                     for the Mass</p>
                 </div>
-                <div class="relative">
-                  <img class="book" src="./src/assets/bookV2.png" alt="">
+                <div class="relative h-fit" draggable="true" id="book-manuel-for-gardening">
+                  <img class="book max-w-[34.5px] sm:max-w-[58px] md:max-w-[65px] lg:max-w-[55px]  2xl:max-w-[70px]"
+                    src="./src/assets/bookV2.png" alt="">
                   <p
-                    class="text-manuscript absolute top-14/30 left-1/2 -translate-x-1/2 -translate-y-1/2 -rotate-90 w-40 2xl:w-60 text-center">
+                    class="text-manuscript absolute top-14/30 left-1/2 -translate-x-1/2 -translate-y-1/2 -rotate-90 w-36 sm:w-40 2xl:w-60 text-center">
                     Manuel for <br>
                     Gardening</p>
                 </div>
               </div>
             </div>
+            <p
+              class="mt-4 w-full hidden xl:block lg:ml-0 lg:mr-auto lg:mt-24 xl:mt-0 xl:min-w-[400px] 2xl:max-w-[550px] xl:mt-20">
+              <span class="highlight">Manuscripts</span> are arriving at my Officina from every direction. But <span
+                class="highlight">not every idea</span> belongs in my printing
+              house.
+              <br>Can you help me select the <span class="highlight">right works</span>? <br> Drag the <span
+                class="highlight">correct titles</span> into my Printing House. <br>
+              Leave
+              out
+              the ones
+              that
+              <span class="highlight">do not</span>
+              fit my mission.<br>
+              <span class="highlight">Hint:</span> There are 5 correct titles.
+            </p>
           </div>
-          <p class="mt-4 w-full hidden lg:block lg:ml-0 lg:mr-auto lg:mt-24 xl:mt-0 xl:min-w-[400px] 2xl:max-w-[550px]">
-            Manuscripts are arriving at my Officina from every direction. But not every idea belongs in my printing
-            house.
-            <br>Can you help me select the right works? <br> Drag the correct titles into my Printing House. <br> Leave
-            out
-            the ones
-            that
-            do not
-            fit my mission.
-          </p>
-        </div>
-      </div>
-      <!-- SHELF -->
-      <div class="relative flex flex-col mt-28 sm:mt-48 xl:-mt-92">
-        <div class="absolute top-0 w-full flex justify-center xl:w-fit xl:right-1/20 items-center z-10">
-          <p class="title-manuscript">Printing House Shelf</p>
         </div>
         <div
-          class="relative h-fit w-full mr-0 ml-auto min-w-[380px] lg:max-w-[650px] xl:max-w-[600px] 2xl:max-w-[700px]  aspect-[16/13] -right-6 md:-right-8 lg:-right-16 xl:-right-36">
+          class="absolute flex flex-col justify-center items-center mt-20 md:mt-32 lg:-mt-48 xl:-mt-40 2xl:-mt-60 w-full right-0 xl:-right-36 xl:max-w-[800px]">
+          <!-- Content container -->
+          <div class="top-4 w-fit flex flex-col justify-center lg:ml-auto lg:mr-[5%] items-center z-10 px-4 md:px-8 xl:mr-36">
+            <p class="title-manuscript text-center">Printing House Shelf</p>
+            <button class="button-confirm mt-4 mb-2 px-4 py-2 text-sm md:text-base lg:text-lg">
+              Confirm Selection
+            </button>
+            <p></p>
+          </div>
+          <!-- max-w-[350px] sm:max-w-[500px] md:max-w-[650px] lg:max-w-[700px] xl:max-w-[800px] 2xl:max-w-[900px] -->
+          <!-- -right-6 md:-right-8 lg:-right-16 xl:-right-36 -->
+          <!-- Shelf container -->
+          <div
+            class="relative w-full h-[260px] mr-0 ml-auto -right-6 md:-right-8 lg:-right-16  sm:h-[430px] md:h-[490px] lg:h-[450px] xl:h-[470px] 2xl:h-[520px] max-w-[350px] sm:max-w-[500px] md:max-w-[650px] lg:max-w-[700px] xl:max-w-[800px]  ">
+            <!-- Shelf image -->
+            <img class="absolute bottom-0 opacity-50 z-0 pointer-events-none right-0" src="./src/assets/shelf2.png"
+              alt="Shelf">
 
-          <img class="absolute right-0  bottom-0 w-full opacity-50 z-0" src="./src/assets/shelf2.png" alt="Shelf">
-
-          <div class="absolute bottom-[25%] left-4/9 -translate-x-1/2 w-9/15 gap-4 flex justify-center">
-            <div class="relative">
-              <img class="book w-20 md:w-28" src="./src/assets/bookV2.png" alt="">
-              <p
-                class="text-manuscript absolute top-14/30 left-1/2 -translate-x-1/2 -translate-y-1/2 -rotate-90 w-40 2xl:w-60 text-center">
-                De Constantia
-              </p>
-            </div>
-
-            <div class="relative">
-              <img class="book w-20 md:w-28" src="./src/assets/bookV2.png" alt="">
-              <p
-                class="text-manuscript absolute top-14/30 left-1/2 -translate-x-1/2 -translate-y-1/2 -rotate-90 w-40 2xl:w-60 text-center ">
-                Bible <br> Translation
-              </p>
-            </div>
-
-            <div class="relative">
-              <img class="book w-20 md:w-28" src="./src/assets/bookV2.png" alt="">
-              <p
-                class="text-manuscript absolute top-14/30 left-1/2 -translate-x-1/2 -translate-y-1/2 -rotate-90 w-40 2xl:w-60 text-center ">
-                Atlas of <br> Ortelius
-              </p>
-            </div>
-            <div class="relative">
-              <img class="book" src="./src/assets/bookV2.png" alt="">
-              <p
-                class="text-manuscript absolute top-14/30 left-1/2 -translate-x-1/2 -translate-y-1/2 -rotate-90 w-40 2xl:w-60 text-center">
-                Medicinal
-                plants <br>
-                by Dodoens</p>
-            </div>
-            <div class="relative">
-              <img class="book" src="./src/assets/bookV2.png" alt="">
-              <p
-                class="text-manuscript absolute top-14/30 left-1/2 -translate-x-1/2 -translate-y-1/2 -rotate-90 w-40 2xl:w-60 text-center">
-                Prayer book <br>
-                for the Mass</p>
+            <!-- Items container -->
+            <div id="shelf"
+              class="absolute bottom-[27%] lg:bottom-[30%] xl:bottom-[35%] 2xl:bottom-[33%] w-full h-fit right-0 gap-2 flex flex-wrap justify-center px-0">
+              <!-- Dynamically added items here -->
             </div>
           </div>
         </div>
+
+
       </div>
 
     </section>
