@@ -47,8 +47,13 @@ body {
     overflow-x: hidden;
 }
 
+body {
+    overflow-y: auto;
+}
+
 html {
     scroll-behavior: smooth;
+    overflow-y: hidden;
 }
 
 *,
@@ -285,16 +290,53 @@ button {
     margin: 0 clamp(1rem, -0.3699rem + 5.8447vw, 5rem);
 }
 
+
 .unlock__text-1 {
-    font-size: 46px !important;
+    font-size: 32px !important;
 }
 
 .unlock__text-2 {
-    font-size: 36px !important;
+    font-size: 32px !important;
 }
 
+
 .unlock__text-3 {
+    font-size: 32px !important;
+}
+
+.unlock__text-4 {
     font-size: 24px !important;
+}
+
+.unlock__text-5 {
+    font-size: 20px !important;
+}
+
+/* .maskOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: var(--color-black);
+    opacity: 0;
+    margin: 0;
+    overflow: hidden;
+    padding: 0;
+    pointer-events: none;
+    touch-action: pan-y;
+    mask-image: radial-gradient(circle, transparent 100vh, var(--color-black) 100vh);
+    -webkit-mask-image: radial-gradient(circle, transparent 100vh, var(--color-black) 100vh);
+    z-index: 20;
+} */
+
+.unlock__content {
+    min-height: 100vh;
+}
+
+
+.mask__active {
+    opacity: 1;
 }
 
 /* #lock {
@@ -463,6 +505,18 @@ button {
         font-size: 24px !important;
         color: var(--color-red);
         font-weight: bold;
+    }
+
+    .unlock__text-3 {
+        font-size: 46px !important;
+    }
+
+    .unlock__text-4 {
+        font-size: 36px !important;
+    }
+
+    .unlock__text-5 {
+        font-size: 24px !important;
     }
 
 }
