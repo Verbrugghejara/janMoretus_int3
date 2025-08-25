@@ -407,20 +407,20 @@ function animateLock() {
   if (!lockAnimationActive) return;
   gsap.fromTo(
     lock,
-    { x: -10, rotation: -10 },
+    { rotation: -10 },
     {
-      x: 10,
+      // x: 10,
       rotation: 10,
-      duration: 0.12,
-      repeat: 7,
-      transformOrigin: "top top",
+      duration: 0.5,
+      repeat: 10,
+      transformOrigin: "top",
       yoyo: true,
       ease: "power1.inOut",
       onComplete: () => {
         gsap.to(lock, {
           x: 0,
           rotation: 0,
-          duration: 0.2,
+          duration: 0.5,
           ease: "power2.out",
           onComplete: () => {
             if (lockAnimationActive) {
