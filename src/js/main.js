@@ -9,6 +9,7 @@ yearsScroll();
 
 document.querySelector(".lock-1").classList.add("hidden");
 document.querySelector(".lock-2").classList.add("hidden");
+document.querySelector(".questions").classList.add("hidden");
 
 // window.addEventListener("resize", () => {
 //   document.querySelector(".lock-1").classList.remove("hidden");
@@ -25,6 +26,36 @@ document.querySelector(".lock-2").classList.add("hidden");
 //     document.querySelector(".lock-2").classList.add("hidden");
 //   }
 // });
+document.querySelector(".questions-close").addEventListener("click", () => {
+  document.getElementById("question-1").classList.add("hidden");
+  document.getElementById("question-2").classList.add("hidden");
+  document.getElementById("question-3").classList.add("hidden");
+  document.querySelector(".questions-close").classList.add("hidden");
+  document.querySelector(".questions-info").classList.remove("hidden");
+  questions.classList.add("left-0");
+  questions.classList.add("top-12");
+  questions.classList.add("h-12");
+  questions.classList.add("w-12");
+  // questions.classList.add("p-0");
+  questions.classList.remove("py-3");
+  questions.classList.remove("px-6");
+});
+
+document.querySelector(".questions-info").addEventListener("click", () => {
+  document.getElementById("question-1").classList.remove("hidden");
+  document.getElementById("question-2").classList.remove("hidden");
+  document.getElementById("question-3").classList.remove("hidden");
+  document.querySelector(".questions-close").classList.remove("hidden");
+  document.querySelector(".questions-info").classList.add("hidden");
+  questions.classList.remove("left-0");
+  questions.classList.remove("top-12");
+  questions.classList.remove("h-12");
+  questions.classList.remove("w-12");
+  // questions.classList.remove("p-0");
+  questions.classList.add("py-3");
+  questions.classList.add("px-6");
+});
+
 // =====================
 // 1. Eyes Animation
 // =====================
@@ -312,15 +343,17 @@ function getTouchAfterElement(container, x) {
 // Maskoverlay & Lockwheel
 // =====================
 
+const unlockInstructions = document.getElementById("unlock-instructions");
 const mask = document.querySelector("#maskOverlay");
 const combinations = document.getElementById("combinations");
-const question1 = document.getElementById("question-1");
-const question2 = document.getElementById("question-2");
-const question3 = document.getElementById("question-3");
+const question1 = document.querySelector(".question-1");
+const question2 = document.querySelector(".question-2");
+const question3 = document.querySelector(".question-3");
+const questions = document.querySelector(".questions");
 
 mask.style.webkitMaskImage = "none";
 mask.style.maskImage = "none";
-
+let lockOpen = false;
 ScrollTrigger.create({
   trigger: "#chapterBlock",
   start: "-40% -40%",
@@ -330,19 +363,24 @@ ScrollTrigger.create({
   },
   onLeaveBack: () => {
     gsap.to(mask, { opacity: 0, duration: 0.3 });
-    gsap.killTweensOf(lock);
-    gsap.to(lock, {
-      scale: 1,
-      duration: 0,
-      overwrite: true,
-    });
+    console.log(lockOpen);
+    if (!lockOpen) {
+      combinations.classList.add("hidden");
+      unlockInstructions.classList.remove("hidden");
+      gsap.killTweensOf(lock);
+      gsap.to(lock, {
+        scale: 1,
+        duration: 0,
+        overwrite: true,
+      });
+    }
     // lock.style.pointerEvents = "auto";
     // lock.style.cursor = "pointer";
     fadeInDone = false;
-    combinations.classList.add("hidden");
     question1.classList.add("hidden");
     question2.classList.add("hidden");
     question3.classList.add("hidden");
+    questions.classList.add("hidden");
   },
   onLeave: () => {
     gsap.to(mask, { opacity: 0, duration: 0.3 });
@@ -414,8 +452,9 @@ gsap.to(
       },
       onLeave: () => {
         lockAnimationActive = true;
-
-        animateLock();
+        if (!fadeInDone && !lockOpen) {
+          animateLock();
+        }
 
         // lock.addEventListener("click", stopLockAnimation, { once: true });
       },
@@ -428,7 +467,7 @@ lock.addEventListener("click", () => {
   fadeInDone = true;
   stopLockAnimation(); // nu werkt dit ook
   gsap.to(lock, {
-    scale: 5,
+    scale: 4,
     duration: 0.5,
     yoyo: true,
     ease: "power2.inOut",
@@ -438,17 +477,18 @@ lock.addEventListener("click", () => {
   // lock.style.pointerEvents = "none";
   // lock.style.cursor = "default";
   // Fade-in animatie met GSAP
-  const unlockInstructions = document.getElementById("unlock-instructions");
   unlockInstructions.classList.add("hidden");
-  [combinations, question1, question2, question3].forEach((el, i) => {
-    el.classList.remove("hidden");
-    if (el === combinations) el.classList.add("flex");
-    gsap.fromTo(
-      el,
-      { opacity: 0, y: 40 },
-      { opacity: 1, y: 0, duration: 0.7, delay: i * 0.2, ease: "power2.out" }
-    );
-  });
+  [combinations, questions, question1, question2, question3].forEach(
+    (el, i) => {
+      el.classList.remove("hidden");
+      if (el === combinations) el.classList.add("flex");
+      gsap.fromTo(
+        el,
+        { opacity: 0, y: 40 },
+        { opacity: 1, y: 0, duration: 0.7, delay: i * 0.2, ease: "power2.out" }
+      );
+    }
+  );
 });
 
 const lockWheel = document.getElementById("lockWheel");
@@ -526,14 +566,18 @@ function checkCodeStep() {
       const answer3 = document.getElementById("answer-3");
 
       answer3.classList.remove("hidden");
-      [question1, question2, question3].forEach((el, i) => {
-        el.classList.add("hidden");
-      });
+      questions.classList.add("hidden");
+
+      question1.classList.add("hidden");
+      question2.classList.add("hidden");
+      question3.classList.add("hidden");
       currentStep = 0;
       document.querySelector(".lock-1").classList.remove("hidden");
       document.querySelector(".lock-2").classList.remove("hidden");
       // lock1 = 1;
       // lock2 = 1;
+      lockOpen = true;
+      lock.style.pointerEvents = "none";
       ScrollTrigger.refresh();
     } else if (currentStep == 1) {
       const answer1 = document.getElementById("answer-1");
