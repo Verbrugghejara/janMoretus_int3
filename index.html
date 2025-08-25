@@ -210,7 +210,7 @@
         <img class="love absolute bottom-1 right-0" src="./src/assets/martinaPlantin.png" alt="Martine Plantin">
       </div>
     </div>
-    <div class="relative mt-12 mb-32 h-[420px] md:h-[520px] lg:h-[600px] xl:h-[850px] 2xl:h-[1100px]">
+    <div class="relative mt-12 lg:mb-32 h-[420px] md:h-[520px] lg:h-[600px] xl:h-[850px] 2xl:h-[1100px]">
       <div
         class="absolute z-0 -top-24 xl:-top-36 2xl:-top-48 -right-56 lg:-right-72 xl:-right-[500px] 2xl:-right-[550px] min-w-[600px] max-w-[700px] lg:max-w-[850px] xl:max-w-[1200px] 2xl:max-w-[1600px]">
         <img src="./src/assets/leidenRed.png" alt="Leiden illustration" class="opacity-30 h-auto" />
@@ -240,9 +240,9 @@
         <span class="highlightY">legacy</span>.
       </p>
     </div>
-    <div class="relative w-full h-[38/0vh]  " id="chapterBlock">
+    <div class="relative w-full h-[38/0vh] " id="chapterBlock">
       <!-- Overlay zwart met cirkel-mask -->
-      <div id="maskOverlay" class="fixed inset-0 bg-black pointer-events-none z-20 opacity-0"></div>
+      <div id="maskOverlay" class="lg:block hidden fixed inset-0 bg-black pointer-events-none z-20 opacity-0"></div>
 
       <!-- Content -->
       <!-- <div class="top-0 h-screen flex flex-col items-center relative z-10">
@@ -254,24 +254,25 @@
           It leads to the <span class="highlightY">next part of my story</span>, but it is locked.
         </p>
       </div> -->
-      <ul class="unlock__list">
-        <li class="">Then something happened...</li>
-        <li class="">The city froze in silence.</li>
-        <li class="max-w-[800px] unlock__text-1">Oh no, a door blocks your way to what comes next.</li>
-        <li class="max-w-[400px] unlock__text-2">The lock can only be opened by those who have noticed the clues.</li>
-        <li class="max-w-[300px] unlock__text-3 mb-[300px]">Are you ready to unlock the next chapter?</li>
+      <ul class="unlock__list hidden lg:flex">
+        <li class="unlock__text-1">Then something happened...</li>
+        <li class="unlock__text-2">The city froze in silence.</li>
+        <li class="unlock__text-3 max-w-[800px] ">Oh no, a door blocks your way to what comes next.</li>
+        <li class="unlock__text-4 max-w-[400px] ">The lock can only be opened by those who have noticed the clues.</li>
+        <li class="unlock__text-5 max-w-[300px]  mb-[300px]">Are you ready to unlock the next chapter?</li>
       </ul>
-      <div class="max-h-[100vh] w-fit relative bottom-0 flex justify-center items-center z-10 mx-auto">
+      <div class="h-[100vh] w-fit relative bottom-0 flex justify-center items-center z-10 mx-auto">
         <img class="h-full w-fit object-contain mx-auto max-h-[100vh]" src="./src/assets/door2.png" alt="">
 
-        <div id="lock" class="absolute bottom-[20%] left-1/2 -translate-x-1/2 cursor-pointer">
+        <div id="lock"
+          class="absolute bottom-[25%] sm:bottom-[30%] lg:bottom-[20%] left-1/2 -translate-x-1/2 cursor-pointer">
           <!-- lock afbeelding -->
           <div class="relative">
-            <img class="max-w-[70px]" src="./src/assets/lock.png" alt="">
+            <img class="max-w-[50px] lg:max-w-[70px]" src="./src/assets/lock.png" alt="">
 
             <!-- lockwheel -->
             <img id="lockWheel"
-              class="max-w-[50px] absolute top-[68.30%] left-1/2 -translate-x-1/2 -translate-y-1/2 cursor-grab select-none"
+              class="max-w-[37px] lg:max-w-[50px] absolute top-[68.30%] left-1/2 -translate-x-1/2 -translate-y-1/2 cursor-grab select-none"
               src="./src/assets/lockWheel.png" alt="" draggable="false">
           </div>
         </div>
@@ -279,24 +280,24 @@
       <!-- <div class="max-h-[800px] w-fit relative flex justify-center items-center z-10 mx-auto">
         <img class="h-full w-fit object-contain max-h-[800px] mx-auto" src="./src/assets/door2.png" alt="">
       </div> -->
-      <img class="absolute min-w-[300px] bottom-96 scale-x-[-1] opacity-20 z-0 md:hidden" src="./src/assets/wall.png"
+      <img class="absolute min-w-[300px] top-0 scale-x-[-1] opacity-20 z-0 lg:hidden" src="./src/assets/wall.png"
         alt="">
-      <img class="absolute min-w-[300px] bottom-0 opacity-20 z-0 md:hidden" src="./src/assets/wall.png" alt="">
+      <img class="absolute min-w-[300px] bottom-0 opacity-20 z-0 lg:hidden" src="./src/assets/wall.png" alt="">
 
-      <img class="absolute hidden md:block left-0 bottom-[80vh] wall opacity-20 " src="./src/assets/wall.png" alt="">
-      <img class="absolute hidden md:block -right-8 bottom-0 wall scale-x-[-1] opacity-20 " src="./src/assets/wall.png"
+      <img class="absolute hidden lg:block left-0 bottom-[80vh] wall opacity-20 " src="./src/assets/wall.png" alt="">
+      <img class="absolute hidden lg:block -right-8 bottom-0 wall scale-x-[-1] opacity-20 " src="./src/assets/wall.png"
         alt="">
-      <img class="absolute hidden md:block -right-12 bottom-[70vh] wall2 opacity-20" src="./src/assets/wall2.png"
+      <img class="absolute hidden lg:block -right-12 bottom-[70vh] wall2 opacity-20" src="./src/assets/wall2.png"
         alt="">
-      <img class="absolute hidden md:block -left-12 bottom-6 wall2 opacity-20" src="./src/assets/wall2.png" alt="">
+      <img class="absolute hidden lg:block -left-12 bottom-6 wall2 opacity-20" src="./src/assets/wall2.png" alt="">
       <div id="unlock-instructions"
-        class="absolute z-10 xl:left-[80%] 2xl:left-[75%]  xl:-right-36 bottom-[30vh] xl:max-w-[350px] 2xl:max-w-[400px]">
+        class="absolute left-1/2 -translate-x-1/2 text-center min-w-[300px] xl:min-w-[350px] h-fit lg:text-start top-[5%] z-10 lg:top-auto lg:bottom-[30vh] lg:left-[15%] xl:left-[10%] 2xl:left-[20%]  lg:-right-36  lg:max-w-[320px] 2xl:max-w-[400px]">
         <h3>Unlock the Lock</h3>
         <p>Click on the lock to unlock it, by <span class="highlightY">turning the lock wheel.</span></p>
         <p>You need to give in <span class="highlightY">3 combinations</span></p>
       </div>
-      <div id="question-1"
-        class="absolute hidden z-10 xl:left-[5%] 2xl:left-[10%] bottom-[60vh] xl:max-w-[350px] 2xl:max-w-[400px]">
+      <div 
+        class="question-1 absolute hidden z-10 lg:left-0 xl:left-[5%] 2xl:left-[10%] bottom-[60vh] lg:max-w-[300px] xl:max-w-[350px] 2xl:max-w-[400px]">
         <div class="relative xl:-left-36 ">
           <h3 class="mb-4">First combination:</h3>
           <p>What are the <span class="highlightY">last two digits</span> of the year in which I found myself working in
@@ -304,13 +305,13 @@
             Christoffel Plantin’s bookshop?</p>
         </div>
       </div>
-      <div id="question-2"
-        class="absolute hidden z-10 xl:left-[80%] 2xl:left-[75%] xl:-right-36 bottom-[40vh] xl:max-w-[350px] 2xl:max-w-[400px]">
+      <div 
+        class="question-2 absolute hidden z-10 xl:left-[80%] 2xl:left-[75%] lg:-right-16 xl:-right-36 bottom-[40vh] lg:max-w-[300px] xl:max-w-[350px] 2xl:max-w-[400px]">
         <h3 class="mb-4">Second combination:</h3>
         <p>How <span class="highlightY">young</span> was I when I started working there?</p>
       </div>
-      <div id="question-3"
-        class="absolute hidden z-10 xl:left-[5%] 2xl:left-[10%] bottom-[20vh] xl:max-w-[350px] 2xl:max-w-[400px]">
+      <div 
+        class="question-3 absolute hidden z-10 lg:left-0 xl:left-[5%] 2xl:left-[10%] bottom-[20vh] lg:max-w-[300px] xl:max-w-[350px] 2xl:max-w-[400px]">
         <div class="relative xl:-left-36 ">
           <h3 class="mb-4">Third combination:</h3>
           <p>What are the <span class="highlightY">last two digits</span> of the year in which I was <span
@@ -318,10 +319,54 @@
 
         </div>
       </div>
+      <div class="lg:hidden hidden questions z-20 absolute flex flex-col top-1/2 py-3 px-6 -translate-y-1/2 gap-6 ">
+        <!-- <div class="py-12 gap-y-6"> -->
+        <svg class="questions-info hidden absolute -translate-1/2 top-1/2 left-1/2" xmlns="http://www.w3.org/2000/svg"
+          x="0px" y="0px" width="24" height="24" viewBox="0 0 128 128" style="fill: var(--color-white);">
+          <path
+            d="M 64 6 C 32 6 6 32 6 64 C 6 96 32 122 64 122 C 96 122 122 96 122 64 C 122 32 96 6 64 6 z M 64 12 C 92.7 12 116 35.3 116 64 C 116 92.7 92.7 116 64 116 C 35.3 116 12 92.7 12 64 C 12 35.3 35.3 12 64 12 z M 64 30 A 9 9 0 0 0 64 48 A 9 9 0 0 0 64 30 z M 64 59 C 59 59 55 63 55 68 L 55 92 C 55 97 59 101 64 101 C 69 101 73 97 73 92 L 73 68 C 73 63 69 59 64 59 z">
+          </path>
+        </svg>
+        <svg class="questions-close absolute right-6 top-6 z-20" style="fill: var(--color-white);"
+          xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="24" height="24" viewBox="0 0 24 24">
+          <path
+            d="M 4.9902344 3.9902344 A 1.0001 1.0001 0 0 0 4.2929688 5.7070312 L 10.585938 12 L 4.2929688 18.292969 A 1.0001 1.0001 0 1 0 5.7070312 19.707031 L 12 13.414062 L 18.292969 19.707031 A 1.0001 1.0001 0 1 0 19.707031 18.292969 L 13.414062 12 L 19.707031 5.7070312 A 1.0001 1.0001 0 0 0 18.980469 3.9902344 A 1.0001 1.0001 0 0 0 18.292969 4.2929688 L 12 10.585938 L 5.7070312 4.2929688 A 1.0001 1.0001 0 0 0 4.9902344 3.9902344 z">
+          </path>
+        </svg>
+        <div id="question-1"
+          class="z-10 pt-8 xl:left-[5%] 2xl:left-[10%] bottom-[60vh] xl:max-w-[350px] 2xl:max-w-[400px]">
+          <div class="relative xl:-left-36 ">
+            <h3 class="mb-2">First combination:</h3>
+            <p>What are the <span class="highlightY">last two digits</span> of the year in which I found myself working
+              in
+
+              Christoffel Plantin’s bookshop?</p>
+          </div>
+        </div>
+        <div id="question-2"
+          class=" z-10 xl:left-[80%] 2xl:left-[75%] xl:-right-36 bottom-[40vh] xl:max-w-[350px] 2xl:max-w-[400px]">
+          <h3 class="mb-2">Second combination:</h3>
+          <p>How <span class="highlightY">young</span> was I when I started working there?</p>
+        </div>
+        <div id="question-3"
+          class="pb-8 z-10 xl:left-[5%] 2xl:left-[10%] bottom-[20vh] xl:max-w-[350px] 2xl:max-w-[400px]">
+          <div class="relative xl:-left-36 ">
+            <h3 class="mb-2">Third combination:</h3>
+            <p>What are the <span class="highlightY">last two digits</span> of the year in which I was <span
+                class="highlightY">married</span> to Martina Plantin?</p>
+
+          </div>
+        </div>
+
+        <!-- </div> -->
+      </div>
+
+
       <div id="scrollingFeedback"
-        class="absolute hidden xl:min-w-[350px] 2xl:min-w-[450px] text-center flex-col justify-center z-10 xl:-left-[120px] bottom-[20vh] px-6 py-6 ">
-        <div class="relative ">
-          <img class="absolute -z-10 top-1/2 -translate-y-1/2" src="./src/assets/kader2.png" alt="">
+        class="absolute left-1/2 -translate-x-1/2 lg:translate-x-0 top-[5%] lg:top-auto hidden w-full max-w-[200px] sm:max-w-[220px] lg:max-w-[320px] xl:min-w-[400px] 2xl:min-w-[450px] text-center flex-col justify-center z-10 lg:-left-20 xl:-left-28 2xl:-left-20 lg:bottom-[20vh] px-6 py-6 ">
+        <div class="relative">
+          <img class="absolute w-full -z-10 top-1/2 -translate-y-1/2 lg:max-w-[320px] xl:max-w-[400px] 2xl:max-w-full"
+            src="./src/assets/kader2.png" alt="">
 
           <h3 class="mb-4 z-10">Good job!</h3>
           <p class="z-10 text-feedback">Continue scrolling</p>
@@ -340,34 +385,6 @@
         </div>
 
       </div>
-    </div>
-    <div class="relative hidden">
-      <div class="flex flex-col justify-center items-center text-center h-full w-full">
-        <h3>Can you unlock the next chapter?</h3>
-        <p class="pt-4 sm:max-w-[450px]">You are standing in front of a large wooden door. It leads to the <span
-            class="highlightY">next
-            part of my story</span>, but it is locked.</p>
-        <p>Click on the lock to unlock it, by <span class="highlightY">turning the lock wheel.</span></p>
-        <p>You need to give in <span class="highlightY">3 combinations</span></p>
-
-      </div>
-      <img class="absolute -top-1/7 md:-top-1/5 scale-x-[-1] opacity-20 z-0 md:hidden" src="./src/assets/wall.png"
-        alt="">
-      <div class="max-h-[800px] w-fit relative flex justify-center items-center z-10 mx-auto">
-        <img class="h-full w-fit object-contain max-h-[800px] mx-auto" src="./src/assets/door2.png" alt="">
-      </div>
-      <div class="relative md:hidden aspect-[12/5] ">
-        <img class="absolute -bottom-0 scale-x-[-1] opacity-20 z-0 " src="./src/assets/wall.png" alt="">
-      </div>
-      <div class="hidden lg:block h-[200px]">
-
-      </div>
-      <img class="hidden md:block absolute left-0 -top-40 wall opacity-20 xl:-left-20 xl:-top-52 2xl:-top-64"
-        src="./src/assets/wall.png" alt="">
-      <img class="hidden md:block absolute -right-8 -bottom-0 wall scale-x-[-1] opacity-20 xl:-right-20 2xl:-bottom-16"
-        src="./src/assets/wall.png" alt="">
-      <img class="hidden md:block absolute -right-12 -top-20 wall2 opacity-20" src="./src/assets/wall2.png" alt="">
-      <img class="hidden md:block absolute -left-12 bottom-12 wall2 opacity-20" src="./src/assets/wall2.png" alt="">
     </div>
   </section>
   <div class="lock-1">
@@ -472,7 +489,8 @@
 
           <!-- Papier -->
           <img class="z-1 top-0 opacity-75" src="./src/assets/paper.png" alt="">
-          <canvas id="signature-canvas" class="absolute bottom-0 left-0 w-full h-40 z-50 border-dashed border-2 border-red-500"></canvas>
+          <canvas id="signature-canvas"
+            class="absolute bottom-0 left-0 w-full h-40 z-50 border-dashed border-2 border-red-500"></canvas>
 
           <!-- Veer / Quill -->
           <img id="quill" src="./src/assets/quill.png" alt=""
@@ -682,14 +700,16 @@
           <p><span class="highlight">Help me</span> write my will. <span class="highlight">Click</span> on the
             light-colored text and type the words as you see them. As you type, your
             handwriting
-            will appear over the example text. Type carefully, for every word matters. Once you finish a section, you will
+            will appear over the example text. Type carefully, for every word matters. Once you finish a section, you
+            will
             automatically move on to the next. <span class="highlight">Together</span>, we shall ensure <span
               class="highlight">my will</span> is faithfully recorded.</p>
         </div>
-        <div class="min-w-[327px] md:min-w-[458px] max-w-[399px] sm:max-w-[480px] 2xl:max-w-[570px] relative mx-auto my-12 lg:flex">
+        <div
+          class="min-w-[327px] md:min-w-[458px] max-w-[399px] sm:max-w-[480px] 2xl:max-w-[570px] relative mx-auto my-12 lg:flex">
           <div class="absolute pt-8 sm:pt-16 pl-12 z-10 pr-12 h-full">
             <p class="text-center font-semibold title-letter">Jan I Moretus's Will</p>
-  
+
             <p class="sm:pt-4 text-will leading-relaxed">
               We, Jan Moretus and Martina Plantin, mindful of the fragility of life and desirous to preserve the unity
               of our house and workshop, do hereby declare our last will and testament. <br>
@@ -712,9 +732,9 @@
               whole, and of benefit to future generations. Witness our hand and seal, in Antwerp, this year of Our Lord
               1610.
             </p>
-  
+
           </div>
-  
+
           <img class="z-1 top-0 opacity-75" src="./src/assets/paper.png" alt="">
         </div>
 
