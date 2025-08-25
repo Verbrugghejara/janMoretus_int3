@@ -1,11 +1,33 @@
+import "../css/style.css";
 gsap.registerPlugin(ScrollTrigger);
+
+// let pageHeight = document.body.scrollHeight;
+
+// let lock1 = 0;
+// let lock2 = 0;
 yearsScroll();
 
+document.querySelector(".lock-1").classList.add("hidden");
+document.querySelector(".lock-2").classList.add("hidden");
+
+// window.addEventListener("resize", () => {
+//   document.querySelector(".lock-1").classList.remove("hidden");
+//   document.querySelector(".lock-2").classList.remove("hidden");
+
+//   ScrollTrigger.refresh();
+
+//   pageHeight = document.body.scrollHeight;
+
+//   if (lock1 === 0) {
+//     document.querySelector(".lock-1").classList.add("hidden");
+//   }
+//   if (lock2 === 0) {
+//     document.querySelector(".lock-2").classList.add("hidden");
+//   }
+// });
 // =====================
 // 1. Eyes Animation
 // =====================
-import "../css/style.css";
-gsap.registerPlugin(ScrollTrigger);
 
 const header = document.getElementById("eyes");
 const eyeLeft = document.getElementById("eye-left");
@@ -386,7 +408,7 @@ gsap.to(
       scrub: true,
       onUpdate: (self) => {
         let progress = self.progress; // 0 → 1
-        let size = 60 - progress * 55; // van 60vmax → 5vmax
+        let size = 50 - progress * 50; // van 60vmax → 5vmax
         mask.style.webkitMaskImage = `radial-gradient(circle ${size}vmax at center, transparent 0%, black 100%)`;
         mask.style.maskImage = `radial-gradient(circle ${size}vmax at center, transparent 0%, black 100%)`;
       },
@@ -508,8 +530,11 @@ function checkCodeStep() {
         el.classList.add("hidden");
       });
       currentStep = 0;
-      const lock1 = document.getElementById("lock-1");
-      lock1.classList.remove("hidden");
+      document.querySelector(".lock-1").classList.remove("hidden");
+      document.querySelector(".lock-2").classList.remove("hidden");
+      // lock1 = 1;
+      // lock2 = 1;
+      ScrollTrigger.refresh();
     } else if (currentStep == 1) {
       const answer1 = document.getElementById("answer-1");
       // verwijder class hidden van de child
@@ -525,7 +550,7 @@ function checkCodeStep() {
 // =====================
 // Signature
 // =====================
-const quill = document.getElementById("quill");
+let quill = document.getElementById("quill");
 const ink = document.getElementById("ink-container");
 const paper = document.getElementById("paper-container");
 const canvas = document.getElementById("signature-canvas");
@@ -535,103 +560,127 @@ let quillActive = false;
 let inkLoaded = false;
 let drawing = false;
 let hasDrawn = false;
+let quillOffsetX = 0;
+let quillOffsetY = 0;
 
+// =====================
+// Canvas Resize
+// =====================
 function resizeCanvas() {
   const rect = paper.getBoundingClientRect();
-  canvas.width = rect.width;
-  canvas.height = rect.height;
+  canvas.width = rect.width; // interne resolutie
+  canvas.height = 160; // vaste hoogte
   canvas.style.width = rect.width + "px";
-  canvas.style.height = rect.height + "px";
+  canvas.style.height = "160px";
   canvas.style.position = "absolute";
-  canvas.style.top = 0;
-  canvas.style.left = 0;
+  canvas.style.bottom = "0";
+  canvas.style.left = "0";
   canvas.style.zIndex = 30;
+
+  // reset tekenstijl
+  ctx.lineWidth = 2;
+  ctx.lineCap = "round";
+  ctx.strokeStyle = "#2C3E50";
 }
-resizeCanvas();
-window.addEventListener("resize", resizeCanvas);
 
-const quillOffsetX = 60; // afstemmen op jouw afbeelding
-const quillOffsetY = quill.offsetHeight - 5; // afstemmen op punt
-
+// =====================
+// Veer klikken
+// =====================
 quill.addEventListener("click", (e) => {
+  window.addEventListener("resize", resizeCanvas);
+  resizeCanvas();
   quillActive = true;
   quill.style.opacity = "1";
   ink.style.opacity = "1";
   quill.style.pointerEvents = "none";
+
+  quillOffsetX = 60; // pas aan op je afbeelding
+  quillOffsetY = quill.offsetHeight - 5;
+
   e.stopPropagation();
 });
 
+// =====================
+// Veer bewegen over paper
+// =====================
 paper.addEventListener("mousemove", (e) => {
-  if (quillActive) {
-    const rect = paper.getBoundingClientRect();
-    const x = e.clientX - rect.left - quillOffsetX;
-    const y = e.clientY - rect.top - quillOffsetY;
+  if (!quillActive) return;
 
-    const xClient = e.clientX - rect.left;
-    const yClient = e.clientY - rect.top;
-    quill.style.left = `${x}px`;
-    quill.style.top = `${y}px`;
+  const rect = paper.getBoundingClientRect();
+  const x = e.clientX - rect.left - quillOffsetX;
+  const y = e.clientY - rect.top - quillOffsetY;
 
-    if (drawing) {
-      ctx.lineTo(xClient, yClient);
-      ctx.stroke();
-    }
-  }
-});
+  quill.style.left = `${x}px`;
+  quill.style.top = `${y}px`;
 
-ink.addEventListener("click", (e) => {
-  if (quillActive) {
-    inkLoaded = true;
-    ctx.strokeStyle = "#2C3E50";
-    ctx.lineWidth = 2;
-    ctx.lineCap = "butt";
-
-    quill.src = "./src/assets/quillInkt.png";
-
-    e.stopPropagation();
-  }
-});
-
-canvas.addEventListener("mousedown", (e) => {
-  if (inkLoaded && quillActive) {
-    drawing = true;
-    hasDrawn = true;
-    const rect = canvas.getBoundingClientRect();
-    const x = e.clientX - rect.left;
-    const y = e.clientY - rect.top;
-    ctx.beginPath();
-    ctx.moveTo(x, y);
-  } else if (quillActive && !inkLoaded) {
-    const feedback = document.getElementById("inkFeedback");
-    feedback.classList.remove("hidden");
-    feedback.classList.add("flex");
-    setTimeout(() => {
-      feedback.classList.add("hidden");
-      feedback.classList.remove("flex");
-    }, 2000);
-  }
-});
-
-canvas.addEventListener("mousemove", (e) => {
   if (drawing) {
-    const rect = canvas.getBoundingClientRect();
-    const x = e.clientX - rect.left;
-    const y = e.clientY - rect.top;
-    ctx.lineTo(x, y);
+    const canvasRect = canvas.getBoundingClientRect();
+    const drawX = e.clientX - canvasRect.left;
+    const drawY = e.clientY - canvasRect.top;
+    ctx.lineTo(drawX, drawY);
     ctx.stroke();
   }
 });
 
+// =====================
+// Inktvat klikken
+// =====================
+ink.addEventListener("click", (e) => {
+  if (!quillActive) return;
+  inkLoaded = true;
+
+  quill.src = "./src/assets/quillInkt.png";
+  ctx.strokeStyle = "#2C3E50";
+  ctx.lineWidth = 2;
+  ctx.lineCap = "round";
+
+  e.stopPropagation();
+});
+
+// =====================
+// Canvas tekenen
+// =====================
+canvas.addEventListener("mousedown", (e) => {
+  if (!inkLoaded || !quillActive) {
+    if (quillActive && !inkLoaded) {
+      const feedback = document.getElementById("inkFeedback");
+      feedback.classList.remove("hidden");
+      feedback.classList.add("flex");
+      setTimeout(() => {
+        feedback.classList.add("hidden");
+        feedback.classList.remove("flex");
+      }, 2000);
+    }
+    return;
+  }
+
+  drawing = true;
+  hasDrawn = true;
+  const rect = canvas.getBoundingClientRect();
+  const x = e.clientX - rect.left;
+  const y = e.clientY - rect.top;
+  ctx.beginPath();
+  ctx.moveTo(x, y);
+});
+
+canvas.addEventListener("mousemove", (e) => {
+  if (!drawing) return;
+  const rect = canvas.getBoundingClientRect();
+  const x = e.clientX - rect.left;
+  const y = e.clientY - rect.top;
+  ctx.lineTo(x, y);
+  ctx.stroke();
+});
+
 canvas.addEventListener("mouseup", () => {
   drawing = false;
 });
-canvas.addEventListener("mouseup", () => {
-  drawing = false;
-});
+
 canvas.addEventListener("mouseleave", () => {
   drawing = false;
   if (hasDrawn) {
     ink.style.opacity = "0.5";
+
     quill.remove();
     const newQuill = document.createElement("img");
     newQuill.id = "quill";
@@ -645,8 +694,10 @@ canvas.addEventListener("mouseleave", () => {
     hasDrawn = false;
 
     const quote = document.querySelector(".quote-1");
-    quote.classList.remove("hidden");
-    quote.classList.add("flex");
+    if (quote) {
+      quote.classList.remove("hidden");
+      quote.classList.add("flex");
+    }
   }
 });
 
@@ -655,6 +706,8 @@ canvas.addEventListener("mouseleave", () => {
 // =====================
 const isTouchDevice = "ontouchstart" in window || navigator.maxTouchPoints > 0;
 if (isTouchDevice) {
+  canvas.height = 100; // vaste hoogte
+  canvas.style.height = "100px";
   canvas.addEventListener("touchstart", (e) => {
     e.preventDefault();
     const rect = canvas.getBoundingClientRect();
@@ -683,7 +736,6 @@ if (isTouchDevice) {
   });
 } else {
 }
-
 // =====================
 // Drag & Drop printing house
 // =====================
@@ -769,4 +821,132 @@ confirmBtn.addEventListener("click", () => {
   });
 
   resultText.textContent = `${correct} of ${allowedBooks.length} correct`;
+});
+
+// =====================
+// Typing will
+// =====================
+const segments = Array.from(document.querySelectorAll(".typing"));
+
+segments.forEach((span) => {
+  const text = span.dataset.text || "";
+  span.classList.add("relative", "inline-block", "cursor-text", "font-bold");
+
+  span.innerHTML = `
+  <span class="ghost text-black/20 font-bold">${text}</span>
+  <span class="typed text-black outline-none bg-transparent font-bold min-w-[1ch]" 
+    contenteditable="true" spellcheck="false"></span>
+`;
+
+  const typedEl = span.querySelector(".typed");
+
+  span.addEventListener("click", () => setActive(segments.indexOf(span)));
+  typedEl.addEventListener("focus", () => setActive(segments.indexOf(span)));
+  typedEl.addEventListener("beforeinput", (e) =>
+    handleMobileInput(e, typedEl, span)
+  );
+});
+
+let current = null;
+
+function setActive(i) {
+  current = i;
+  segments.forEach((s, idx) => {
+    if (idx === i) {
+      s.classList.add("active");
+    } else {
+      s.classList.remove("active");
+    }
+  });
+  if (current !== null) {
+    const typedEl = segments[current].querySelector(".typed");
+    typedEl.focus({ preventScroll: true });
+  }
+}
+function updateCursor(typedEl, cursorEl) {
+  const range = document.createRange();
+  const sel = window.getSelection();
+  range.selectNodeContents(typedEl);
+  range.collapse(false); // cursor aan het einde
+  const rect = range.getBoundingClientRect();
+  const parentRect = typedEl.getBoundingClientRect();
+
+  cursorEl.style.left = rect.right - parentRect.left + "px";
+  cursorEl.style.top = rect.top - parentRect.top + "px";
+  cursorEl.style.height = rect.height + "px";
+}
+function handleMobileInput(e, typedEl, span) {
+  const targetText = span.dataset.text || "";
+  const typed = typedEl.textContent;
+  const inputChar = e.data;
+  if (!inputChar) return;
+
+  const nextChar = targetText[typed.length];
+  if (!nextChar) return;
+
+  const isMatch = inputChar === nextChar;
+
+  if (!isMatch) {
+    e.preventDefault();
+    span.classList.add("error");
+    setTimeout(() => span.classList.remove("error"), 200);
+    return;
+  }
+
+  setTimeout(() => checkSegmentComplete(typedEl, span), 0);
+}
+
+function checkSegmentComplete(typedEl, span) {
+  const targetText = span.dataset.text || "";
+  if (typedEl.textContent.length === targetText.length) {
+    span.classList.remove("active");
+
+    const allDone = segments.every(
+      (s) => s.querySelector(".typed").textContent === s.dataset.text
+    );
+
+    if (allDone) {
+      typedEl.blur();
+      const quote2 = document.querySelector(".quote-2");
+      if (quote2)
+        quote2.classList.add("opacity-100", "transition", "duration-500");
+    } else {
+      const nextIndex = segments.findIndex(
+        (s) => s.querySelector(".typed").textContent !== s.dataset.text
+      );
+      if (nextIndex !== -1) setActive(nextIndex);
+    }
+  }
+}
+typedEl.addEventListener("input", () => {
+  const cursorEl = typedEl.parentElement.querySelector(".custom-cursor");
+  updateCursor(typedEl, cursorEl);
+});
+document.addEventListener("keydown", (e) => {
+  if (current === null) return;
+  const span = segments[current];
+  const typedEl = span.querySelector(".typed");
+
+  if (["Shift", "Alt", "Control", "Meta"].includes(e.key)) return;
+
+  if (e.key === "Backspace") {
+    typedEl.textContent = typedEl.textContent.slice(0, -1);
+    e.preventDefault();
+    return;
+  }
+
+  const targetText = span.dataset.text;
+  const nextChar = targetText[typedEl.textContent.length];
+  if (!nextChar) return;
+
+  const isMatch = e.key === nextChar;
+
+  if (isMatch) {
+    typedEl.textContent = typedEl.textContent + nextChar;
+    e.preventDefault();
+    checkSegmentComplete(typedEl, span);
+  } else {
+    span.classList.add("error");
+    setTimeout(() => span.classList.remove("error"), 200);
+  }
 });

@@ -216,8 +216,9 @@ footer p {
 }
 
 .text-will {
-    font-size: clamp(12px, calc(12px + (4 * ((100vw - 375px) / 265))), 14px);
+    font-size: clamp(12px, calc(12px + (4 * ((100vw - 375px) / 300))), 16px);
     color: var(--color-blue);
+    line-height: 140%;
 }
 
 .title-letter {
@@ -313,11 +314,56 @@ button {
     background-color: var(--color-yellow);
 }
 
-/* #lock {
-    transition: transform 0.3s ease;
-} */
+@keyframes shake {
+    0% {
+        transform: translateX(0px);
+    }
 
+    25% {
+        transform: translateX(-2px);
+    }
 
+    50% {
+        transform: translateX(2px);
+    }
+
+    75% {
+        transform: translateX(-2px);
+    }
+
+    100% {
+        transform: translateX(0px);
+    }
+}
+
+.error .typed {
+    animation: shake 0.15s;
+}
+
+.typing {
+    position: relative;
+    display: inline-block;
+}
+
+.typing .ghost {
+    color: var(--color-blue);
+    opacity: 0.4;
+    /* of via Tailwind: text-black/20 */
+}
+
+.typing .typed {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding-right: 0px !important;
+    color: var(--color-blue);
+}
+
+.typing.error .typed {
+    color: var(--color-red);
+    /* Tailwind red-500 */
+    animation: shake 0.2s;
+}
 
 /* Tablet vanaf 640px */
 @media (min-width: 640px) {

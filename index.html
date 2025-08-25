@@ -370,7 +370,7 @@
       <img class="hidden md:block absolute -left-12 bottom-12 wall2 opacity-20" src="./src/assets/wall2.png" alt="">
     </div>
   </section>
-  <div id="lock-1" class=" ">
+  <div class="lock-1">
     <img class="z-20" src="./src/assets/paperRip2.png" alt="">
     <section
       class="pl-6 pr-6 relative pt-6 md:pl-8 md:pr-8 md:pt-8 lg:pl-16 lg:pr-16 lg:pt-8 xl:pl-36 xl:pr-36 bg-dust">
@@ -472,13 +472,13 @@
 
           <!-- Papier -->
           <img class="z-1 top-0 opacity-75" src="./src/assets/paper.png" alt="">
-          <canvas id="signature-canvas" class="absolute bottom-0 left-0 w-full z-50"></canvas>
+          <canvas id="signature-canvas" class="absolute bottom-0 left-0 w-full h-40 z-50 border-dashed border-2 border-red-500"></canvas>
 
           <!-- Veer / Quill -->
           <img id="quill" src="./src/assets/quill.png" alt=""
-            class="hidden lg:block absolute opacity-50 max-w-[400px] -right-[330px] xl:-right-[30vw] 2xl:-right-[30vw] bottom-0 w-16 cursor-pointer">
+            class="hidden lg:block absolute opacity-50 max-w-[400px] -right-[400px] xl:-right-[30vw] 2xl:-right-[30vw] bottom-0 w-16 cursor-pointer">
           <div id="inkFeedback" class="hidden absolute bottom-0 left-0 w-full bg-red-500 text-white p-2">
-            No ink available
+            You need some ink to sign the document.
           </div>
         </div>
 
@@ -634,7 +634,8 @@
         <div
           class="absolute flex flex-col justify-center items-center mt-20 md:mt-32 lg:-mt-48 xl:-mt-40 2xl:-mt-60 w-full right-0 xl:-right-36 xl:max-w-[800px]">
           <!-- Content container -->
-          <div class="top-4 w-fit flex flex-col justify-center lg:ml-auto lg:mr-[5%] items-center z-10 px-4 md:px-8 xl:mr-36">
+          <div
+            class="top-4 w-fit flex flex-col justify-center lg:ml-auto lg:mr-[5%] items-center z-10 px-4 md:px-8 xl:mr-36">
             <p class="title-manuscript text-center">Printing House Shelf</p>
             <button class="button-confirm mt-4 mb-2 px-4 py-2 text-sm md:text-base lg:text-lg">
               Confirm Selection
@@ -652,7 +653,7 @@
 
             <!-- Items container -->
             <div id="shelf"
-              class="absolute bottom-[27%] lg:bottom-[30%] xl:bottom-[35%] 2xl:bottom-[33%] w-full h-fit right-0 gap-2 flex flex-wrap justify-center px-0">
+              class="absolute bottom-[25%] lg:bottom-[30%] xl:bottom-[35%] 2xl:bottom-[33%] w-full right-0 gap-2 flex flex-wrap justify-center px-0 h-[165px] sm:h-[270px] md:h-[305px] lg:h-[260px] xl:h-[325px]">
               <!-- Dynamically added items here -->
             </div>
           </div>
@@ -667,7 +668,7 @@
     <section
       class="pl-6 pr-6 relative pt-6 md:pl-8 md:pr-8 md:pt-8 lg:pl-16 lg:pr-16 lg:pt-8 xl:pl-36 xl:pr-36 bg-dust">
       <h2 class="text-center">My Death and Testament</h2>
-      <div class="text-center pt-4 relative max-w-[440px] mx-auto">
+      <div class="text-center pt-4 relative max-w-[500px] mx-auto">
         <p>On <span class="highlightY">September 22, 1610</span>, I passed away. I was laid to rest in <span
             class="highlightY">the Cathedral of Our Lady</span>, where so many of Antwerp’s great
           stories are carved in stone. But before my death, my wife <span class="highlightY">Martine and I</span> had
@@ -675,33 +676,53 @@
           testament that would protect the Officina Plantiniana from disputes and divisions.</p>
         <p class="bg-year-dark">1610</p>
       </div>
-      <div class="min-w-[327px] max-w-[399px] sm:max-w-[480px] 2xl:max-w-[570px] relative mx-auto my-12 lg:flex">
-        <div class="absolute pt-8 sm:pt-16  pl-12 z-10 pr-12 h-full">
-          <p style="font-weight: 600;" class="text-center title-letter">Jan I Moretus's Will</p>
-          <p class="sm:pt-4 text-will">
-            We, Jan Moretus and Martina Plantin, mindful of the fragility of life and desirous to preserve the unity
-            of
-            our house
-            and workshop, do hereby declare our last will and testament. <br>
-            It is our firm command that <span style="font-weight: bold;">the Officina Plantiniana shall forever remain
-              one
-              and undivided, never to be
-              sold, nor
-              broken apart</span>. The care and governance of the printing house shall pass to our beloved sons, <span
-              style="font-weight: bold;">Jan II and
-              Balthasar I</span>, who
-            shall together guard its honor and continue its labor in the service of God, the Church, and the Republic
-            of
-            Letters. <br>
-            In this way, we seek to avoid quarrels among heirs, and to secure that our life’s work may remain strong,
-            whole, and of
-            benefit to future generations.
-            Witness our hand and seal, in Antwerp, this year of Our Lord 1610.</p>
-
+      <div class="md:flex">
+        <div class="2xl:absolute left-24 top-[30%] max-w-[400px] mt-12 xl:mt-14">
+          <h3 class="mb-4">Writing the Will</h3>
+          <p><span class="highlight">Help me</span> write my will. <span class="highlight">Click</span> on the
+            light-colored text and type the words as you see them. As you type, your
+            handwriting
+            will appear over the example text. Type carefully, for every word matters. Once you finish a section, you will
+            automatically move on to the next. <span class="highlight">Together</span>, we shall ensure <span
+              class="highlight">my will</span> is faithfully recorded.</p>
         </div>
-        <img class="z-1 top-0 opacity-75" src="./src/assets/paper.png" alt="">
+        <div class="min-w-[327px] md:min-w-[458px] max-w-[399px] sm:max-w-[480px] 2xl:max-w-[570px] relative mx-auto my-12 lg:flex">
+          <div class="absolute pt-8 sm:pt-16 pl-12 z-10 pr-12 h-full">
+            <p class="text-center font-semibold title-letter">Jan I Moretus's Will</p>
+  
+            <p class="sm:pt-4 text-will leading-relaxed">
+              We, Jan Moretus and Martina Plantin, mindful of the fragility of life and desirous to preserve the unity
+              of our house and workshop, do hereby declare our last will and testament. <br>
+              It is our firm command that
+              <span class="typing"
+                data-text="The Officina Plantiniana shall forever remain one and undivided, never to be sold, nor broken apart">
+                <span class="ghost text-black/20 font-bold">The Officina Plantiniana shall forever remain one and
+                  undivided,
+                  never to be sold, nor broken apart</span>
+                <span class="typed relative text-black font-bold min-w-[1ch]"></span>
+              </span>.
+              The care and governance of the printing house shall pass to our beloved sons
+              <span class="typing" data-text="Jan II and Balthasar I">
+                <span class="ghost text-black/20 font-bold">Jan II and Balthasar I</span>
+                <span class="typed relative text-black font-bold p-0"></span>
+              </span>,
+              who shall together guard its honor and continue its labor in the service of God, the Church, and the
+              Republic of Letters. <br>
+              In this way, we seek to avoid quarrels among heirs, and to secure that our life’s work may remain strong,
+              whole, and of benefit to future generations. Witness our hand and seal, in Antwerp, this year of Our Lord
+              1610.
+            </p>
+  
+          </div>
+  
+          <img class="z-1 top-0 opacity-75" src="./src/assets/paper.png" alt="">
+        </div>
+
       </div>
-      <p class="text-center mt-8 max-w-[800px] flex justify-center mx-auto quotes" style="font-weight: 600;">This
+
+
+      <p class="text-center mt-8 max-w-[800px] justify-center mx-auto quotes quote-2 opacity-0"
+        style="font-weight: 600;">This
         testament was not only law. It was love, foresight, and
         duty
         woven into words.</p>
@@ -764,7 +785,7 @@
       </div>
     </section>
   </div>
-  <footer class="lock--2 hidden">
+  <footer class="lock-2">
     <div class="hidden w-full lg:block" style="color: var(--color-white);">
       <div class="flex justify-center items-center">
         <ul class="flex gap-7 text-lg font-serif">
