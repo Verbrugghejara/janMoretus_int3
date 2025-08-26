@@ -4,16 +4,16 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="/src/css/style.css" rel="stylesheet">
   <link
     href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
     rel="stylesheet">
+  <title>Jan I Moretus</title>
 </head>
 
 <body>
   <header id="eyes"
     class="relative pl-6 pr-6 pt-6 md:pl-8 md:pr-8 md:pt-8 lg:pt-4 h-[481px] sm:h-[600px]  md:h-[700px] lg:h-[800px] xl:h-[900px] 2xl:h-[1050px]">
-    <nav class="relative z-50 flex flex-col items-center justify-center">
+    <nav class="relative text-alphaWhite z-50 flex flex-col items-center justify-center">
       <div class="flex justify-end w-full mb-2">
         <svg class="w-8 h-8 md:w-16 md:h-16 lg:hidden" viewBox="0 0 33 23" fill="none"
           xmlns="http://www.w3.org/2000/svg">
@@ -24,7 +24,7 @@
         <div class="hidden w-full lg:block">
           <div class="flex justify-between items-center gap-8">
             <div class="h-16 w-16 ">
-              <img src="./src/assets/logoMuseum.png" alt="">
+              <img src="src/assets/logoMuseum.png" alt="">
 
             </div>
             <ul class="flex gap-7 text-lg font-serif">
@@ -44,22 +44,22 @@
     <div class="absolute inset-0 w-full h-full overflow-hidden ">
       <img
         class="xl:hidden absolute w-full h-full object-cover object-bottom sm:-top-8 md:-top-36 lg:-top-48 xl:-top-64 2xl:-top-96"
-        src="./src/assets/janMoretus.jpg" alt="">
+        src="src/assets/janMoretus.jpg" alt="">
       <div class="relative w-full -top-1/5 2xl:-top-1/3 aspect-[3/4] hidden xl:block">
         <img id="anchor" class="absolute top-0 left-0 w-full h-full object-cover z-20"
-          src="./src/assets/janMoretusEyeless.png" alt="Jan Moretus">
+          src="src/assets/janMoretusEyeless.png" alt="Jan Moretus">
         <div class="absolute top-0 left-0 w-full h-full z-10">
           <img id="eye-left" class="absolute top-[24%] left-[47%] -translate-x-1/2 -translate-y-1/2"
-            style="height: 5%; width: auto;" src="./src/assets/eyes.png" alt="Linker oog">
+            style="height: 5%; width: auto;" src="src/assets/eyes.png" alt="Linker oog">
 
           <img id="eye-right" class="absolute top-[23.5%] left-[57.5%] -translate-x-1/2 -translate-y-1/2"
-            style="height: 5%; width: auto;" src="./src/assets/eyes.png" alt="Rechter oog">
+            style="height: 5%; width: auto;" src="src/assets/eyes.png" alt="Rechter oog">
         </div>
       </div>
       <div
         class="absolute z-20 bottom-26 sm:bottom-36 md:bottom-44 lg:bottom-48 xl:bottom-60 2xl:bottom-72 left-6 right-6 flex flex-col items-center justify-center">
-        <h1>Jan I Moretus</h1>
-        <p class="text-paper text-center mt-2 min-w-[337px] max-w-[480px] sm:max-w-xl text-base sm:text-lg">
+        <h1 class="">Jan I Moretus</h1>
+        <p class="text-alphaWhite text-center mt-2 min-w-[337px] max-w-[480px] sm:max-w-xl text-base sm:text-lg">
           Yes, that’s me. Sorry for the staring, just happy you’re here. Now you can follow me through my story from
           young
           bookshop helper to master printer of the legendary Officina Plantiniana.
@@ -67,13 +67,13 @@
         <button class="mt-4" style="border-color: var(--color-white); color: var(--color-white);"><a href=""></a>Let's
           start my Journey</button>
       </div>
-      <img class="absolute left-0 right-0 bottom-0 w-full z-50" src="./src/assets/paperRip.png" alt="">
+      <img class="absolute left-0 right-0 bottom-0 w-full z-50" src="src/assets/paperRip.png" alt="">
 
   </header>
-  <section id="timeline" class="relative w-full h-[500vh] hidden xl:block">
+  <section id="timeline" class="relative w-full h-[500vh] xl:h-[600vh] hidden xl:block">
     <div class="sticky top-0 h-screen flex justify-center items-center">
       <img id="background" class="absolute w-auto max-w-full max-h-screen object-cover opacity-50 pointer-events-none"
-        src="./src/assets/AntwerpmapY.png" alt="Antwerp map" />
+        src="src/assets/AntwerpmapY.png" alt="Antwerp map" />
 
       <div id="year-container" class="flex flex-col items-center justify-center text-center">
       </div>
@@ -84,14 +84,16 @@
 
   <section class="relative xl:hidden flex justify-center pl-6 pr-6 md:pl-8 md:pr-8 md:pt-8 lg:px-16 xl:px-36">
     <img class="w-full h-full object-cover opacity-50 pointer-events-none" style="position:relative;"
-      src="./src/assets/AntwerpmapY.png" alt="">
-    <div class="absolute inset-0 flex flex-col items-center justify-center text-center z-10">
-      <p class="title-year -mt-12 sm:-mt-20 xl:-mt-32">1543</p>
-      <p class="text-year">the year I was born, in the city of&nbsp;<span class="highlight">Antwerp</span>.</p>
+      src="src/assets/AntwerpmapY.png" alt="">
+    <div class="absolute inset-0 flex flex-col items-center justify-center text-center z-10 gap-8 sm:gap-12">
+      <p class="title-year">1543</p>
+      <p class="">the year I was born, in the city of&nbsp;<span
+          class="highlight">Antwerp</span>.</p>
     </div>
   </section>
-  <img class="" src="./src/assets/paperRip2.png" alt="">
-  <section class="bg-dust relative pl-6 pr-6 pt-6 md:pl-8 md:pr-8 md:pt-8 lg:pl-16 lg:pr-16 lg:pt-8 xl:pl-36 xl:pr-36">
+  <img class="" src="src/assets/paperRip2.png" alt="">
+  <section
+    class="bg-alphaBeige relative pl-6 pr-6 pt-6 md:pl-8 md:pr-8 md:pt-8 lg:pl-16 lg:pr-16 lg:pt-8 xl:pl-36 xl:pr-36">
     <div class="">
       <div class="lg:flex lg:justify-center lg:items-center">
         <div class="lg:flex lg:flex-col">
@@ -105,7 +107,7 @@
         </div>
         <img
           class="opacity-50 mr-0 ml-auto -mt-5 w-full max-w-[320px] sm:max-w-[420px] md:max-w-[480px] lg:max-w-[520px]"
-          src="./src/assets/booksBlue.png" alt="">
+          src="src/assets/booksBlue.png" alt="">
 
       </div>
       <div class="relative pt-6 w-full h-full">
@@ -115,18 +117,18 @@
             working in the bookshop of <span class="highlight">Christoffel Plantin</span>.</p>
         </div>
         <div class="ml-auto sm:mr-auto sm:-ml-16 -mr-16 xl:ml-0 max-w-[400px] md:max-w-[500px] lg:max-w-[600px]">
-          <img class="opacity-50 sm:scale-x-[-1]" src="./src/assets/plantinBlu.png" alt="Christoffel Plantin">
+          <img class="opacity-50 sm:scale-x-[-1]" src="src/assets/plantinBlu.png" alt="Christoffel Plantin">
         </div>
       </div>
       <img class="opacity-50 absolute bottom-0 left-1/2 -translate-x-1/2 w-[12rem] sm:w-[16rem] md:w-[20rem]"
-        src="./src/assets/top.png" alt="">
+        src="src/assets/top.png" alt="">
     </div>
   </section>
   <section
-    class="bg-dust relative pl-6 pr-6 pt-6 pb-12 lg:pb-20 md:pl-8 md:pr-8 md:pt-8 lg:pl-16 lg:pr-16 lg:pt-8 xl:pl-36 xl:pr-36">
+    class="bg-alphaBeige relative pl-6 pr-6 pt-6 pb-12 lg:pb-20 md:pl-8 md:pr-8 md:pt-8 lg:pl-16 lg:pr-16 lg:pt-8 xl:pl-36 xl:pr-36">
 
-    <img class="hidden opacity-50 lg:block lg:absolute right-0 zuil lg:-top-8" src="./src/assets/zuilBlue.png" alt="">
-    <img class="hidden opacity-50 lg:block lg:absolute left-0 zuil lg:-top-8" src="./src/assets/zuil2Blue.png" alt="">
+    <img class="hidden opacity-50 lg:block lg:absolute right-0 zuil lg:-top-8" src="src/assets/zuilBlue.png" alt="">
+    <img class="hidden opacity-50 lg:block lg:absolute left-0 zuil lg:-top-8" src="src/assets/zuil2Blue.png" alt="">
 
     <h3 class="sm:text-center xl:mb-12">Will you help me with my <span class="highlight">first task</span> in the
       bookshop?</h3>
@@ -140,45 +142,40 @@
       <div id="book-container"
         class="w-full flex justify-center items-center gap-4 mx-auto mt-8 xl:mx-0 xl:max-w-[800px] pointer-events-auto">
 
-        <!-- Boek 1 -->
         <div class="relative draggable" draggable="true" data-order="2">
-          <img class="book-img min-w-[34px] max-w-[60px] sm:max-w-[100px]" src="./src/assets/bookV2.png" alt="">
+          <img class="book-img min-w-[34px] max-w-[60px] sm:max-w-[100px] lg:max-w-[90px]" src="src/assets/bookV2.png" alt="">
           <p
             class="text-book absolute top-14/30 left-1/2 -translate-x-1/2 -translate-y-1/2 -rotate-90 w-40 sm:w-56 text-center">
             Les Douleurs Chrétiennes
           </p>
         </div>
 
-        <!-- Boek 2 -->
         <div class="relative draggable" draggable="true" data-order="5">
-          <img class="book-img min-w-[34px] max-w-[60px] sm:max-w-[100px]" src="./src/assets/bookV2.png" alt="">
+          <img class="book-img min-w-[34px] max-w-[60px] sm:max-w-[100px] lg:max-w-[90px]" src="src/assets/bookV2.png" alt="">
           <p
             class="text-book absolute top-14/30 left-1/2 -translate-x-1/2 -translate-y-1/2 -rotate-90 w-40 sm:w-56 text-center">
             De Constantia
           </p>
         </div>
 
-        <!-- Boek 3 -->
         <div class="relative draggable" draggable="true" data-order="4">
-          <img class="book-img min-w-[34px] max-w-[60px] sm:max-w-[100px]" src="./src/assets/bookV2.png" alt="">
+          <img class="book-img min-w-[34px] max-w-[60px] sm:max-w-[100px] lg:max-w-[90px]" src="src/assets/bookV2.png" alt="">
           <p
             class="text-book absolute top-14/30 left-1/2 -translate-x-1/2 -translate-y-1/2 -rotate-90 w-40 sm:w-56 text-center">
             Constancia del <br> Alma Fiel
           </p>
         </div>
 
-        <!-- Boek 4 -->
         <div class="relative draggable" draggable="true" data-order="1">
-          <img class="book-img min-w-[34px] max-w-[60px] sm:max-w-[100px]" src="./src/assets/bookV2.png" alt="">
+          <img class="book-img min-w-[34px] max-w-[60px] sm:max-w-[100px] lg:max-w-[90px]" src="src/assets/bookV2.png" alt="">
           <p
             class="text-book absolute top-14/30 left-1/2 -translate-x-1/2 -translate-y-1/2 -rotate-90 w-40 sm:w-56 text-center">
             De Standvastige <br> Ziel
           </p>
         </div>
 
-        <!-- Boek 5 -->
         <div class="relative draggable" draggable="true" data-order="3">
-          <img class="book-img min-w-[34px] max-w-[60px] sm:max-w-[100px]" src="./src/assets/bookV2.png" alt="">
+          <img class="book-img min-w-[34px] max-w-[60px] sm:max-w-[100px] lg:max-w-[90px]" src="src/assets/bookV2.png" alt="">
           <p
             class="text-book absolute top-14/30 left-1/2 -translate-x-1/2 -translate-y-1/2 -rotate-90 w-40 sm:w-56 text-center">
             Costanza <br> dell’Anima Fedele
@@ -187,13 +184,12 @@
       </div>
     </div>
     <img class="opacity-50 absolute bottom-0 left-1/2 -translate-x-1/2 w-[12rem] sm:w-[16rem] md:w-[20rem]"
-      src="./src/assets/top.png" alt="">
+      src="src/assets/top.png" alt="">
 
-    <!-- <img class="absolute bottom-0 left-0" src="./src/assets/topMobile.png" alt=""> -->
   </section>
-  <img class="rotate-180 w-full" src="./src/assets/paperRip2.png" alt="">
+  <img class="rotate-180 w-full" src="src/assets/paperRip2.png" alt="">
   <section class="pl-6 pr-6 relative pt-6 md:pl-8 md:pr-8 md:pt-8 lg:pl-16 lg:pr-16 lg:pt-8 xl:pl-36 xl:pr-36">
-    <div class="relative h-[420px] sm:h-[420px] md:h-[480px] lg:h-[500px] xl:h-[600px] 2xl:h-[650px]">
+    <div class="relative h-[420px] sm:h-[420px] md:h-[480px] lg:h-[550px] xl:h-[600px] 2xl:h-[700px]">
       <div class="flex flex-col items-center h-full text-center">
         <h2>I got married</h2>
         <p class="max-w-[400px] md:max-w-[450px] xl:max-w-[500px] 2xl:max-w-[550px] mt-4">Her name was <span
@@ -205,15 +201,19 @@
         <p class="bg-year highlightY mt-4">1570</p>
       </div>
       <div class="absolute z-10 bottom-0 w-screen opacity-50 flex justify-between -ml-6 md:-ml-8 lg:-ml-16 xl:-ml-36">
-        <img class="love absolute bottom-1" src="./src/assets/janMoretus.png" alt="Jan Moretus">
-        <img class="" src="./src/assets/heart.png" alt="">
-        <img class="love absolute bottom-1 right-0" src="./src/assets/martinaPlantin.png" alt="Martine Plantin">
+        <img
+          class="min-w-[100px] max-w-[120px] h-auto absolute bottom-1 sm:max-w-[150px] md:max-w-[200px] lg:max-w-[300px] xl:max-w-[350px] 2xl:max-w-[450px]"
+          src="src/assets/janMoretus.png" alt="Jan Moretus">
+        <img class="" src="src/assets/heart.png" alt="">
+        <img
+          class="min-w-[100px] max-w-[120px] h-auto absolute bottom-1 right-0 sm:max-w-[150px] md:max-w-[200px] lg:max-w-[300px] xl:max-w-[350px] 2xl:max-w-[450px]"
+          src="src/assets/martinaPlantin.png" alt="Martine Plantin">
       </div>
     </div>
     <div class="relative mt-12 lg:mb-32 h-[420px] md:h-[520px] lg:h-[600px] xl:h-[850px] 2xl:h-[1100px]">
       <div
         class="absolute z-0 -top-24 xl:-top-36 2xl:-top-48 -right-56 lg:-right-72 xl:-right-[500px] 2xl:-right-[550px] min-w-[600px] max-w-[700px] lg:max-w-[850px] xl:max-w-[1200px] 2xl:max-w-[1600px]">
-        <img src="./src/assets/leidenRed.png" alt="Leiden illustration" class="opacity-30 h-auto" />
+        <img src="src/assets/leidenRed.png" alt="Leiden illustration" class="opacity-30 h-auto" />
       </div>
 
       <h3 class="sm:text-center xl:pt-16 2xl:pt-20">An Inheritance in My Hands</h3>
@@ -228,7 +228,7 @@
         When Plantin <span class="highlightY">moved to Leiden</span> between...
       </p>
 
-      <p class="pt-2 text-28-40 italic highlightY">1583 & 1585</p>
+      <p class="pt-2 colab-year text-3xl italic highlightY">1583 & 1585</p>
 
       <p class="pt-2 max-w-[450px]">
         To work on new projects, my brother-in-law Franciscus Raphelengius and I
@@ -241,89 +241,77 @@
       </p>
     </div>
     <div class="relative w-full h-[38/0vh] " id="chapterBlock">
-      <!-- Overlay zwart met cirkel-mask -->
       <div id="maskOverlay" class="lg:block hidden fixed inset-0 bg-black pointer-events-none z-20 opacity-0"></div>
 
-      <!-- Content -->
-      <!-- <div class="top-0 h-screen flex flex-col items-center relative z-10">
-        <p class="text-unlock">Are you ready?</p>
-        <p class="mt-[600px] text-unlock">You sure?</p>
-        <p>Can you unlock the next chapter?</p>
-        <p class="pt-4 sm:max-w-[450px]">
-          You are standing in front of a large wooden door.
-          It leads to the <span class="highlightY">next part of my story</span>, but it is locked.
-        </p>
-      </div> -->
-      <ul class="unlock__list hidden lg:flex">
-        <li class="unlock__text-1 max-w-[500px] xl:max-w-[800px]">Then something bad happened...</li>
-        <li class="unlock__text-2 max-w-[500px] xl:max-w-[800px]">It was the dead of...</li>
-        <li class="unlock__text-3 max-w-[450px] xl:max-w-[700px]">Oh no, a door blocks your way to what comes next.</li>
-        <li class="unlock__text-4 max-w-[400px] 2xl:max-w-[450px]">The lock can only be opened by those who have noticed the clues.</li>
-        <li class="unlock__text-5 max-w-[150px] xl:max-w-[200px] 2xl:max-w-[300px] mb-[300px]">Are you ready to unlock the next chapter?</li>
+      <ul class="unlock__list hidden lg:flex leading-[150%]">
+        <li class="max-w-[500px] xl:max-w-[800px] xl:text-7xl">Then something bad happened...</li>
+        <li class="max-w-[500px] xl:max-w-[700px] xl:text-7xl">It was the dead of...</li>
+        <li class="text-5xl max-w-[450px] xl:max-w-[600px] xl:text-6xl">Oh no, a door blocks your way to what comes
+          next.</li>
+        <li class="text-3xl 2xl:text-5xl max-w-[400px] 2xl:max-w-[450px] xl:text-2xl">The lock can only be opened by
+          those who have noticed
+          the clues.</li>
+        <li class="text-xl 2xl:text-3xl max-w-[150px] xl:max-w-[200px] 2xl:max-w-[300px] mb-[300px]">Are you ready to
+          unlock
+          the next chapter?</li>
       </ul>
       <div class="h-[100vh] w-fit relative bottom-0 flex justify-center items-center z-10 mx-auto">
-        <img class="h-full w-fit object-contain mx-auto max-h-[100vh]" src="./src/assets/door2.png" alt="">
+        <img class="h-full w-fit object-contain mx-auto max-h-[100vh]" src="src/assets/door2.png" alt="">
 
         <div id="lock"
           class="absolute bottom-[30%] sm:bottom-[30%] lg:bottom-[20%] left-1/2 -translate-x-1/2 cursor-pointer">
-          <!-- lock afbeelding -->
           <div class="relative">
-            <img class="max-w-[50px] lg:max-w-[70px]" src="./src/assets/lock.png" alt="">
+            <img class="max-w-[50px] lg:max-w-[70px]" src="src/assets/lock.png" alt="">
 
-            <!-- lockwheel -->
             <img id="lockWheel"
               class="max-w-[37px] lg:max-w-[50px] absolute top-[68.30%] left-1/2 -translate-x-1/2 -translate-y-1/2 cursor-grab select-none"
-              src="./src/assets/lockWheel.png" alt="" draggable="false">
+              src="src/assets/lockWheel.png" alt="" draggable="false">
           </div>
         </div>
       </div>
-      <!-- <div class="max-h-[800px] w-fit relative flex justify-center items-center z-10 mx-auto">
-        <img class="h-full w-fit object-contain max-h-[800px] mx-auto" src="./src/assets/door2.png" alt="">
-      </div> -->
-      <img class="absolute min-w-[300px] top-0 scale-x-[-1] opacity-20 z-0 lg:hidden" src="./src/assets/wall.png"
-        alt="">
-      <img class="absolute min-w-[300px] bottom-0 opacity-20 z-0 lg:hidden" src="./src/assets/wall.png" alt="">
+      <img class="absolute min-w-[300px] top-0 scale-x-[-1] opacity-20 z-0 lg:hidden" src="src/assets/wall.png" alt="">
+      <img class="absolute min-w-[300px] bottom-0 opacity-20 z-0 lg:hidden" src="src/assets/wall.png" alt="">
 
-      <img class="absolute hidden lg:block left-0 bottom-[80vh] wall opacity-20 " src="./src/assets/wall.png" alt="">
-      <img class="absolute hidden lg:block -right-8 bottom-0 wall scale-x-[-1] opacity-20 " src="./src/assets/wall.png"
+      <img class="absolute hidden lg:block left-0 bottom-[80vh] wall opacity-20 " src="src/assets/wall.png" alt="">
+      <img class="absolute hidden lg:block -right-8 bottom-0 wall scale-x-[-1] opacity-20 " src="src/assets/wall.png"
         alt="">
-      <img class="absolute hidden lg:block -right-12 bottom-[70vh] wall2 opacity-20" src="./src/assets/wall2.png"
-        alt="">
-      <img class="absolute hidden lg:block -left-12 bottom-6 wall2 opacity-20" src="./src/assets/wall2.png" alt="">
+      <img class="absolute hidden lg:block -right-12 bottom-[70vh] wall2 opacity-20" src="src/assets/wall2.png" alt="">
+      <img class="absolute hidden lg:block -left-12 bottom-6 wall2 opacity-20" src="src/assets/wall2.png" alt="">
       <div id="unlock-instructions"
         class="absolute left-1/2 -translate-x-1/2 text-center min-w-[300px] xl:min-w-[350px] h-fit lg:text-start top-[5%] z-10 lg:top-auto lg:bottom-[30vh] lg:left-[15%] xl:left-[10%] 2xl:left-[20%]  lg:-right-36  lg:max-w-[320px] 2xl:max-w-[400px]">
         <h3>Unlock the Lock</h3>
-        <p>Click on the lock to unlock it, by <span class="highlightY">turning the lock wheel.</span></p>
-        <p>You need to give in <span class="highlightY">3 combinations</span></p>
+        <p>Click on the lock to unlock it, by <span class="highlight">turning the lock wheel.</span></p>
+        <p>You need to give in <span class="highlight">3 combinations</span></p>
       </div>
       <div class="hidden lg:block">
-        <div 
+        <div
           class="question-1 absolute hidden z-10 lg:left-0 xl:left-[5%] 2xl:left-[10%] bottom-[60vh] lg:max-w-[300px] xl:max-w-[350px] 2xl:max-w-[400px]">
           <div class="relative xl:-left-36 ">
             <h3 class="mb-4">First combination:</h3>
-            <p>What are the <span class="highlightY">last two digits</span> of the year in which I found myself working in
-  
+            <p>What are the <span class="highlightY">last two digits</span> of the year in which I found myself working
+              in
+
               Christoffel Plantin’s bookshop?</p>
           </div>
         </div>
-        <div 
+        <div
           class="question-2 absolute hidden z-10 xl:left-[80%] 2xl:left-[75%] lg:-right-16 xl:-right-36 bottom-[40vh] lg:max-w-[300px] xl:max-w-[350px] 2xl:max-w-[400px]">
           <h3 class="mb-4">Second combination:</h3>
           <p>How <span class="highlightY">young</span> was I when I started working there?</p>
         </div>
-        <div 
+        <div
           class="question-3 absolute hidden z-10 lg:left-0 xl:left-[5%] 2xl:left-[10%] bottom-[20vh] lg:max-w-[300px] xl:max-w-[350px] 2xl:max-w-[400px]">
           <div class="relative xl:-left-36 ">
             <h3 class="mb-4">Third combination:</h3>
             <p>What are the <span class="highlightY">last two digits</span> of the year in which I was <span
                 class="highlightY">married</span> to Martina Plantin?</p>
-  
+
           </div>
         </div>
 
       </div>
-      <div class="lg:hidden hidden questions z-20 absolute flex flex-col top-1/2 py-3 px-6 -translate-y-1/2 gap-6 ">
-        <!-- <div class="py-12 gap-y-6"> -->
+      <div
+        class="lg:hidden hidden questions bg-alphaRed rounded-3xl text-alphaWhite z-20 absolute flex flex-col top-1/2 py-3 px-6 -translate-y-1/2 gap-6 ">
         <svg class="questions-info hidden absolute -translate-1/2 top-1/2 left-1/2" xmlns="http://www.w3.org/2000/svg"
           x="0px" y="0px" width="24" height="24" viewBox="0 0 128 128" style="fill: var(--color-white);">
           <path
@@ -361,7 +349,6 @@
           </div>
         </div>
 
-        <!-- </div> -->
       </div>
 
 
@@ -369,10 +356,10 @@
         class="absolute left-1/2 -translate-x-1/2 lg:translate-x-0 top-[5%] lg:top-auto hidden w-full max-w-[200px] sm:max-w-[220px] lg:max-w-[320px] xl:min-w-[400px] 2xl:min-w-[450px] text-center flex-col justify-center z-10 lg:-left-20 xl:-left-28 2xl:-left-20 lg:bottom-[20vh] px-6 py-6 ">
         <div class="relative">
           <img class="absolute w-full -z-10 top-1/2 -translate-y-1/2 lg:max-w-[320px] xl:max-w-[400px] 2xl:max-w-full"
-            src="./src/assets/kader2.png" alt="">
+            src="src/assets/kader2.png" alt="">
 
           <h3 class="mb-4 z-10">Good job!</h3>
-          <p class="z-10 text-feedback">Continue scrolling</p>
+          <p class="z-10 xl:text-2xl 2xl:text-3xl xl:text-alphaRed xl:font-bold">Continue scrolling</p>
         </div>
       </div>
       <div id="combinations" class="absolute hidden z-10 left-1/2 -translate-x-1/2 bottom-[6vh] gap-6">
@@ -390,10 +377,10 @@
       </div>
     </div>
   </section>
-  <div class="lock-1">
-    <img class="z-20" src="./src/assets/paperRip2.png" alt="">
+  <div class="locked">
+    <img class="z-20" src="src/assets/paperRip2.png" alt="">
     <section
-      class="pl-6 pr-6 relative pt-6 md:pl-8 md:pr-8 md:pt-8 lg:pl-16 lg:pr-16 lg:pt-8 xl:pl-36 xl:pr-36 bg-dust">
+      class="pl-6 pr-6 relative pt-6 md:pl-8 md:pr-8 md:pt-8 lg:pl-16 lg:pr-16 lg:pt-8 xl:pl-36 xl:pr-36 bg-alphaBeige">
       <h2 class="text-center">Inheritance</h2>
       <div class="text-center pt-4 relative max-w-[450px] mx-auto">
         <p>The city seemed to hold its breath. No clatter of printing presses, no murmur of customers. Only silence
@@ -404,7 +391,6 @@
       </div>
       <div class="relative h-[250px] sm:h-[300px] md:h-[320px] lg:h-[400px] xl:h-[500px] mt-4">
 
-        <!-- <div class="absolute top-8 sm:top-16 md:top-1/4 flex z-10 lg:left-16 xl:left-36"> -->
         <p
           class="absolute left-0 lg:left-12 xl:left-28 2xl:left-48 top-1/5 2xl:top-1/7 min-w-[300px] max-w-[400px] md:max-w-[600px] xl:max-w-[678px]">
           In the study of my
@@ -413,10 +399,9 @@
           parchment, its corner pinned beneath a heavy ink pot. It was <span class="highlight">the will </span>of
           Christophe
           Plantin.</p>
-        <!-- </div> -->
         <div
           class="opacity-25 absolute -left-6 -right-6 md:-right-8 md:-left-8 lg:-right-16 lg:-left-16 xl:-right-36 xl:-left-36 bottom-0 z-0">
-          <img class="w-full" src="./src/assets/desk.png" alt="">
+          <img class="w-full" src="src/assets/desk.png" alt="">
         </div>
       </div>
       <div class="mt-8">
@@ -424,7 +409,7 @@
           <h3 class="text-center mb-4 lg:hidden">His Craft, My Charge</h3>
           <div
             class="relative flex flex-col sm:flex-row lg:flex-row-reverse lg:absolute lg:left-0 lg:-top-6 2xl:w-fit 2xl:ml-auto 2xl:gap-12">
-            <div class="lg:ml-auto lg:w-fit lg:mt-24">
+            <div class="lg:ml-auto lg:w-fit lg:mt-24 xl:mt-16">
               <h3 class="mb-4 xl:mb-0 hidden lg:block">His Craft, My Charge</h3>
               <p class="lg:pt-4 sm:max-w-[300px] md:max-w-[500px] 2xl:max-w-[550px]">He was more than a master printer.
                 He
@@ -436,7 +421,7 @@
             </div>
             <div
               class="max-w-[327px] opacity-30 mx-auto flex justify-center lg:relative lg:-left-16 xl:-left-36 lg:max-w-[450px] xl:max-w-[517px] 2xl:max-w-[617px] xl:relative">
-              <img src="./src/assets/office.png" alt="">
+              <img src="src/assets/office.png" alt="">
             </div>
           </div>
           <div
@@ -449,7 +434,7 @@
             </p>
             <div
               class="max-w-[327px] opacity-30 mx-auto flex justify-center lg:relative lg:-top-6 lg:-right-6 lg:max-w-[450px] xl:max-w-[517px] xl:relative 2xl:max-w-[617px]">
-              <img src="./src/assets/printingHouse.png" alt="">
+              <img src="src/assets/printingHouse.png" alt="">
             </div>
           </div>
 
@@ -461,61 +446,58 @@
         </div>
         <div class="min-w-[327px] max-w-[399px] sm:max-w-[570px] relative mx-auto lg:flex" id="paper-container">
 
-          <!-- Inktpotje -->
           <div id="ink-container"
             class="hidden lg:block absolute opacity-50 -left-56 2xl:-left-96 bottom-0 max-w-[200px] cursor-pointer">
-            <img src="./src/assets/ink.png" alt="">
+            <img src="src/assets/ink.png" alt="">
           </div>
 
-          <!-- Tekst inhoud -->
           <div class="absolute pt-10 sm:pt-16 pl-12 z-10 pr-12 flex flex-col justify-between h-full">
-            <p style="font-weight: 600;" class="text-center title-letter">Christophe Plantin's Will</p>
-            <p class="text-letter"><span style="font-weight: bold; line-height: 120%;">Legacy of the Printing
+            <p class="title-letter">Christophe Plantin's Will</p>
+            <p class="text-letter"><span class="font-bold">Legacy of the Printing
                 Business:</span>
               Plantin’s will focused on passing his world-renowned Officina Plantiniana to his son-in-law, Jan Moretus,
               ensuring
               its continuity.</p>
-            <p class="text-letter"><span style="font-weight: bold; line-height: 120%;">Financial Provisions:</span>
+            <p class="text-letter"><span class="font-bold">Financial Provisions:</span>
               He provided for his family, including daughters and relatives, through various financial arrangements.</p>
-            <p class="text-letter"><span style="font-weight: bold; line-height: 120%;">Religious Affiliation:</span>
+            <p class="text-letter"><span class="font-bold">Religious Affiliation:</span>
               Committed to the Catholic Church, Plantin wanted his business to remain Catholic, reflecting his previous
               works
               like the polyglot Bible and the Index of Prohibited Books.</p>
-            <p class="text-letter"><span style="font-weight: bold; line-height: 120%;">Management and Ownership:</span>
+            <p class="text-letter"><span class="font-bold">Management and Ownership:</span>
               The will outlined business management and ownership to ensure a smooth transition.</p>
-            <p class="text-letter"><span style="font-weight: bold; line-height: 120%;">Family Peace:</span>
+            <p class="text-letter"><span class="font-bold">Family Peace:</span>
               His wife, Jeanne Rivière, waived certain claims to maintain harmony among their children.</p>
-            <p class="text-letter pb-28 sm:pb-48"><span style="line-height: 120%;">In the presence of witnesses I
+            <p class="text-letter pb-28 sm:pb-48"><span>In the presence of witnesses I
                 declare my
                 agreement with the provisions of my father-in-law.<br><br>Autograph:</span></p>
           </div>
 
-          <!-- Papier -->
-          <img class="z-1 top-0 opacity-75" src="./src/assets/paper.png" alt="">
-          <canvas id="signature-canvas"
-            class="absolute bottom-0 left-0 w-full h-40 z-50 border-dashed border-2 border-red-500"></canvas>
+          <img class="z-1 top-0 opacity-75" src="src/assets/paper.png" alt="">
+          <canvas id="signature-canvas" class="absolute bottom-0 left-0 w-full h-40 z-50 border-2 border-dashed border-alphaRed"></canvas>
 
-          <!-- Veer / Quill -->
-          <img id="quill" src="./src/assets/quill.png" alt=""
+          <img id="quill" src="src/assets/quill.png" alt=""
             class="hidden lg:block absolute opacity-50 max-w-[400px] -right-[400px] xl:-right-[30vw] 2xl:-right-[30vw] bottom-0 w-16 cursor-pointer">
-          <div id="inkFeedback" class="hidden absolute bottom-0 left-0 w-full bg-red-500 text-white p-2">
+          <div id="inkFeedback" class="hidden absolute bottom-0 left-0 w-full p-2"
+            style="background-color: var(--color-red); color: var(--color-white);">
             You need some ink to sign the document.
           </div>
         </div>
 
       </div>
-      <p class="hidden text-center mt-8 max-w-[800px] justify-center mx-auto quotes quote-1" style="font-weight: 600; ">
+      <p class="hidden text-center mt-8 max-w-[800px] justify-center mx-auto text-2xl quote-1"
+        style="font-weight: 600; ">
         This was
         not a gift. It was a duty. And at the same time,
         the
         greatest honor I could ever receive.</p>
     </section>
-    <img class="bottom-0 left-0 rotate-180" src="./src/assets/paperRip2.png" alt="">
+    <img class="bottom-0 left-0 rotate-180" src="src/assets/paperRip2.png" alt="">
     <section class="pl-6 pr-6 relative pt-6 md:pl-8 md:pr-8 md:pt-8 lg:pl-16 lg:pr-16 lg:pt-8 xl:pl-36 xl:pr-36">
-      <div class="h-[450px] md:h-[500px] lg:h-[550px] xl:h-[600px] 2xl:h-[700px] relative">
+      <div class="h-[450px] md:h-[500px] lg:h-[670px]  2xl:h-[700px] relative">
         <div class="text-center mt-6">
           <h2>Expanding the Office Plantina</h2>
-          <p class="mt-4 max-w-[600px] mx-auto"><span class="highlight">Between 1590 and 1610</span>, I publish nearly
+          <p class="mt-4 max-w-[600px] lg:max-w-[500px] mx-auto"><span class="highlight">Between 1590 and 1610</span>, I publish nearly
             640
             editions. Most of
             them
@@ -531,16 +513,22 @@
         </div>
         <div
           class="absolute bottom-0 -left-6 -right-6 md:-right-8 md:-left-8 lg:-right-16 lg:-left-16 xl:-right-36 xl:-left-36 w-screen opacity-50 flex justify-between ">
-          <img class="authors" src="./src/assets/abrahamOrtelius.png" alt="">
-          <img class="authors_justus mt-auto -mb-3" src="./src/assets/justusLipsius.png" alt="">
-          <img class="authors" src="./src/assets/rembertDodoens.png" alt="">
-          <img class="absolute bottom-0" src="./src/assets/rand.png" alt="">
+          <img
+            class="authors min-w-[100px] h-auto sm:max-w-[180px] md:max-w-[240px] lg:max-w-[330px] xl:max-w-[350px] 2xl:max-w-[400px]"
+            src="src/assets/abrahamOrtelius.png" alt="">
+          <img
+            class="authors_justus min-w-[140px] h-auto mt-auto -mb-3 sm:max-w-[240px] md:max-w-[300px] lg:max-w-[390px] xl:max-w-[420px] 2xl:max-w-[470px]"
+            src="src/assets/justusLipsius.png" alt="">
+          <img
+            class="authors min-w-[100px] h-auto sm:max-w-[180px] md:max-w-[240px] lg:max-w-[330px] xl:max-w-[350px] 2xl:max-w-[400px]"
+            src="src/assets/rembertDodoens.png" alt="">
+          <img class="absolute bottom-0" src="src/assets/rand.png" alt="">
         </div>
       </div>
-      <div class="relative min-h-[calc(100vh+250px)] mt-8">
+      <div class="relative min-h-[calc(100vh+250px)] lg:min-h-[calc(100vh+400px)] 2xl:min-h-[100vh] mt-8">
 
         <div class="">
-          <p class="max-w-[520px] xl:hidden mx-auto  sm:text-center">
+          <p class="max-w-[570px] xl:hidden mx-auto  sm:text-center">
             <span class="highlight">Manuscripts</span> are arriving at my Officina from every direction. But <span
               class="highlight">not every idea</span>
             belongs in my printing
@@ -562,74 +550,74 @@
               class="relative -left-6 md:-left-8 lg:-left-16 xl:-left-36 items-center w-[380px] h-full sm:w-[640px] sm:h-[400px] md:w-[768px] md:h-[470px] lg:w-[600px] lg:h-[440px] xl:w-[650px] xl:h-[470px] 2xl:w-[800px] 2xl:h-[570px] aspect-[16/9] sm:mt-12">
               <p class="absolute top-[5%] sm:top-[10%] lg:top-[5%] right-1/3 title-manuscript z-10">Manuscripts</p>
               <img class="absolute inset-0 w-full h-full object-contain opacity-50 z-0 pointer-events-none"
-                src="./src/assets/cart2.png" alt="Cart">
+                src="src/assets/cart2.png" alt="Cart">
 
               <div id="cart"
                 class="absolute -bottom-[10%] sm:bottom-0 lg:bottom-[15%] left-4/9 -translate-x-1/2 w-12/15 gap-1 flex justify-center">
                 <div class="relative h-fit" draggable="true" id="book-de-constantia">
                   <img class="book max-w-[34.5px] sm:max-w-[58px] md:max-w-[65px] lg:max-w-[55px]  2xl:max-w-[70px]"
-                    src="./src/assets/bookV2.png" alt="">
+                    src="src/assets/bookV2.png" alt="">
                   <p
-                    class="text-manuscript absolute top-14/30 left-1/2 -translate-x-1/2 -translate-y-1/2 -rotate-90 w-36 sm:w-40 2xl:w-60 text-center">
+                    class="leading-[120%] text-alphaBlue font-bold text-[12px] sm:text-xl lg:text-lg absolute top-14/30 left-1/2 -translate-x-1/2 -translate-y-1/2 -rotate-90 w-36 sm:w-40 2xl:w-60 text-center">
                     De Constantia
                   </p>
                 </div>
 
                 <div class="relative h-fit" draggable="true" id="book-bible-translation">
                   <img class="book max-w-[34.5px] sm:max-w-[58px] md:max-w-[65px] lg:max-w-[55px]  2xl:max-w-[70px]"
-                    src="./src/assets/bookV2.png" alt="">
+                    src="src/assets/bookV2.png" alt="">
                   <p
-                    class="text-manuscript absolute top-14/30 left-1/2 -translate-x-1/2 -translate-y-1/2 -rotate-90 w-36 sm:w-40 2xl:w-60 text-center ">
+                    class="leading-[120%] text-alphaBlue font-bold text-[12px] sm:text-xl lg:text-lg absolute top-14/30 left-1/2 -translate-x-1/2 -translate-y-1/2 -rotate-90 w-36 sm:w-40 2xl:w-60 text-center ">
                     Bible <br> Translation
                   </p>
                 </div>
 
                 <div class="relative h-fit" draggable="true" id="book-atlas-of-ortelius">
                   <img class="book max-w-[34.5px] sm:max-w-[58px] md:max-w-[65px] lg:max-w-[55px]  2xl:max-w-[70px]"
-                    src="./src/assets/bookV2.png" alt="">
+                    src="src/assets/bookV2.png" alt="">
                   <p
-                    class="text-manuscript absolute top-14/30 left-1/2 -translate-x-1/2 -translate-y-1/2 -rotate-90 w-36 sm:w-40 2xl:w-60 text-center ">
+                    class="leading-[120%] text-alphaBlue font-bold text-[12px] sm:text-xl lg:text-lg absolute top-14/30 left-1/2 -translate-x-1/2 -translate-y-1/2 -rotate-90 w-36 sm:w-40 2xl:w-60 text-center ">
                     Atlas of <br> Ortelius
                   </p>
                 </div>
                 <div class="relative h-fit" draggable="true" id="book-cookbook-of-antwerp">
                   <img class="book max-w-[34.5px] sm:max-w-[58px] md:max-w-[65px] lg:max-w-[55px]  2xl:max-w-[70px]"
-                    src="./src/assets/bookV2.png" alt="">
+                    src="src/assets/bookV2.png" alt="">
                   <p
-                    class="text-manuscript absolute top-14/30 left-1/2 -translate-x-1/2 -translate-y-1/2 -rotate-90 w-36 sm:w-40 2xl:w-60 text-center">
+                    class="leading-[120%] text-alphaBlue font-bold text-[12px] sm:text-xl lg:text-lg absolute top-14/30 left-1/2 -translate-x-1/2 -translate-y-1/2 -rotate-90 w-36 sm:w-40 2xl:w-60 text-center">
                     Cookbook <br>
                     of Antwerp</p>
                 </div>
                 <div class="relative h-fit" draggable="true" id="book-medicinal-dodoens">
                   <img class="book max-w-[34.5px] sm:max-w-[58px] md:max-w-[65px] lg:max-w-[55px]  2xl:max-w-[70px]"
-                    src="./src/assets/bookV2.png" alt="">
+                    src="src/assets/bookV2.png" alt="">
                   <p
-                    class="text-manuscript absolute top-14/30 left-1/2 -translate-x-1/2 -translate-y-1/2 -rotate-90 w-36 sm:w-40 2xl:w-60 text-center">
+                    class="leading-[120%] text-alphaBlue font-bold text-[12px] sm:text-xl lg:text-lg absolute top-14/30 left-1/2 -translate-x-1/2 -translate-y-1/2 -rotate-90 w-36 sm:w-40 2xl:w-60 text-center">
                     Medicinal
                     plants <br>
                     by Dodoens</p>
                 </div>
                 <div class="relative h-fit" draggable="true" id="book-romantic-tales">
                   <img class="book max-w-[34.5px] sm:max-w-[58px] md:max-w-[65px] lg:max-w-[55px]  2xl:max-w-[70px]"
-                    src="./src/assets/bookV2.png" alt="">
+                    src="src/assets/bookV2.png" alt="">
                   <p
-                    class="text-manuscript absolute top-14/30 left-1/2 -translate-x-1/2 -translate-y-1/2 -rotate-90 w-36 sm:w-40 2xl:w-60 text-center">
+                    class="leading-[120%] text-alphaBlue font-bold text-[12px] sm:text-xl lg:text-lg absolute top-14/30 left-1/2 -translate-x-1/2 -translate-y-1/2 -rotate-90 w-36 sm:w-40 2xl:w-60 text-center">
                     Romantic
                     Tales</p>
                 </div>
                 <div class="relative h-fit" draggable="true" id="book-prayer-mass">
                   <img class="book max-w-[34.5px] sm:max-w-[58px] md:max-w-[65px] lg:max-w-[55px]  2xl:max-w-[70px]"
-                    src="./src/assets/bookV2.png" alt="">
+                    src="src/assets/bookV2.png" alt="">
                   <p
-                    class="text-manuscript absolute top-14/30 left-1/2 -translate-x-1/2 -translate-y-1/2 -rotate-90 w-36 sm:w-40 2xl:w-60 text-center">
+                    class="leading-[120%] text-alphaBlue font-bold text-[12px] sm:text-xl lg:text-lg absolute top-14/30 left-1/2 -translate-x-1/2 -translate-y-1/2 -rotate-90 w-36 sm:w-40 2xl:w-60 text-center">
                     Prayer book <br>
                     for the Mass</p>
                 </div>
                 <div class="relative h-fit" draggable="true" id="book-manuel-for-gardening">
                   <img class="book max-w-[34.5px] sm:max-w-[58px] md:max-w-[65px] lg:max-w-[55px]  2xl:max-w-[70px]"
-                    src="./src/assets/bookV2.png" alt="">
+                    src="src/assets/bookV2.png" alt="">
                   <p
-                    class="text-manuscript absolute top-14/30 left-1/2 -translate-x-1/2 -translate-y-1/2 -rotate-90 w-36 sm:w-40 2xl:w-60 text-center">
+                    class="leading-[120%] text-alphaBlue font-bold text-[12px] sm:text-xl lg:text-lg absolute top-14/30 left-1/2 -translate-x-1/2 -translate-y-1/2 -rotate-90 w-36 sm:w-40 2xl:w-60 text-center">
                     Manuel for <br>
                     Gardening</p>
                 </div>
@@ -653,29 +641,22 @@
           </div>
         </div>
         <div
-          class="absolute flex flex-col justify-center items-center mt-20 md:mt-32 lg:-mt-48 xl:-mt-40 2xl:-mt-60 w-full right-0 xl:-right-36 xl:max-w-[800px]">
-          <!-- Content container -->
+          class="absolute flex flex-col justify-center items-center mt-20 md:mt-32 lg:-mt-48 xl:mt-0 2xl:-mt-60 w-full right-0 lg:-right-16 xl:-right-36 lg:max-w-[600px] xl:max-w-[800px]">
           <div
-            class="top-4 w-fit flex flex-col justify-center lg:ml-auto lg:mr-[5%] items-center z-10 px-4 md:px-8 xl:mr-36">
+            class="top-4 w-fit flex flex-col justify-center lg:ml-auto items-center z-10 px-4 md:px-8 lg:mr-16 xl:mr-36">
             <p class="title-manuscript text-center">Printing House Shelf</p>
             <button class="button-confirm mt-4 mb-2 px-4 py-2 text-sm md:text-base lg:text-lg">
               Confirm Selection
             </button>
             <p></p>
           </div>
-          <!-- max-w-[350px] sm:max-w-[500px] md:max-w-[650px] lg:max-w-[700px] xl:max-w-[800px] 2xl:max-w-[900px] -->
-          <!-- -right-6 md:-right-8 lg:-right-16 xl:-right-36 -->
-          <!-- Shelf container -->
           <div
             class="relative w-full h-[260px] mr-0 ml-auto -right-6 md:-right-8 lg:-right-16  sm:h-[430px] md:h-[490px] lg:h-[450px] xl:h-[470px] 2xl:h-[520px] max-w-[350px] sm:max-w-[500px] md:max-w-[650px] lg:max-w-[700px] xl:max-w-[800px]  ">
-            <!-- Shelf image -->
-            <img class="absolute bottom-0 opacity-50 z-0 pointer-events-none right-0" src="./src/assets/shelf2.png"
+            <img class="absolute bottom-0 opacity-50 z-0 pointer-events-none right-0" src="src/assets/shelf2.png"
               alt="Shelf">
 
-            <!-- Items container -->
             <div id="shelf"
-              class="absolute bottom-[25%] lg:bottom-[30%] xl:bottom-[35%] 2xl:bottom-[33%] w-full right-0 gap-2 flex flex-wrap justify-center px-0 h-[165px] sm:h-[270px] md:h-[305px] lg:h-[260px] xl:h-[325px]">
-              <!-- Dynamically added items here -->
+              class="absolute bottom-[25%] lg:bottom-[30%] xl:bottom-[35%] 2xl:bottom-[33%] w-full right-0 gap-2 flex flex-wrap justify-center px-0 h-[165px] sm:h-[270px] md:h-[305px] lg:h-[240px] xl:h-[260px] 2xl:h-[325px]">
             </div>
           </div>
         </div>
@@ -684,10 +665,10 @@
       </div>
 
     </section>
-    <img class="" src="./src/assets/paperRip2.png" alt="">
+    <img class="" src="src/assets/paperRip2.png" alt="">
 
     <section
-      class="pl-6 pr-6 relative pt-6 md:pl-8 md:pr-8 md:pt-8 lg:pl-16 lg:pr-16 lg:pt-8 xl:pl-36 xl:pr-36 bg-dust">
+      class="pl-6 pr-6 relative pt-6 md:pl-8 md:pr-8 md:pt-8 lg:pl-16 lg:pr-16 lg:pt-8 xl:pl-36 xl:pr-36 bg-alphaBeige">
       <h2 class="text-center">My Death and Testament</h2>
       <div class="text-center pt-4 relative max-w-[500px] mx-auto">
         <p>On <span class="highlightY">September 22, 1610</span>, I passed away. I was laid to rest in <span
@@ -698,7 +679,7 @@
         <p class="bg-year-dark">1610</p>
       </div>
       <div class="md:flex">
-        <div class="2xl:absolute left-24 top-[30%] max-w-[400px] mt-12 xl:mt-14">
+        <div class="2xl:absolute left-24 top-[30%] max-w-[400px] mt-12 lg:mt-16 xl:mt-14">
           <h3 class="mb-4">Writing the Will</h3>
           <p><span class="highlight">Help me</span> write my will. <span class="highlight">Click</span> on the
             light-colored text and type the words as you see them. As you type, your
@@ -711,7 +692,7 @@
         <div
           class="min-w-[327px] md:min-w-[458px] max-w-[399px] sm:max-w-[480px] 2xl:max-w-[570px] relative mx-auto my-12 lg:flex">
           <div class="absolute pt-8 sm:pt-16 pl-12 z-10 pr-12 h-full">
-            <p class="text-center font-semibold title-letter">Jan I Moretus's Will</p>
+            <p class="title-letter">Jan I Moretus's Will</p>
 
             <p class="sm:pt-4 text-will leading-relaxed">
               We, Jan Moretus and Martina Plantin, mindful of the fragility of life and desirous to preserve the unity
@@ -738,19 +719,19 @@
 
           </div>
 
-          <img class="z-1 top-0 opacity-75" src="./src/assets/paper.png" alt="">
+          <img class="z-1 top-0 opacity-75" src="src/assets/paper.png" alt="">
         </div>
 
       </div>
 
 
-      <p class="text-center mt-8 max-w-[800px] justify-center mx-auto quotes quote-2 opacity-0"
+      <p class="text-center mt-8 max-w-[800px] justify-center mx-auto text-2xl quote-2 opacity-0"
         style="font-weight: 600;">This
         testament was not only law. It was love, foresight, and
         duty
         woven into words.</p>
     </section>
-    <img class="rotate-180" src="./src/assets/paperRip2.png" alt="">
+    <img class="rotate-180" src="src/assets/paperRip2.png" alt="">
     <section class="pl-6 pr-6 relative pt-6 md:pl-8 md:pr-8 md:pt-8 lg:pl-16 lg:pr-16 lg:pt-8 xl:pl-36 xl:pr-36">
       <div class="text-center mb-8">
 
@@ -776,7 +757,7 @@
           wisdom
           of the world.</p>
         <div class=" max-w-[342px] mx-auto sm:mx-0 sm:min-w-[280px]">
-          <img class="-mt-6 opacity-75" src="./src/assets/logoMuseumY.png" alt="">
+          <img class="-mt-6 opacity-75" src="src/assets/logoMuseumY.png" alt="">
 
         </div>
       </div>
@@ -803,13 +784,13 @@
       </div>
       <div
         class="relative w-screen z-0 -left-6 md:-left-8 lg:-left-16 xl:-left-36 -right-6 md:-right-8 lg:-right-16 xl:-right-36">
-        <img class="absolute opacity-50 bottom-0 md:-bottom-4" src="./src/assets/footsteps.png" alt="">
+        <img class="absolute opacity-50 bottom-0 md:-bottom-4" src="src/assets/footsteps.png" alt="">
 
       </div>
     </section>
   </div>
-  <footer class="lock-2">
-    <div class="hidden w-full lg:block" style="color: var(--color-white);">
+  <footer class="footer py-6 bg-alphaBlack">
+    <div class="hidden w-full lg:block text-alphaWhite">
       <div class="flex justify-center items-center">
         <ul class="flex gap-7 text-lg font-serif">
           <li><a href="#early-years" class="hover:text-red-700 transition">My Early Years</a></li>
