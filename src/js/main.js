@@ -82,8 +82,7 @@ const yearsScroll = () => {
     layer.style.opacity = 0;
 
     const yearEl = document.createElement("p");
-    yearEl.className =
-      "title-year select-none";
+    yearEl.className = "title-year select-none";
     yearEl.style.fontFamily = fonts[i % fonts.length];
 
     year
@@ -217,16 +216,28 @@ const getDragAfterElement = (container, x) => {
 };
 
 const checkOrder = () => {
-  const items = [...container.querySelectorAll(".draggable")];
-  items.forEach((item, index) => {
-    const correctOrder = parseInt(item.dataset.order);
-    const img = item.querySelector(".book-img");
+  const items = Array.from(container.querySelectorAll(".draggable"));
 
-    if (correctOrder === index + 1) {
-      img.src = "./src/image/bookY.png";
-    } else {
-      img.src = "./src/image/bookV2.png";
+  items.forEach((item) => {
+    const index = Array.from(container.children).indexOf(item);
+    const correctOrder = parseInt(item.dataset.order, 10);
+
+    const defaultImg = item.querySelector(".book-default");
+    const correctImg = item.querySelector(".book-correct");
+
+    if (!defaultImg || !correctImg) {
+      console.warn("❌ img niet gevonden in item:", item);
+      return;
     }
+
+    const isCorrect = correctOrder === index + 1;
+
+    defaultImg.classList.toggle("hidden", isCorrect);
+    correctImg.classList.toggle("hidden", !isCorrect);
+
+    console.log(
+      `Boek ${correctOrder}: huidige index=${index + 1}, correct=${isCorrect}`
+    );
   });
 };
 
@@ -516,8 +527,10 @@ const checkCodeStep = () => {
       const feedback = document.getElementById("scrollingFeedback");
       feedback.classList.remove("hidden");
       feedback.classList.add("flex");
-      const lockImg = document.querySelector("#lock img:first-child");
-      lockImg.src = "./src/image/lockOpen.png";
+      const lockClosed = document.querySelector("#lock .lock-closed");
+      const lockOpenImg = document.querySelector("#lock .lock-open");
+      lockClosed.classList.add("hidden");
+      lockOpenImg.classList.remove("hidden");
 
       lockWheel.classList.remove("cursor-grab");
       lockWheel.classList.add(
@@ -567,7 +580,6 @@ const closeQuestions = () => {
     questions.classList.add("top-12");
     questions.classList.add("h-12");
     questions.classList.add("w-12");
-    // questions.classList.add("p-0");
     questions.classList.remove("py-3");
     questions.classList.remove("px-6");
   });
@@ -584,7 +596,6 @@ const openQuestions = () => {
     questions.classList.remove("top-12");
     questions.classList.remove("h-12");
     questions.classList.remove("w-12");
-    // questions.classList.remove("p-0");
     questions.classList.add("py-3");
     questions.classList.add("px-6");
   });
@@ -593,11 +604,13 @@ const openQuestions = () => {
 // =====================
 // Signature
 // =====================
-let quill = document.getElementById("quill");
+let quill = document.getElementById("quillEmpty");
 const ink = document.getElementById("ink-container");
 const paper = document.getElementById("paper-container");
 const canvas = document.getElementById("signature-canvas");
 const ctx = canvas.getContext("2d");
+const quillEmpty = document.getElementById("quillEmpty");
+const quillInkt = document.getElementById("quillInkt");
 
 let quillActive = false;
 let inkLoaded = false;
@@ -621,30 +634,21 @@ const resizeCanvas = () => {
   ctx.lineCap = "round";
   ctx.strokeStyle = "#2C3E50";
 };
-
-quill.addEventListener("click", (e) => {
-  window.addEventListener("resize", resizeCanvas);
-  resizeCanvas();
-  quillActive = true;
-  quill.style.opacity = "1";
-  ink.style.opacity = "1";
-  quill.style.pointerEvents = "none";
-
-  quillOffsetX = 60;
-  quillOffsetY = quill.offsetHeight - 5;
-
-  e.stopPropagation();
-});
+const getActiveQuill = () => {
+  return quillInkt.classList.contains("hidden") ? quillEmpty : quillInkt;
+};
 
 paper.addEventListener("mousemove", (e) => {
   if (!quillActive) return;
+
+  const activeQuill = getActiveQuill();
 
   const rect = paper.getBoundingClientRect();
   const x = e.clientX - rect.left - quillOffsetX;
   const y = e.clientY - rect.top - quillOffsetY;
 
-  quill.style.left = `${x}px`;
-  quill.style.top = `${y}px`;
+  activeQuill.style.left = `${x}px`;
+  activeQuill.style.top = `${y}px`;
 
   if (drawing) {
     const canvasRect = canvas.getBoundingClientRect();
@@ -655,14 +659,32 @@ paper.addEventListener("mousemove", (e) => {
   }
 });
 
+quillEmpty.addEventListener("click", (e) => {
+  window.addEventListener("resize", resizeCanvas);
+  resizeCanvas();
+  quillActive = true;
+  quillEmpty.style.opacity = "1";
+  ink.style.opacity = "1";
+  quillOffsetX = 60;
+  quillOffsetY = quillEmpty.offsetHeight - 5;
+  quillEmpty.style.pointerEvents = "none";
+  e.stopPropagation();
+});
+
 ink.addEventListener("click", (e) => {
   if (!quillActive) return;
   inkLoaded = true;
 
-  quill.src = "./src/image/quillInkt.png";
-  ctx.strokeStyle = "#2C3E50";
-  ctx.lineWidth = 2;
-  ctx.lineCap = "round";
+  quillEmpty.classList.add("hidden");
+  quillInkt.classList.remove("hidden");
+
+  const rect = paper.getBoundingClientRect();
+  const x = e.clientX - rect.left - quillOffsetX;
+  const y = e.clientY - rect.top - quillOffsetY;
+  quillInkt.style.left = `${x}px`;
+  quillInkt.style.top = `${y}px`;
+
+  quillOffsetY = quillInkt.offsetHeight - 5;
 
   e.stopPropagation();
 });
@@ -708,15 +730,23 @@ canvas.addEventListener("mouseleave", () => {
   if (hasDrawn) {
     ink.style.opacity = "0.5";
 
-    quill.remove();
-    const newQuill = document.createElement("img");
-    newQuill.id = "quill";
-    newQuill.src = "./src/image/quill.png";
-    newQuill.className =
-      "hidden lg:block absolute opacity-50 max-w-[400px] -right-[330px] 2xl:-right-[30vw] bottom-0 w-16 cursor-pointer";
-    newQuill.style.pointerEvents = "none";
-    paper.appendChild(newQuill);
-    quill = newQuill;
+    quillInkt.classList.add("hidden");
+
+    quillEmpty.classList.remove("hidden");
+    quillEmpty.style.opacity = "0.5";
+    quillEmpty.style.maxWidth = "400px";
+    quillEmpty.style.right = "-400px"; 
+    quillEmpty.style.bottom = "0";
+    quillEmpty.style.left = "";
+    quillEmpty.style.top = "";
+
+    if (window.innerWidth >= 1280) {
+      quillEmpty.style.right = "-30vw";
+    }
+    if (window.innerWidth >= 1536) {
+      quillEmpty.style.right = "-30vw";
+    }
+
     quillActive = false;
     hasDrawn = false;
 
@@ -733,8 +763,6 @@ canvas.addEventListener("mouseleave", () => {
 // =====================
 const isTouchDevice = "ontouchstart" in window || navigator.maxTouchPoints > 0;
 if (isTouchDevice) {
-  // canvas.height = 100;
-  // canvas.style.height = "100px";
   canvas.addEventListener(
     "touchstart",
     (e) => {
