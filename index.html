@@ -1,5 +1,5 @@
 <!doctype html>
-<html>
+<html lang="en">
 
 <head>
   <meta charset="UTF-8">
@@ -11,45 +11,41 @@
 </head>
 
 <body>
-  <header id="eyes"
-    class="relative pl-6 pr-6 pt-6 md:pl-8 md:pr-8 md:pt-8 lg:pt-4 h-[481px] sm:h-[600px]  md:h-[700px] lg:h-[800px] xl:h-[900px] 2xl:h-[1050px]">
-    <nav class="relative text-alphaWhite z-50 flex flex-col items-center justify-center">
-      <div class="flex justify-end w-full mb-2">
-        <svg class="w-8 h-8 md:w-16 md:h-16 lg:hidden" viewBox="0 0 33 23" fill="none"
-          xmlns="http://www.w3.org/2000/svg">
-          <line y1="1.5" x2="33" y2="1.5" stroke="#EEE4D3" stroke-width="3" />
-          <line y1="11.5" x2="33" y2="11.5" stroke="#EEE4D3" stroke-width="3" />
-          <line y1="21.5" x2="33" y2="21.5" stroke="#EEE4D3" stroke-width="3" />
-        </svg>
-        <div class="hidden w-full lg:block">
-          <div class="flex justify-between items-center gap-8">
-            <div class="h-16 w-16 ">
-              <picture>
-                <source srcset="./src/image/logoMuseum-240.avif 240w" type="image/avif"
-                  sizes="(min-width: 1280px) 75px, calc(5.45vw + 8px)">
-                <source srcset="./src/image/logoMuseum-240.webp 240w" type="image/webp"
-                  sizes="(min-width: 1280px) 75px, calc(5.45vw + 8px)">
-                <img src="./src/image/logoMuseum.png" srcset="./src/image/logoMuseum-240.png 240w"
-                  sizes="(min-width: 1280px) 75px, calc(5.45vw + 8px)">
-              </picture>
-            </div>
-            <ul class="flex gap-7 text-lg font-serif">
-              <li><a href="#early-years" class="hover:text-red-700 transition">My Early Years</a></li>
-              <li><a href="#marriage" class="hover:text-red-700 transition">Marriage</a></li>
-              <li><a href="#succession" class="hover:text-red-700 transition">Succession</a></li>
-              <li><a href="#expansion" class="hover:text-red-700 transition">Expansion</a></li>
-              <li><a href="#testament" class="hover:text-red-700 transition">Testament</a></li>
-              <li><a href="#legacy" class="hover:text-red-700 transition">Legacy</a></li>
-            </ul>
-            <a href="" class="ml-8 px-5 py-2 h-6 rounded-full font-bold"
-              style="background-color: var(--color-yellow); font-family: 'Playfair Display';">TICKETS</a>
-          </div>
-        </div>
+  <header id="eyes" class="relative   h-[481px] sm:h-[600px]  md:h-[700px] lg:h-[800px] xl:h-[900px] 2xl:h-[1050px]">
+    <nav class="fixed text-alphaWhite z-50 w-full bg-alphaBlack/75 backdrop-blur-sm">
+      <!-- <div class="flex justify-center w-full mb-2"> -->
+      <svg class="w-8 h-8 md:w-16 md:h-16 lg:hidden" viewBox="0 0 33 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <line y1="1.5" x2="33" y2="1.5" stroke="#EEE4D3" stroke-width="3" />
+        <line y1="11.5" x2="33" y2="11.5" stroke="#EEE4D3" stroke-width="3" />
+        <line y1="21.5" x2="33" y2="21.5" stroke="#EEE4D3" stroke-width="3" />
+      </svg>
+      <!-- <div class="hidden w-full lg:block"> -->
+      <div class="hidden lg:flex justify-between items-center px-6 py-2">
+        <a class="h-16 w-16" aria-label="Home" href="https://verbrugghejara.github.io/janMoretus_int3/">
+          <picture>
+            <source srcset="./src/image/logoMuseum-240.avif 240w" type="image/avif"
+              sizes="(min-width: 1280px) 75px, calc(5.45vw + 8px)">
+            <source srcset="./src/image/logoMuseum-240.webp 240w" type="image/webp"
+              sizes="(min-width: 1280px) 75px, calc(5.45vw + 8px)">
+            <img src="./src/image/logoMuseum.png" srcset="./src/image/logoMuseum-240.png 240w"
+              sizes="(min-width: 1280px) 75px, calc(5.45vw + 8px)" alt="Museum Logo">
+          </picture>
+        </a>
+        <ul class="flex gap-7 text-lg font-serif">
+          <li><a href="#early-years" class="hover:text-alphaYellow transition">My Early Years</a></li>
+          <li><a href="#marriage" class="hover:text-alphaYellow transition">Marriage</a></li>
+          <li><a href="#inheritance" class="hover:text-alphaYellow transition">Inheritance</a></li>
+          <li><a href="#expansion" class="hover:text-alphaYellow transition">Expansion</a></li>
+          <li><a href="#testament" class="hover:text-alphaYellow transition">Testament</a></li>
+          <li><a href="#legacy" class="hover:text-alphaYellow transition">Legacy</a></li>
+        </ul>
+        <a href="https://museumplantinmoretus.be/nl/bezoek" aria-label="Tickets"
+          class="px-5 py-2 rounded-full font-bold bg-alphaRed hover:bg-alphaYellow font-primary">TICKETS</a>
       </div>
+      <!-- </div> -->
+      <!-- </div> -->
     </nav>
     <div class="absolute inset-0 w-full h-full overflow-hidden ">
-
-
       <picture>
         <source srcset="./src/image/janMoretus-300.avif 300w,
                           ./src/image/janMoretus-722.avif 722w,
@@ -81,9 +77,8 @@
                           ./src/image/janMoretus-1640.jpg 1640w,
                           ./src/image/janMoretus-1789.jpg 1789w,
                           ./src/image/janMoretus-1920.jpg 1920w,
-                          ./src/image/janMoretus-2048.jpg 2048w" alt="" sizes="100vw">
+                          ./src/image/janMoretus-2048.jpg 2048w" alt="Jan Moretus" sizes="100vw">
       </picture>
-
       <div class="relative w-full -top-1/5 2xl:-top-1/3 aspect-[3/4] hidden xl:block">
         <picture>
           <source srcset="./src/image/janMoretusEyeless-1280.avif 1280w,
@@ -107,14 +102,23 @@
                     ./src/image/janMoretusEyeless-1789.png 1789w,
                     ./src/image/janMoretusEyeless-1920.png 1920w,
                     ./src/image/janMoretusEyeless-2048.png 2048w,
-                    " alt="" sizes="100vw">
+                    " alt="Jan Moretus Eyeless" sizes="100vw">
         </picture>
         <div class="absolute top-0 left-0 w-full h-full z-10">
-          <img id="eye-left" class="absolute top-[24%] left-[47%] -translate-x-1/2 -translate-y-1/2"
-            style="height: 5%; width: auto;" src="./src/image/eyes.png" alt="Linker oog">
-
-          <img id="eye-right" class="absolute top-[23.5%] left-[57.5%] -translate-x-1/2 -translate-y-1/2"
-            style="height: 5%; width: auto;" src="./src/image/eyes.png" alt="Rechter oog">
+          <picture>
+            <source srcset="./src/image/eyes.avif 119w" type="image/avif" sizes="8.78vw">
+            <source srcset="./src/image/eyes.webp 119w" type="image/webp" sizes="8.78vw">
+            <img id="eye-left" class="absolute top-[24%] left-[47%] -translate-x-1/2 -translate-y-1/2"
+              style="height: 5%; width: auto;" src="./src/image/eyes.png" srcset="./src/image/eyes.png 119w"
+              alt="Left eye of Jan Moretus" sizes="8.78vw">
+          </picture>
+          <picture>
+            <source srcset="./src/image/eyes.avif 119w" type="image/avif" sizes="8.78vw">
+            <source srcset="./src/image/eyes.webp 119w" type="image/webp" sizes="8.78vw">
+            <img id="eye-right" class="absolute top-[23.5%] left-[57.5%] -translate-x-1/2 -translate-y-1/2"
+              style="height: 5%; width: auto;" src="./src/image/eyes.png" srcset="./src/image/eyes.png 119w"
+              alt="Right eye of Jan Moretus" sizes="8.78vw">
+          </picture>
         </div>
       </div>
       <div
@@ -145,14 +149,14 @@
                         ./src/image/paperRip-2560.webp 2560w,
                         ./src/image/paperRip-2790.webp 2790w,
                         ./src/image/paperRip-3000.webp 3000w" type="image/webp" sizes="100vw">
-        <img class="absolute left-0 right-0 bottom-0 w-full z-50" src="./src/image/paperRip.png" srcset="./src/image/paperRip-721.png 721w,
+        <img class="absolute left-0 right-0 bottom-0 w-full z-40" src="./src/image/paperRip.png" srcset="./src/image/paperRip-721.png 721w,
                         ./src/image/paperRip-1080.png 1080w,
                         ./src/image/paperRip-1560.png 1560w,
                         ./src/image/paperRip-1920.png 1920w,
                         ./src/image/paperRip-2260.png 2260w,
                         ./src/image/paperRip-2560.png 2560w,
                         ./src/image/paperRip-2790.png 2790w,
-                        ./src/image/paperRip-3000.png 3000w" alt="" sizes="100vw">
+                        ./src/image/paperRip-3000.png 3000w" alt="Torn paper" sizes="100vw">
       </picture>
 
   </header>
@@ -171,7 +175,7 @@
         <img src="./src/image/antwerpenMapY.png" srcset="./src/image/antwerpenMapY-1280.png 1280w,
                           ./src/image/antwerpenMapY-1630.png 1630w,
                           ./src/image/antwerpenMapY-1920.png 1920w,
-                          ./src/image/antwerpenMapY-2048.png 2048w" alt="" sizes="100vw">
+                          ./src/image/antwerpenMapY-2048.png 2048w" alt="Antwerp Map" sizes="100vw">
       </picture>
 
       <div id="year-container" class="flex flex-col items-center justify-center text-center">
@@ -200,7 +204,7 @@
                           ./src/image/antwerpenMapY-936.png 936w,
                           ./src/image/antwerpenMapY-1470.png 1470w,
                           ./src/image/antwerpenMapY-1858.png 1858w,
-                          ./src/image/antwerpenMapY-2048.png 2048w" alt=""
+                          ./src/image/antwerpenMapY-2048.png 2048w" alt="Antwerp Map"
         sizes="(min-width: 1040px) calc(97.27vw - 118px), calc(96.39vw - 36px)">
     </picture>
     <div class="absolute inset-0 flex flex-col items-center justify-center text-center z-10 gap-8 sm:gap-12">
@@ -220,10 +224,10 @@
     <img src="./src/image/paperRip2.png" srcset="./src/image/paperRip2-1080.png 1080w,
                       ./src/image/paperRip2-1920.png 1920w,
                       ./src/image/paperRip2-2260.png 2260w,
-                      ./src/image/paperRip2-3000.png 3000w" alt="" sizes="100vw">
+                      ./src/image/paperRip2-3000.png 3000w" alt="Torn paper" sizes="100vw">
   </picture>
 
-  <section
+  <section id="early-years"
     class="bg-alphaBeige relative pl-6 pr-6 pt-6 md:pl-8 md:pr-8 md:pt-8 lg:pl-16 lg:pr-16 lg:pt-8 xl:pl-36 xl:pr-36">
     <div class="">
       <div class="lg:flex lg:justify-center lg:items-center">
@@ -257,7 +261,7 @@
                     ./src/image/booksBlue-1040.png 1040w,
                     ./src/image/booksBlue-1260.png 1260w,
                     ./src/image/booksBlue-1440.png 1440w,
-                    ./src/image/booksBlue-1560.png 1560w" alt=""
+                    ./src/image/booksBlue-1560.png 1560w" alt="Books in Blue"
             sizes="(min-width: 1040px) 520px, calc(96.53vw - 38px)">
         </picture>
 
@@ -269,11 +273,25 @@
             working in the bookshop of <span class="highlight">Christoffel Plantin</span>.</p>
         </div>
         <div class="ml-auto sm:mr-auto sm:-ml-16 -mr-16 xl:ml-0 max-w-[400px] md:max-w-[500px] lg:max-w-[600px]">
-          <img class="opacity-50 sm:scale-x-[-1]" src="./src/image/plantinBlu.png" alt="Christoffel Plantin">
+          <picture>
+            <source srcset="./src/image/plantinBlu.avif 552w" type="image/avif"
+              sizes="(min-width: 1040px) 600px, (min-width: 780px) 500px, (min-width: 420px) 400px, calc(84vw + 64px)">
+            <source srcset="./src/image/plantinBlu.webp 552w" type="image/webp"
+              sizes="(min-width: 1040px) 600px, (min-width: 780px) 500px, (min-width: 420px) 400px, calc(84vw + 64px)">
+            <img class="opacity-50 sm:scale-x-[-1]" src="./src/image/plantinBlu.png"
+              srcset="./src/image/plantinBlu.png 552w" alt="Christophe Plantin"
+              sizes="(min-width: 1040px) 600px, (min-width: 780px) 500px, (min-width: 420px) 400px, calc(84vw + 64px)">
+          </picture>
+
         </div>
       </div>
-      <img class="opacity-50 absolute bottom-0 left-1/2 -translate-x-1/2 w-[12rem] sm:w-[16rem] md:w-[20rem]"
-        src="./src/image/top.png" alt="">
+      <picture>
+        <source srcset="./src/image/top.avif 2249w" type="image/avif" sizes="100vw">
+        <source srcset="./src/image/top.webp 2249w" type="image/webp" sizes="100vw">
+        <img class="opacity-50 absolute bottom-0 left-1/2 -translate-x-1/2 w-[12rem] sm:w-[16rem] md:w-[20rem]"
+          src="./src/image/top.png" srcset="./src/image/top.png 2249w" alt="Edge" sizes="100vw">
+      </picture>
+
     </div>
   </section>
   <section
@@ -288,7 +306,7 @@
                       ./src/image/zuilBlue-510.webp 510w" type="image/webp" sizes="170px">
       <img class="hidden opacity-50 lg:block lg:absolute right-0 zuil lg:-top-8" src="./src/image/zuilBlue.png" srcset="./src/image/zuilBlue-170.png 170w,
                       ./src/image/zuilBlue-340.png 340w,
-                      ./src/image/zuilBlue-510.png 510w" alt="" sizes="170px">
+                      ./src/image/zuilBlue-510.png 510w" alt="Zuil Blue" sizes="170px">
     </picture>
 
     <picture>
@@ -300,7 +318,7 @@
                     ./src/image/zuil2Blue-510.webp 510w" type="image/webp" sizes="170px">
       <img class="hidden opacity-50 lg:block lg:absolute left-0 zuil lg:-top-8" src="./src/image/zuil2Blue.png" srcset="./src/image/zuil2Blue-170.png 170w,
                     ./src/image/zuil2Blue-340.png 340w,
-                    ./src/image/zuil2Blue-510.png 510w" alt="" sizes="170px">
+                    ./src/image/zuil2Blue-510.png 510w" alt="Zuil Blue" sizes="170px">
     </picture>
 
     <h3 class="sm:text-center xl:mb-12">Will you help me with my <span class="highlight">first task</span> in the
@@ -316,11 +334,24 @@
         class="w-full flex justify-center items-center gap-4 mx-auto mt-8 xl:mx-0 xl:max-w-[800px] pointer-events-auto">
 
         <div class="relative draggable" draggable="true" data-order="2">
-          <img class="book-img book-default min-w-[34px] max-w-[60px] sm:max-w-[100px] lg:max-w-[90px]"
-            src="./src/image/bookV2.png" alt="">
+          <picture>
+            <source srcset="./src/image/bookV2.avif 185w" type="image/avif"
+              sizes="(min-width: 1040px) 90px, (min-width: 640px) 100px, (min-width: 460px) 60px, calc(5.71vw + 35px)">
+            <source srcset="./src/image/bookV2.webp 185w" type="image/webp"
+              sizes="(min-width: 1040px) 90px, (min-width: 640px) 100px, (min-width: 460px) 60px, calc(5.71vw + 35px)">
+            <img class="book-img book-default min-w-[34px] max-w-[60px] sm:max-w-[100px] lg:max-w-[90px]"
+              src="./src/image/bookV2.png" srcset="./src/image/bookV2.png 185w" alt="Book"
+              sizes="(min-width: 1040px) 90px, (min-width: 640px) 100px, (min-width: 460px) 60px, calc(5.71vw + 35px)">
+          </picture>
 
-          <img class="book-img book-correct hidden min-w-[34px] max-w-[60px] sm:max-w-[100px] lg:max-w-[90px]"
-            src="./src/image/bookY.png" alt="">
+
+          <picture>
+            <source srcset="./src/image/bookY.avif 185w" type="image/avif" sizes="100vw">
+            <source srcset="./src/image/bookY.webp 185w" type="image/webp" sizes="100vw">
+            <img class="book-img book-correct hidden min-w-[34px] max-w-[60px] sm:max-w-[100px] lg:max-w-[90px]"
+              src="./src/image/bookY.png" srcset="./src/image/bookY.png 185w" alt="Book correct" sizes="100vw">
+          </picture>
+
           <p
             class="text-book absolute top-14/30 left-1/2 -translate-x-1/2 -translate-y-1/2 -rotate-90 w-40 sm:w-56 text-center">
             Les Douleurs Chrétiennes
@@ -328,11 +359,21 @@
         </div>
 
         <div class="relative draggable" draggable="true" data-order="5">
-          <img class="book-img book-default min-w-[34px] max-w-[60px] sm:max-w-[100px] lg:max-w-[90px]"
-            src="./src/image/bookV2.png" alt="">
-
-          <img class="book-img book-correct hidden min-w-[34px] max-w-[60px] sm:max-w-[100px] lg:max-w-[90px]"
-            src="./src/image/bookY.png" alt="">
+          <picture>
+            <source srcset="./src/image/bookV2.avif 185w" type="image/avif"
+              sizes="(min-width: 1680px) 90px, (min-width: 1280px) calc(1.32vw + 68px), (min-width: 1040px) 90px, (min-width: 640px) 100px, (min-width: 440px) 60px, calc(18.33vw - 17px)">
+            <source srcset="./src/image/bookV2.webp 185w" type="image/webp"
+              sizes="(min-width: 1680px) 90px, (min-width: 1280px) calc(1.32vw + 68px), (min-width: 1040px) 90px, (min-width: 640px) 100px, (min-width: 440px) 60px, calc(18.33vw - 17px)">
+            <img class="book-img book-default min-w-[34px] max-w-[60px] sm:max-w-[100px] lg:max-w-[90px]"
+              src="./src/image/bookV2.png" srcset="./src/image/bookV2.png 185w" alt="Book"
+              sizes="(min-width: 1680px) 90px, (min-width: 1280px) calc(1.32vw + 68px), (min-width: 1040px) 90px, (min-width: 640px) 100px, (min-width: 440px) 60px, calc(18.33vw - 17px)">
+          </picture>
+          <picture>
+            <source srcset="./src/image/bookY.avif 185w" type="image/avif" sizes="100vw">
+            <source srcset="./src/image/bookY.webp 185w" type="image/webp" sizes="100vw">
+            <img class="book-img book-correct hidden min-w-[34px] max-w-[60px] sm:max-w-[100px] lg:max-w-[90px]"
+              src="./src/image/bookY.png" srcset="./src/image/bookY.png 185w" alt="Book correct" sizes="100vw">
+          </picture>
           <p
             class="text-book absolute top-14/30 left-1/2 -translate-x-1/2 -translate-y-1/2 -rotate-90 w-40 sm:w-56 text-center">
             De Constantia
@@ -340,11 +381,22 @@
         </div>
 
         <div class="relative draggable" draggable="true" data-order="4">
-          <img class="book-img book-default min-w-[34px] max-w-[60px] sm:max-w-[100px] lg:max-w-[90px]"
-            src="./src/image/bookV2.png" alt="">
+          <picture>
+            <source srcset="./src/image/bookV2.avif 185w" type="image/avif"
+              sizes="(min-width: 1680px) 90px, (min-width: 1280px) calc(1.32vw + 68px), (min-width: 1040px) 90px, (min-width: 640px) 100px, (min-width: 440px) 60px, calc(18.33vw - 17px)">
+            <source srcset="./src/image/bookV2.webp 185w" type="image/webp"
+              sizes="(min-width: 1680px) 90px, (min-width: 1280px) calc(1.32vw + 68px), (min-width: 1040px) 90px, (min-width: 640px) 100px, (min-width: 440px) 60px, calc(18.33vw - 17px)">
+            <img class="book-img book-default min-w-[34px] max-w-[60px] sm:max-w-[100px] lg:max-w-[90px]"
+              src="./src/image/bookV2.png" srcset="./src/image/bookV2.png 185w" alt="Book"
+              sizes="(min-width: 1680px) 90px, (min-width: 1280px) calc(1.32vw + 68px), (min-width: 1040px) 90px, (min-width: 640px) 100px, (min-width: 440px) 60px, calc(18.33vw - 17px)">
+          </picture>
 
-          <img class="book-img book-correct hidden min-w-[34px] max-w-[60px] sm:max-w-[100px] lg:max-w-[90px]"
-            src="./src/image/bookY.png" alt="">
+          <picture>
+            <source srcset="./src/image/bookY.avif 185w" type="image/avif" sizes="100vw">
+            <source srcset="./src/image/bookY.webp 185w" type="image/webp" sizes="100vw">
+            <img class="book-img book-correct hidden min-w-[34px] max-w-[60px] sm:max-w-[100px] lg:max-w-[90px]"
+              src="./src/image/bookY.png" srcset="./src/image/bookY.png 185w" alt="Book correct" sizes="100vw">
+          </picture>
           <p
             class="text-book absolute top-14/30 left-1/2 -translate-x-1/2 -translate-y-1/2 -rotate-90 w-40 sm:w-56 text-center">
             Constancia del <br> Alma Fiel
@@ -352,11 +404,22 @@
         </div>
 
         <div class="relative draggable" draggable="true" data-order="1">
-          <img class="book-img book-default min-w-[34px] max-w-[60px] sm:max-w-[100px] lg:max-w-[90px]"
-            src="./src/image/bookV2.png" alt="">
+          <picture>
+            <source srcset="./src/image/bookV2.avif 185w" type="image/avif"
+              sizes="(min-width: 1680px) 90px, (min-width: 1280px) calc(1.32vw + 68px), (min-width: 1040px) 90px, (min-width: 640px) 100px, (min-width: 440px) 60px, calc(18.33vw - 17px)">
+            <source srcset="./src/image/bookV2.webp 185w" type="image/webp"
+              sizes="(min-width: 1680px) 90px, (min-width: 1280px) calc(1.32vw + 68px), (min-width: 1040px) 90px, (min-width: 640px) 100px, (min-width: 440px) 60px, calc(18.33vw - 17px)">
+            <img class="book-img book-default min-w-[34px] max-w-[60px] sm:max-w-[100px] lg:max-w-[90px]"
+              src="./src/image/bookV2.png" srcset="./src/image/bookV2.png 185w" alt="Book"
+              sizes="(min-width: 1680px) 90px, (min-width: 1280px) calc(1.32vw + 68px), (min-width: 1040px) 90px, (min-width: 640px) 100px, (min-width: 440px) 60px, calc(18.33vw - 17px)">
+          </picture>
 
-          <img class="book-img book-correct hidden min-w-[34px] max-w-[60px] sm:max-w-[100px] lg:max-w-[90px]"
-            src="./src/image/bookY.png" alt="">
+          <picture>
+            <source srcset="./src/image/bookY.avif 185w" type="image/avif" sizes="100vw">
+            <source srcset="./src/image/bookY.webp 185w" type="image/webp" sizes="100vw">
+            <img class="book-img book-correct hidden min-w-[34px] max-w-[60px] sm:max-w-[100px] lg:max-w-[90px]"
+              src="./src/image/bookY.png" srcset="./src/image/bookY.png 185w" alt="Book correct" sizes="100vw">
+          </picture>
           <p
             class="text-book absolute top-14/30 left-1/2 -translate-x-1/2 -translate-y-1/2 -rotate-90 w-40 sm:w-56 text-center">
             De Standvastige <br> Ziel
@@ -364,11 +427,22 @@
         </div>
 
         <div class="relative draggable" draggable="true" data-order="3">
-          <img class="book-img book-default min-w-[34px] max-w-[60px] sm:max-w-[100px] lg:max-w-[90px]"
-            src="./src/image/bookV2.png" alt="">
+          <picture>
+            <source srcset="./src/image/bookV2.avif 185w" type="image/avif"
+              sizes="(min-width: 1680px) 90px, (min-width: 1280px) calc(1.32vw + 68px), (min-width: 1040px) 90px, (min-width: 640px) 100px, (min-width: 440px) 60px, calc(18.33vw - 17px)">
+            <source srcset="./src/image/bookV2.webp 185w" type="image/webp"
+              sizes="(min-width: 1680px) 90px, (min-width: 1280px) calc(1.32vw + 68px), (min-width: 1040px) 90px, (min-width: 640px) 100px, (min-width: 440px) 60px, calc(18.33vw - 17px)">
+            <img class="book-img book-default min-w-[34px] max-w-[60px] sm:max-w-[100px] lg:max-w-[90px]"
+              src="./src/image/bookV2.png" srcset="./src/image/bookV2.png 185w" alt="Book"
+              sizes="(min-width: 1680px) 90px, (min-width: 1280px) calc(1.32vw + 68px), (min-width: 1040px) 90px, (min-width: 640px) 100px, (min-width: 440px) 60px, calc(18.33vw - 17px)">
+          </picture>
 
-          <img class="book-img book-correct hidden min-w-[34px] max-w-[60px] sm:max-w-[100px] lg:max-w-[90px]"
-            src="./src/image/bookY.png" alt="">
+          <picture>
+            <source srcset="./src/image/bookY.avif 185w" type="image/avif" sizes="100vw">
+            <source srcset="./src/image/bookY.webp 185w" type="image/webp" sizes="100vw">
+            <img class="book-img book-correct hidden min-w-[34px] max-w-[60px] sm:max-w-[100px] lg:max-w-[90px]"
+              src="./src/image/bookY.png" srcset="./src/image/bookY.png 185w" alt="Book correct" sizes="100vw">
+          </picture>
           <p
             class="text-book absolute top-14/30 left-1/2 -translate-x-1/2 -translate-y-1/2 -rotate-90 w-40 sm:w-56 text-center">
             Costanza <br> dell’Anima Fedele
@@ -376,8 +450,12 @@
         </div>
       </div>
     </div>
-    <img class="opacity-50 absolute bottom-0 left-1/2 -translate-x-1/2 w-[12rem] sm:w-[16rem] md:w-[20rem]"
-      src="./src/image/top.png" alt="">
+    <picture>
+      <source srcset="./src/image/top.avif 2249w" type="image/avif" sizes="100vw">
+      <source srcset="./src/image/top.webp 2249w" type="image/webp" sizes="100vw">
+      <img class="opacity-50 absolute bottom-0 left-1/2 -translate-x-1/2 w-[12rem] sm:w-[16rem] md:w-[20rem]"
+        src="./src/image/top.png" srcset="./src/image/top.png 2249w" alt="Edge" sizes="100vw">
+    </picture>
 
   </section>
   <picture>
@@ -392,9 +470,10 @@
     <img class="rotate-180 w-full" src="./src/image/paperRip2.png" srcset="./src/image/paperRip2-1080.png 1080w,
                         ./src/image/paperRip2-1920.png 1920w,
                         ./src/image/paperRip2-2260.png 2260w,
-                        ./src/image/paperRip2-3000.png 3000w" alt="" sizes="100vw">
+                        ./src/image/paperRip2-3000.png 3000w" alt="Torn paper" sizes="100vw">
   </picture>
-  <section class="pl-6 pr-6 relative pt-6 md:pl-8 md:pr-8 md:pt-8 lg:pl-16 lg:pr-16 lg:pt-8 xl:pl-36 xl:pr-36">
+  <section id="marriage"
+    class="pl-6 pr-6 relative pt-6 md:pl-8 md:pr-8 md:pt-8 lg:pl-16 lg:pr-16 lg:pt-8 xl:pl-36 xl:pr-36">
     <div class="relative h-[420px] sm:h-[420px] md:h-[480px] lg:h-[550px] xl:h-[600px] 2xl:h-[700px]">
       <div class="flex flex-col items-center h-full text-center">
         <h2>I got married</h2>
@@ -407,9 +486,17 @@
         <p class="bg-year highlightY mt-4">1570</p>
       </div>
       <div class="absolute z-10 bottom-0 w-screen opacity-50 flex justify-between -ml-6 md:-ml-8 lg:-ml-16 xl:-ml-36">
-        <img
-          class="min-w-[100px] max-w-[120px] h-auto absolute bottom-1 sm:max-w-[150px] md:max-w-[200px] lg:max-w-[300px] xl:max-w-[350px] 2xl:max-w-[450px]"
-          src="./src/image/janMoretus.png" alt="Jan Moretus">
+        <picture>
+          <source srcset="./src/image/janMoretus.avif 426w" type="image/avif"
+            sizes="(min-width: 1540px) 450px, (min-width: 1280px) 350px, (min-width: 1040px) 300px, (min-width: 780px) 200px, (min-width: 640px) 150px, 120px">
+          <source srcset="./src/image/janMoretus.webp 426w" type="image/webp"
+            sizes="(min-width: 1540px) 450px, (min-width: 1280px) 350px, (min-width: 1040px) 300px, (min-width: 780px) 200px, (min-width: 640px) 150px, 120px">
+          <img
+            class="min-w-[100px] max-w-[120px] h-auto absolute bottom-1 sm:max-w-[150px] md:max-w-[200px] lg:max-w-[300px] xl:max-w-[350px] 2xl:max-w-[450px]"
+            src="./src/image/janMoretus.png" srcset="./src/image/janMoretus.png 426w" alt="Jan Moretus"
+            sizes="(min-width: 1540px) 450px, (min-width: 1280px) 350px, (min-width: 1040px) 300px, (min-width: 780px) 200px, (min-width: 640px) 150px, 120px">
+        </picture>
+
         <picture>
           <source srcset="./src/image/heart-1080.avif 1080w,
                             ./src/image/heart-1920.avif 1920w,
@@ -422,7 +509,7 @@
           <img src="./src/image/heart.png" srcset="./src/image/heart-1080.png 1080w,
                             ./src/image/heart-1920.png 1920w,
                             ./src/image/heart-2260.png 2260w,
-                            ./src/image/heart-3000.png 3000w" alt="" sizes="100vw">
+                            ./src/image/heart-3000.png 3000w" alt="Heart" sizes="100vw">
         </picture>
         <picture>
           <source srcset="./src/image/martinaPlantin-210.avif 210w,
@@ -449,7 +536,7 @@
                               ./src/image/martinaPlantin-900.png 900w,
                               ./src/image/martinaPlantin-1050.png 1050w,
                               ./src/image/martinaPlantin-1210.png 1210w,
-                              ./src/image/martinaPlantin-1350.png 1350w" alt=""
+                              ./src/image/martinaPlantin-1350.png 1350w" alt="Martina Plantin"
             sizes="(min-width: 1540px) 450px, (min-width: 1280px) 350px, (min-width: 1040px) 300px, (min-width: 780px) 200px, (min-width: 640px) 150px, 120px">
         </picture>
 
@@ -487,7 +574,7 @@
                             ./src/image/leidenRed-1700.png 1700w,
                             ./src/image/leidenRed-1800.png 1800w,
                             ./src/image/leidenRed-1930.png 1930w,
-                            ./src/image/leidenRed-2048.png 2048w" alt=""
+                            ./src/image/leidenRed-2048.png 2048w" alt="Leiden map"
             sizes="(min-width: 1540px) 1477px, (min-width: 1280px) 1200px, (min-width: 1040px) 850px, (min-width: 800px) 700px, (min-width: 640px) calc(42.86vw + 366px), 581px">
         </picture>
 
@@ -560,17 +647,35 @@
                     ./src/image/door2-1590.png 1590w,
                     ./src/image/door2-1760.png 1760w,
                     ./src/image/door2-1910.png 1910w,
-                    ./src/image/door2-2048.png 2048w" alt="" sizes="41.81vw">
+                    ./src/image/door2-2048.png 2048w" alt="Door" sizes="41.81vw">
         </picture>
 
         <div id="lock"
           class="absolute bottom-[30%] sm:bottom-[30%] lg:bottom-[20%] left-1/2 -translate-x-1/2 cursor-pointer">
           <div class="relative">
-            <img class="lock-closed max-w-[50px] lg:max-w-[70px]" src="./src/image/lock.png" alt="">
-            <img class="lock-open hidden max-w-[50px] lg:max-w-[70px]" src="./src/image/lockOpen.png" alt="">
-            <img id="lockWheel"
-              class="max-w-[37px] lg:max-w-[50px] absolute top-[68.30%] left-1/2 -translate-x-1/2 -translate-y-1/2 cursor-grab select-none"
-              src="./src/image/lockWheel.png" alt="" draggable="false">
+            <picture>
+              <source srcset="./src/image/lock.avif 203w" type="image/avif" sizes="(min-width: 1040px) 70px, 50px">
+              <source srcset="./src/image/lock.webp 203w" type="image/webp" sizes="(min-width: 1040px) 70px, 50px">
+              <img class="lock-closed max-w-[50px] lg:max-w-[70px]" src="./src/image/lock.png"
+                srcset="./src/image/lock.png 203w" alt="Lock" sizes="(min-width: 1040px) 70px, 50px">
+            </picture>
+
+            <picture>
+              <source srcset="./src/image/lockOpen.avif 203w" type="image/avif" sizes="100vw">
+              <source srcset="./src/image/lockOpen.webp 203w" type="image/webp" sizes="100vw">
+              <img class="lock-open hidden max-w-[50px] lg:max-w-[70px]" src="./src/image/lockOpen.png"
+                srcset="./src/image/lockOpen.png 203w" alt="Lock Open" sizes="100vw">
+            </picture>
+
+            <picture>
+              <source srcset="./src/image/lockWheel.avif 147w" type="image/avif" sizes="(min-width: 1040px) 50px, 37px">
+              <source srcset="./src/image/lockWheel.webp 147w" type="image/webp" sizes="(min-width: 1040px) 50px, 37px">
+              <img id="lockWheel"
+                class="max-w-[37px] lg:max-w-[50px] absolute top-[68.30%] left-1/2 -translate-x-1/2 -translate-y-1/2 cursor-grab select-none"
+                src="./src/image/lockWheel.png" draggable="false" srcset="./src/image/lockWheel.png 147w"
+                alt="Lock Wheel" sizes="(min-width: 1040px) 50px, 37px">
+            </picture>
+
           </div>
         </div>
       </div>
@@ -601,7 +706,7 @@
                           ./src/image/wall-1400.png 1400w,
                           ./src/image/wall-1580.png 1580w,
                           ./src/image/wall-1740.png 1740w,
-                          ./src/image/wall-1890.png 1890w" alt=""
+                          ./src/image/wall-1890.png 1890w" alt="Wall"
           sizes="(min-width: 380px) calc(96.09vw - 33px), calc(20vw + 240px)">
       </picture>
 
@@ -631,7 +736,7 @@
                           ./src/image/wall-1400.png 1400w,
                           ./src/image/wall-1580.png 1580w,
                           ./src/image/wall-1740.png 1740w,
-                          ./src/image/wall-1890.png 1890w" alt=""
+                          ./src/image/wall-1890.png 1890w" alt="Wall"
           sizes="(min-width: 380px) calc(96.09vw - 33px), calc(20vw + 240px)">
       </picture>
       <picture>
@@ -657,7 +762,7 @@
                           ./src/image/wall-1030.png 1030w,
                           ./src/image/wall-1245.png 1245w,
                           ./src/image/wall-1335.png 1335w,
-                          ./src/image/wall-1545.png 1545w" alt=""
+                          ./src/image/wall-1545.png 1545w" alt="Wall"
           sizes="(min-width: 1540px) 515px, (min-width: 1280px) 415px, 445px">
       </picture>
 
@@ -685,7 +790,7 @@
                                   ./src/image/wall-1030.png 1030w,
                                   ./src/image/wall-1245.png 1245w,
                                   ./src/image/wall-1335.png 1335w,
-                                  ./src/image/wall-1545.png 1545w" alt=""
+                                  ./src/image/wall-1545.png 1545w" alt="Wall"
           sizes="(min-width: 1540px) 515px, (min-width: 1280px) 415px, 445px">
       </picture>
       <picture>
@@ -715,7 +820,7 @@
                           ./src/image/wall2-1323.png 1323w,
                           ./src/image/wall2-1413.png 1413w,
                           ./src/image/wall2-1520.png 1520w,
-                          ./src/image/wall2-1623.png 1623w" alt=""
+                          ./src/image/wall2-1623.png 1623w" alt="Wall"
           sizes="(min-width: 1540px) 541px, (min-width: 1280px) 441px, 471px">
       </picture>
 
@@ -745,7 +850,7 @@
                                 ./src/image/wall2-1323.png 1323w,
                                 ./src/image/wall2-1413.png 1413w,
                                 ./src/image/wall2-1520.png 1520w,
-                                ./src/image/wall2-1623.png 1623w" alt=""
+                                ./src/image/wall2-1623.png 1623w" alt="Wall"
           sizes="(min-width: 1540px) 541px, (min-width: 1280px) 441px, 471px">
       </picture>
       <div id="unlock-instructions"
@@ -826,8 +931,13 @@
       <div id="scrollingFeedback"
         class="absolute left-1/2 -translate-x-1/2 lg:translate-x-0 top-[5%] lg:top-auto hidden w-full max-w-[200px] sm:max-w-[220px] lg:max-w-[320px] xl:min-w-[400px] 2xl:min-w-[450px] text-center flex-col justify-center z-10 lg:-left-20 xl:-left-28 2xl:-left-20 lg:bottom-[20vh] px-6 py-6 ">
         <div class="relative">
-          <img class="absolute w-full -z-10 top-1/2 -translate-y-1/2 lg:max-w-[320px] xl:max-w-[400px] 2xl:max-w-full"
-            src="./src/image/kader2.png" alt="">
+          <picture>
+            <source srcset="./src/image/kader2.avif 1835w" type="image/avif" sizes="100vw">
+            <source srcset="./src/image/kader2.webp 1835w" type="image/webp" sizes="100vw">
+            <img class="absolute w-full -z-10 top-1/2 -translate-y-1/2 lg:max-w-[320px] xl:max-w-[400px] 2xl:max-w-full"
+              src="./src/image/kader2.png" srcset="./src/image/kader2.png 1835w" alt="Frame" sizes="100vw">
+          </picture>
+
 
           <h3 class="mb-4 z-10">Good job!</h3>
           <p class="z-10 xl:text-2xl 2xl:text-3xl xl:text-alphaRed xl:font-bold">Continue scrolling</p>
@@ -849,8 +959,14 @@
     </div>
   </section>
   <div class="locked">
-    <img class="z-20" src="./src/image/paperRip2.png" alt="">
-    <section
+    <picture>
+      <source srcset="./src/image/paperRip2.avif 834w" type="image/avif" sizes="100vw">
+      <source srcset="./src/image/paperRip2.webp 834w" type="image/webp" sizes="100vw">
+      <img class="z-20" src="./src/image/paperRip2.png" srcset="./src/image/paperRip2.png 834w" alt="Torn paper"
+        sizes="100vw">
+    </picture>
+
+    <section id="inheritance"
       class="pl-6 pr-6 relative pt-6 md:pl-8 md:pr-8 md:pt-8 lg:pl-16 lg:pr-16 lg:pt-8 xl:pl-36 xl:pr-36 bg-alphaBeige">
       <h2 class="text-center">Inheritance</h2>
       <div class="text-center pt-4 relative max-w-[450px] mx-auto">
@@ -872,7 +988,13 @@
           Plantin.</p>
         <div
           class="opacity-25 absolute -left-6 -right-6 md:-right-8 md:-left-8 lg:-right-16 lg:-left-16 xl:-right-36 xl:-left-36 bottom-0 z-0">
-          <img class="w-full" src="./src/image/desk.png" alt="">
+          <picture>
+            <source srcset="./src/image/desk.avif 2163w" type="image/avif" sizes="100vw">
+            <source srcset="./src/image/desk.webp 2163w" type="image/webp" sizes="100vw">
+            <img class="w-full" src="./src/image/desk.png" srcset="./src/image/desk.png 2163w" alt="A desk"
+              sizes="100vw">
+          </picture>
+
         </div>
       </div>
       <div class="mt-8">
@@ -892,7 +1014,13 @@
             </div>
             <div
               class="max-w-[327px] opacity-30 mx-auto flex justify-center lg:relative lg:-left-16 xl:-left-36 lg:max-w-[450px] xl:max-w-[517px] 2xl:max-w-[617px] xl:relative">
-              <img src="./src/image/office.png" alt="">
+              <picture>
+                <source srcset="./src/image/office.avif 1289w" type="image/avif" sizes="100vw">
+                <source srcset="./src/image/office.webp 1289w" type="image/webp" sizes="100vw">
+                <img src="./src/image/office.png" srcset="./src/image/office.png 1289w" alt="Plantin's Office"
+                  sizes="100vw">
+              </picture>
+
             </div>
           </div>
           <div
@@ -905,7 +1033,13 @@
             </p>
             <div
               class="max-w-[327px] opacity-30 mx-auto flex justify-center lg:relative lg:-top-6 lg:-right-6 lg:max-w-[450px] xl:max-w-[517px] xl:relative 2xl:max-w-[617px]">
-              <img src="./src/image/printingHouse.png" alt="">
+              <picture>
+                <source srcset="./src/image/printingHouse.avif 1181w" type="image/avif" sizes="100vw">
+                <source srcset="./src/image/printingHouse.webp 1181w" type="image/webp" sizes="100vw">
+                <img src="./src/image/printingHouse.png" srcset="./src/image/printingHouse.png 1181w"
+                  alt="Plantin's Printing House" sizes="100vw">
+              </picture>
+
             </div>
           </div>
 
@@ -919,7 +1053,12 @@
 
           <div id="ink-container"
             class="hidden lg:block absolute opacity-50 -left-56 2xl:-left-96 bottom-0 max-w-[200px] cursor-pointer">
-            <img src="./src/image/ink.png" alt="">
+            <picture>
+              <source srcset="./src/image/ink.avif 242w" type="image/avif" sizes="100vw">
+              <source srcset="./src/image/ink.webp 242w" type="image/webp" sizes="100vw">
+              <img src="./src/image/ink.png" srcset="./src/image/ink.png 242w" alt="Ink Bottle" sizes="100vw">
+            </picture>
+
           </div>
 
           <div class="absolute pt-10 sm:pt-16 pl-12 z-10 pr-12 flex flex-col justify-between h-full">
@@ -944,14 +1083,31 @@
                 agreement with the provisions of my father-in-law.<br><br>Autograph:</span></p>
           </div>
 
-          <img class="z-1 top-0 opacity-75" src="./src/image/paper.png" alt="">
+          <picture>
+            <source srcset="./src/image/paper.avif 1005w" type="image/avif" sizes="100vw">
+            <source srcset="./src/image/paper.webp 1005w" type="image/webp" sizes="100vw">
+            <img class="z-1 top-0 opacity-75" src="./src/image/paper.png" srcset="./src/image/paper.png 1005w"
+              alt="Paper" sizes="100vw">
+          </picture>
+
           <canvas id="signature-canvas" class="absolute bottom-0 left-0 w-full h-40 z-50"></canvas>
           <div class="hidden lg:block">
-            <img id="quillEmpty" src="./src/image/quill.png"
-              class="quill absolute opacity-50 max-w-[400px] -right-[400px] xl:-right-[30vw] 2xl:-right-[30vw] bottom-0 w-16 cursor-pointer">
+            <picture>
+              <source srcset="./src/image/quill.avif 339w" type="image/avif" sizes="100vw">
+              <source srcset="./src/image/quill.webp 339w" type="image/webp" sizes="100vw">
+              <img id="quillEmpty"
+                class="quill absolute opacity-50 max-w-[400px] -right-[400px] xl:-right-[30vw] 2xl:-right-[30vw] bottom-0 w-16 cursor-pointer"
+                src="./src/image/quill.png" srcset="./src/image/quill.png 339w" alt="Quill" sizes="100vw">
+            </picture>
 
-            <img id="quillInkt" src="./src/image/quillInkt.png"
-              class="quill hidden absolute max-w-[400px] -right-[400px] xl:-right-[30vw] 2xl:-right-[30vw] bottom-0 w-16 cursor-pointer">
+            <picture>
+              <source srcset="./src/image/quillInkt.avif 339w" type="image/avif" sizes="100vw">
+              <source srcset="./src/image/quillInkt.webp 339w" type="image/webp" sizes="100vw">
+              <img id="quillInkt"
+                class="quill hidden absolute max-w-[400px] -right-[400px] xl:-right-[30vw] 2xl:-right-[30vw] bottom-0 w-16 cursor-pointer"
+                src="./src/image/quillInkt.png" srcset="./src/image/quillInkt.png 339w" alt="Quill with ink"
+                sizes="100vw">
+            </picture>
 
           </div>
           <div id="inkFeedback" class="hidden absolute bottom-0 left-0 w-full p-2"
@@ -968,8 +1124,14 @@
         the
         greatest honor I could ever receive.</p>
     </section>
-    <img class="bottom-0 left-0 rotate-180" src="./src/image/paperRip2.png" alt="">
-    <section class="pl-6 pr-6 relative pt-6 md:pl-8 md:pr-8 md:pt-8 lg:pl-16 lg:pr-16 lg:pt-8 xl:pl-36 xl:pr-36">
+    <picture>
+      <source srcset="./src/image/paperRip2.avif 834w" type="image/avif" sizes="100vw">
+      <source srcset="./src/image/paperRip2.webp 834w" type="image/webp" sizes="100vw">
+      <img class="bottom-0 left-0 rotate-180" src="./src/image/paperRip2.png" srcset="./src/image/paperRip2.png 834w"
+        alt="Torn paper" sizes="100vw">
+    </picture>
+    <section id="expansion"
+      class="pl-6 pr-6 relative pt-6 md:pl-8 md:pr-8 md:pt-8 lg:pl-16 lg:pr-16 lg:pt-8 xl:pl-36 xl:pr-36">
       <div class="h-[450px] md:h-[500px] lg:h-[670px]  2xl:h-[700px] relative">
         <div class="text-center mt-6">
           <h2>Expanding the Office Plantina</h2>
@@ -989,17 +1151,43 @@
           </p>
         </div>
         <div
-          class="absolute bottom-0 -left-6 -right-6 md:-right-8 md:-left-8 lg:-right-16 lg:-left-16 xl:-right-36 xl:-left-36 w-screen opacity-50 flex justify-between ">
-          <img
-            class="authors min-w-[100px] h-auto sm:max-w-[180px] md:max-w-[240px] lg:max-w-[330px] xl:max-w-[350px] 2xl:max-w-[400px]"
-            src="./src/image/abrahamOrtelius.png" alt="">
-          <img
-            class="authors_justus min-w-[140px] h-auto mt-auto -mb-3 sm:max-w-[240px] md:max-w-[300px] lg:max-w-[390px] xl:max-w-[420px] 2xl:max-w-[470px]"
-            src="./src/image/justusLipsius.png" alt="">
-          <img
-            class="authors min-w-[100px] h-auto sm:max-w-[180px] md:max-w-[240px] lg:max-w-[330px] xl:max-w-[350px] 2xl:max-w-[400px]"
-            src="./src/image/rembertDodoens.png" alt="">
-          <img class="absolute bottom-0" src="./src/image/rand.png" alt="">
+          class="absolute bottom-0 -left-6 -right-6 md:-right-8 md:-left-8 lg:-right-16 lg:-left-16 xl:-right-36 xl:-left-36 w-screen opacity-50 flex items-end justify-between ">
+          <picture>
+            <source srcset="./src/image/abrahamOrtelius.avif 1568w" type="image/avif" sizes="100vw">
+            <source srcset="./src/image/abrahamOrtelius.webp 1568w" type="image/webp" sizes="100vw">
+            <img
+              class="min-w-[100px] h-auto sm:max-w-[180px] md:max-w-[240px] lg:max-w-[330px] xl:max-w-[350px] 2xl:max-w-[400px]"
+              src="./src/image/abrahamOrtelius.png" srcset="./src/image/abrahamOrtelius.png 1568w"
+              alt="Abraham Ortelius" sizes="100vw">
+          </picture>
+
+          <picture>
+            <source srcset="./src/image/justusLipsius.avif 554w" type="image/avif" sizes="100vw">
+            <source srcset="./src/image/justusLipsius.webp 554w" type="image/webp" sizes="100vw">
+            <img
+              class="min-w-[140px] h-auto mt-auto -mb-3 sm:max-w-[240px] md:max-w-[300px] lg:max-w-[390px] xl:max-w-[420px] 2xl:max-w-[470px]"
+              src="./src/image/justusLipsius.png" srcset="./src/image/justusLipsius.png 554w" alt="Justus Lipsius"
+              sizes="100vw">
+          </picture>
+
+          <picture>
+            <source srcset="./src/image/rembertDodoens.avif 1683w" type="image/avif" sizes="100vw">
+            <source srcset="./src/image/rembertDodoens.webp 1683w" type="image/webp" sizes="100vw">
+            <img
+              class="min-w-[100px] h-auto sm:max-w-[180px] md:max-w-[240px] lg:max-w-[330px] xl:max-w-[350px] 2xl:max-w-[400px]"
+              src="./src/image/rembertDodoens.png" srcset="./src/image/rembertDodoens.png 1683w" alt="Rembert Dodoens"
+              sizes="100vw">
+          </picture>
+
+          <div class="absolute bottom-0 w-full">
+            <picture>
+              <source srcset="./src/image/rand.avif 2019w" type="image/avif" sizes="100vw">
+              <source srcset="./src/image/rand.webp 2019w" type="image/webp" sizes="100vw">
+              <img src="./src/image/rand.png" srcset="./src/image/rand.png 2019w" alt="Edge" sizes="100vw">
+            </picture>
+
+          </div>
+
         </div>
       </div>
       <div class="relative min-h-[calc(100vh+250px)] lg:min-h-[calc(100vh+400px)] 2xl:min-h-[100vh] mt-8">
@@ -1026,14 +1214,25 @@
             <div
               class="relative -left-6 md:-left-8 lg:-left-16 xl:-left-36 items-center w-[380px] h-full sm:w-[640px] sm:h-[400px] md:w-[768px] md:h-[470px] lg:w-[600px] lg:h-[440px] xl:w-[650px] xl:h-[470px] 2xl:w-[800px] 2xl:h-[570px] aspect-[16/9] sm:mt-12">
               <p class="absolute top-[5%] sm:top-[10%] lg:top-[5%] right-1/3 title-manuscript z-10">Manuscripts</p>
-              <img class="absolute inset-0 w-full h-full object-contain opacity-50 z-0 pointer-events-none"
-                src="./src/image/cart2.png" alt="Cart">
+              <picture>
+                <source srcset="./src/image/cart2.avif 1330w" type="image/avif" sizes="100vw">
+                <source srcset="./src/image/cart2.webp 1330w" type="image/webp" sizes="100vw">
+                <img class="absolute inset-0 w-full h-full object-contain opacity-50 z-0 pointer-events-none"
+                  src="./src/image/cart2.png" srcset="./src/image/cart2.png 1330w" alt="Cart with books" sizes="100vw">
+              </picture>
 
               <div id="cart"
                 class="absolute -bottom-[10%] sm:bottom-0 lg:bottom-[15%] left-4/9 -translate-x-1/2 w-12/15 gap-1 flex justify-center">
                 <div class="relative h-fit" draggable="true" id="book-de-constantia">
-                  <img class="book max-w-[34.5px] sm:max-w-[58px] md:max-w-[65px] lg:max-w-[55px]  2xl:max-w-[70px]"
-                    src="./src/image/bookV2.png" alt="">
+                  <picture>
+                    <source srcset="./src/image/bookV2.avif 185w" type="image/avif"
+                      sizes="(min-width: 1680px) 90px, (min-width: 1280px) calc(1.32vw + 68px), (min-width: 1040px) 90px, (min-width: 640px) 100px, (min-width: 440px) 60px, calc(18.33vw - 17px)">
+                    <source srcset="./src/image/bookV2.webp 185w" type="image/webp"
+                      sizes="(min-width: 1680px) 90px, (min-width: 1280px) calc(1.32vw + 68px), (min-width: 1040px) 90px, (min-width: 640px) 100px, (min-width: 440px) 60px, calc(18.33vw - 17px)">
+                    <img class="book max-w-[34.5px] sm:max-w-[58px] md:max-w-[65px] lg:max-w-[55px]  2xl:max-w-[70px]"
+                      src="./src/image/bookV2.png" srcset="./src/image/bookV2.png 185w" alt="Book"
+                      sizes="(min-width: 1680px) 90px, (min-width: 1280px) calc(1.32vw + 68px), (min-width: 1040px) 90px, (min-width: 640px) 100px, (min-width: 440px) 60px, calc(18.33vw - 17px)">
+                  </picture>
                   <p
                     class="leading-[120%] text-alphaBlue font-bold text-[12px] sm:text-xl lg:text-lg absolute top-14/30 left-1/2 -translate-x-1/2 -translate-y-1/2 -rotate-90 w-36 sm:w-40 2xl:w-60 text-center">
                     De Constantia
@@ -1041,8 +1240,15 @@
                 </div>
 
                 <div class="relative h-fit" draggable="true" id="book-bible-translation">
-                  <img class="book max-w-[34.5px] sm:max-w-[58px] md:max-w-[65px] lg:max-w-[55px]  2xl:max-w-[70px]"
-                    src="./src/image/bookV2.png" alt="">
+                  <picture>
+                    <source srcset="./src/image/bookV2.avif 185w" type="image/avif"
+                      sizes="(min-width: 1680px) 90px, (min-width: 1280px) calc(1.32vw + 68px), (min-width: 1040px) 90px, (min-width: 640px) 100px, (min-width: 440px) 60px, calc(18.33vw - 17px)">
+                    <source srcset="./src/image/bookV2.webp 185w" type="image/webp"
+                      sizes="(min-width: 1680px) 90px, (min-width: 1280px) calc(1.32vw + 68px), (min-width: 1040px) 90px, (min-width: 640px) 100px, (min-width: 440px) 60px, calc(18.33vw - 17px)">
+                    <img class="book max-w-[34.5px] sm:max-w-[58px] md:max-w-[65px] lg:max-w-[55px]  2xl:max-w-[70px]"
+                      src="./src/image/bookV2.png" srcset="./src/image/bookV2.png 185w" alt="Book"
+                      sizes="(min-width: 1680px) 90px, (min-width: 1280px) calc(1.32vw + 68px), (min-width: 1040px) 90px, (min-width: 640px) 100px, (min-width: 440px) 60px, calc(18.33vw - 17px)">
+                  </picture>
                   <p
                     class="leading-[120%] text-alphaBlue font-bold text-[12px] sm:text-xl lg:text-lg absolute top-14/30 left-1/2 -translate-x-1/2 -translate-y-1/2 -rotate-90 w-36 sm:w-40 2xl:w-60 text-center ">
                     Bible <br> Translation
@@ -1050,24 +1256,45 @@
                 </div>
 
                 <div class="relative h-fit" draggable="true" id="book-atlas-of-ortelius">
-                  <img class="book max-w-[34.5px] sm:max-w-[58px] md:max-w-[65px] lg:max-w-[55px]  2xl:max-w-[70px]"
-                    src="./src/image/bookV2.png" alt="">
+                  <picture>
+                    <source srcset="./src/image/bookV2.avif 185w" type="image/avif"
+                      sizes="(min-width: 1680px) 90px, (min-width: 1280px) calc(1.32vw + 68px), (min-width: 1040px) 90px, (min-width: 640px) 100px, (min-width: 440px) 60px, calc(18.33vw - 17px)">
+                    <source srcset="./src/image/bookV2.webp 185w" type="image/webp"
+                      sizes="(min-width: 1680px) 90px, (min-width: 1280px) calc(1.32vw + 68px), (min-width: 1040px) 90px, (min-width: 640px) 100px, (min-width: 440px) 60px, calc(18.33vw - 17px)">
+                    <img class="book max-w-[34.5px] sm:max-w-[58px] md:max-w-[65px] lg:max-w-[55px]  2xl:max-w-[70px]"
+                      src="./src/image/bookV2.png" srcset="./src/image/bookV2.png 185w" alt="Book"
+                      sizes="(min-width: 1680px) 90px, (min-width: 1280px) calc(1.32vw + 68px), (min-width: 1040px) 90px, (min-width: 640px) 100px, (min-width: 440px) 60px, calc(18.33vw - 17px)">
+                  </picture>
                   <p
                     class="leading-[120%] text-alphaBlue font-bold text-[12px] sm:text-xl lg:text-lg absolute top-14/30 left-1/2 -translate-x-1/2 -translate-y-1/2 -rotate-90 w-36 sm:w-40 2xl:w-60 text-center ">
                     Atlas of <br> Ortelius
                   </p>
                 </div>
                 <div class="relative h-fit" draggable="true" id="book-cookbook-of-antwerp">
-                  <img class="book max-w-[34.5px] sm:max-w-[58px] md:max-w-[65px] lg:max-w-[55px]  2xl:max-w-[70px]"
-                    src="./src/image/bookV2.png" alt="">
+                  <picture>
+                    <source srcset="./src/image/bookV2.avif 185w" type="image/avif"
+                      sizes="(min-width: 1680px) 90px, (min-width: 1280px) calc(1.32vw + 68px), (min-width: 1040px) 90px, (min-width: 640px) 100px, (min-width: 440px) 60px, calc(18.33vw - 17px)">
+                    <source srcset="./src/image/bookV2.webp 185w" type="image/webp"
+                      sizes="(min-width: 1680px) 90px, (min-width: 1280px) calc(1.32vw + 68px), (min-width: 1040px) 90px, (min-width: 640px) 100px, (min-width: 440px) 60px, calc(18.33vw - 17px)">
+                    <img class="book max-w-[34.5px] sm:max-w-[58px] md:max-w-[65px] lg:max-w-[55px]  2xl:max-w-[70px]"
+                      src="./src/image/bookV2.png" srcset="./src/image/bookV2.png 185w" alt="Book"
+                      sizes="(min-width: 1680px) 90px, (min-width: 1280px) calc(1.32vw + 68px), (min-width: 1040px) 90px, (min-width: 640px) 100px, (min-width: 440px) 60px, calc(18.33vw - 17px)">
+                  </picture>
                   <p
                     class="leading-[120%] text-alphaBlue font-bold text-[12px] sm:text-xl lg:text-lg absolute top-14/30 left-1/2 -translate-x-1/2 -translate-y-1/2 -rotate-90 w-36 sm:w-40 2xl:w-60 text-center">
                     Cookbook <br>
                     of Antwerp</p>
                 </div>
                 <div class="relative h-fit" draggable="true" id="book-medicinal-dodoens">
-                  <img class="book max-w-[34.5px] sm:max-w-[58px] md:max-w-[65px] lg:max-w-[55px]  2xl:max-w-[70px]"
-                    src="./src/image/bookV2.png" alt="">
+                  <picture>
+                    <source srcset="./src/image/bookV2.avif 185w" type="image/avif"
+                      sizes="(min-width: 1680px) 90px, (min-width: 1280px) calc(1.32vw + 68px), (min-width: 1040px) 90px, (min-width: 640px) 100px, (min-width: 440px) 60px, calc(18.33vw - 17px)">
+                    <source srcset="./src/image/bookV2.webp 185w" type="image/webp"
+                      sizes="(min-width: 1680px) 90px, (min-width: 1280px) calc(1.32vw + 68px), (min-width: 1040px) 90px, (min-width: 640px) 100px, (min-width: 440px) 60px, calc(18.33vw - 17px)">
+                    <img class="book max-w-[34.5px] sm:max-w-[58px] md:max-w-[65px] lg:max-w-[55px]  2xl:max-w-[70px]"
+                      src="./src/image/bookV2.png" srcset="./src/image/bookV2.png 185w" alt="Book"
+                      sizes="(min-width: 1680px) 90px, (min-width: 1280px) calc(1.32vw + 68px), (min-width: 1040px) 90px, (min-width: 640px) 100px, (min-width: 440px) 60px, calc(18.33vw - 17px)">
+                  </picture>
                   <p
                     class="leading-[120%] text-alphaBlue font-bold text-[12px] sm:text-xl lg:text-lg absolute top-14/30 left-1/2 -translate-x-1/2 -translate-y-1/2 -rotate-90 w-36 sm:w-40 2xl:w-60 text-center">
                     Medicinal
@@ -1075,24 +1302,45 @@
                     by Dodoens</p>
                 </div>
                 <div class="relative h-fit" draggable="true" id="book-romantic-tales">
-                  <img class="book max-w-[34.5px] sm:max-w-[58px] md:max-w-[65px] lg:max-w-[55px]  2xl:max-w-[70px]"
-                    src="./src/image/bookV2.png" alt="">
+                  <picture>
+                    <source srcset="./src/image/bookV2.avif 185w" type="image/avif"
+                      sizes="(min-width: 1680px) 90px, (min-width: 1280px) calc(1.32vw + 68px), (min-width: 1040px) 90px, (min-width: 640px) 100px, (min-width: 440px) 60px, calc(18.33vw - 17px)">
+                    <source srcset="./src/image/bookV2.webp 185w" type="image/webp"
+                      sizes="(min-width: 1680px) 90px, (min-width: 1280px) calc(1.32vw + 68px), (min-width: 1040px) 90px, (min-width: 640px) 100px, (min-width: 440px) 60px, calc(18.33vw - 17px)">
+                    <img class="book max-w-[34.5px] sm:max-w-[58px] md:max-w-[65px] lg:max-w-[55px]  2xl:max-w-[70px]"
+                      src="./src/image/bookV2.png" srcset="./src/image/bookV2.png 185w" alt="Book"
+                      sizes="(min-width: 1680px) 90px, (min-width: 1280px) calc(1.32vw + 68px), (min-width: 1040px) 90px, (min-width: 640px) 100px, (min-width: 440px) 60px, calc(18.33vw - 17px)">
+                  </picture>
                   <p
                     class="leading-[120%] text-alphaBlue font-bold text-[12px] sm:text-xl lg:text-lg absolute top-14/30 left-1/2 -translate-x-1/2 -translate-y-1/2 -rotate-90 w-36 sm:w-40 2xl:w-60 text-center">
                     Romantic
                     Tales</p>
                 </div>
                 <div class="relative h-fit" draggable="true" id="book-prayer-mass">
-                  <img class="book max-w-[34.5px] sm:max-w-[58px] md:max-w-[65px] lg:max-w-[55px]  2xl:max-w-[70px]"
-                    src="./src/image/bookV2.png" alt="">
+                  <picture>
+                    <source srcset="./src/image/bookV2.avif 185w" type="image/avif"
+                      sizes="(min-width: 1680px) 90px, (min-width: 1280px) calc(1.32vw + 68px), (min-width: 1040px) 90px, (min-width: 640px) 100px, (min-width: 440px) 60px, calc(18.33vw - 17px)">
+                    <source srcset="./src/image/bookV2.webp 185w" type="image/webp"
+                      sizes="(min-width: 1680px) 90px, (min-width: 1280px) calc(1.32vw + 68px), (min-width: 1040px) 90px, (min-width: 640px) 100px, (min-width: 440px) 60px, calc(18.33vw - 17px)">
+                    <img class="book max-w-[34.5px] sm:max-w-[58px] md:max-w-[65px] lg:max-w-[55px]  2xl:max-w-[70px]"
+                      src="./src/image/bookV2.png" srcset="./src/image/bookV2.png 185w" alt="Book"
+                      sizes="(min-width: 1680px) 90px, (min-width: 1280px) calc(1.32vw + 68px), (min-width: 1040px) 90px, (min-width: 640px) 100px, (min-width: 440px) 60px, calc(18.33vw - 17px)">
+                  </picture>
                   <p
                     class="leading-[120%] text-alphaBlue font-bold text-[12px] sm:text-xl lg:text-lg absolute top-14/30 left-1/2 -translate-x-1/2 -translate-y-1/2 -rotate-90 w-36 sm:w-40 2xl:w-60 text-center">
                     Prayer book <br>
                     for the Mass</p>
                 </div>
                 <div class="relative h-fit" draggable="true" id="book-manuel-for-gardening">
-                  <img class="book max-w-[34.5px] sm:max-w-[58px] md:max-w-[65px] lg:max-w-[55px]  2xl:max-w-[70px]"
-                    src="./src/image/bookV2.png" alt="">
+                  <picture>
+                    <source srcset="./src/image/bookV2.avif 185w" type="image/avif"
+                      sizes="(min-width: 1680px) 90px, (min-width: 1280px) calc(1.32vw + 68px), (min-width: 1040px) 90px, (min-width: 640px) 100px, (min-width: 440px) 60px, calc(18.33vw - 17px)">
+                    <source srcset="./src/image/bookV2.webp 185w" type="image/webp"
+                      sizes="(min-width: 1680px) 90px, (min-width: 1280px) calc(1.32vw + 68px), (min-width: 1040px) 90px, (min-width: 640px) 100px, (min-width: 440px) 60px, calc(18.33vw - 17px)">
+                    <img class="book max-w-[34.5px] sm:max-w-[58px] md:max-w-[65px] lg:max-w-[55px]  2xl:max-w-[70px]"
+                      src="./src/image/bookV2.png" srcset="./src/image/bookV2.png 185w" alt="Book"
+                      sizes="(min-width: 1680px) 90px, (min-width: 1280px) calc(1.32vw + 68px), (min-width: 1040px) 90px, (min-width: 640px) 100px, (min-width: 440px) 60px, calc(18.33vw - 17px)">
+                  </picture>
                   <p
                     class="leading-[120%] text-alphaBlue font-bold text-[12px] sm:text-xl lg:text-lg absolute top-14/30 left-1/2 -translate-x-1/2 -translate-y-1/2 -rotate-90 w-36 sm:w-40 2xl:w-60 text-center">
                     Manuel for <br>
@@ -1101,7 +1349,7 @@
               </div>
             </div>
             <p
-              class="mt-4 w-full hidden xl:block lg:ml-0 lg:mr-auto lg:mt-24 xl:mt-0 xl:min-w-[400px] 2xl:max-w-[550px] xl:mt-20">
+              class="mt-4 w-full hidden xl:block lg:ml-0 lg:mr-auto lg:mt-24 xl:min-w-[400px] 2xl:max-w-[550px] xl:mt-16">
               <span class="highlight">Manuscripts</span> are arriving at my Officina from every direction. But <span
                 class="highlight">not every idea</span> belongs in my printing
               house.
@@ -1129,8 +1377,13 @@
           </div>
           <div
             class="relative w-full h-[260px] mr-0 ml-auto -right-6 md:-right-8 lg:-right-16  sm:h-[430px] md:h-[490px] lg:h-[450px] xl:h-[470px] 2xl:h-[520px] max-w-[350px] sm:max-w-[500px] md:max-w-[650px] lg:max-w-[700px] xl:max-w-[800px]  ">
-            <img class="absolute bottom-0 opacity-50 z-0 pointer-events-none right-0" src="./src/image/shelf2.png"
-              alt="Shelf">
+            <picture>
+              <source srcset="./src/image/shelf2.avif 730w" type="image/avif" sizes="100vw">
+              <source srcset="./src/image/shelf2.webp 730w" type="image/webp" sizes="100vw">
+              <img class="absolute bottom-0 opacity-50 z-0 pointer-events-none right-0" src="./src/image/shelf2.png"
+                srcset="./src/image/shelf2.png 730w" alt="Shelf" sizes="100vw">
+            </picture>
+
 
             <div id="shelf"
               class="absolute bottom-[25%] lg:bottom-[30%] xl:bottom-[35%] 2xl:bottom-[33%] w-full right-0 gap-2 flex flex-wrap justify-center px-0 h-[165px] sm:h-[270px] md:h-[305px] lg:h-[240px] xl:h-[260px] 2xl:h-[325px]">
@@ -1142,10 +1395,15 @@
       </div>
 
     </section>
-    <img class="" src="./src/image/paperRip2.png" alt="">
+    <picture>
+      <source srcset="./src/image/paperRip2.avif 834w" type="image/avif" sizes="100vw">
+      <source srcset="./src/image/paperRip2.webp 834w" type="image/webp" sizes="100vw">
+      <img src="./src/image/paperRip2.png" srcset="./src/image/paperRip2.png 834w" alt="Torn paper" sizes="100vw">
+    </picture>
 
-    <section
-      class="pl-6 pr-6 relative pt-6 md:pl-8 md:pr-8 md:pt-8 lg:pl-16 lg:pr-16 lg:pt-8 xl:pl-36 xl:pr-36 bg-alphaBeige">
+    <section id="testament"
+      class=" pl-6 pr-6 relative pt-6 md:pl-8 md:pr-8 md:pt-8 lg:pl-16 lg:pr-16 lg:pt-8 xl:pl-36 xl:pr-36
+      bg-alphaBeige">
       <h2 class="text-center">My Death and Testament</h2>
       <div class="text-center pt-4 relative max-w-[500px] mx-auto">
         <p>On <span class="highlightY">September 22, 1610</span>, I passed away. I was laid to rest in <span
@@ -1196,7 +1454,12 @@
 
           </div>
 
-          <img class="z-1 top-0 opacity-75" src="./src/image/paper.png" alt="">
+          <picture>
+            <source srcset="./src/image/paper.avif 1005w" type="image/avif" sizes="100vw">
+            <source srcset="./src/image/paper.webp 1005w" type="image/webp" sizes="100vw">
+            <img class="z-1 top-0 opacity-75" src="./src/image/paper.png" srcset="./src/image/paper.png 1005w"
+              alt="Paper" sizes="100vw">
+          </picture>
         </div>
 
       </div>
@@ -1208,8 +1471,14 @@
         duty
         woven into words.</p>
     </section>
-    <img class="rotate-180" src="./src/image/paperRip2.png" alt="">
-    <section class="pl-6 pr-6 relative pt-6 md:pl-8 md:pr-8 md:pt-8 lg:pl-16 lg:pr-16 lg:pt-8 xl:pl-36 xl:pr-36">
+    <picture>
+      <source srcset="./src/image/paperRip2.avif 834w" type="image/avif" sizes="100vw">
+      <source srcset="./src/image/paperRip2.webp 834w" type="image/webp" sizes="100vw">
+      <img class="rotate-180" src="./src/image/paperRip2.png" srcset="./src/image/paperRip2.png 834w" alt="Torn paper"
+        sizes="100vw">
+    </picture>
+    <section id="legacy"
+      class="pl-6 pr-6 relative pt-6 md:pl-8 md:pr-8 md:pt-8 lg:pl-16 lg:pr-16 lg:pt-8 xl:pl-36 xl:pr-36">
       <div class="text-center mb-8">
 
         <h2>Legacy Beyond Time</h2>
@@ -1234,7 +1503,12 @@
           wisdom
           of the world.</p>
         <div class=" max-w-[342px] mx-auto sm:mx-0 sm:min-w-[280px]">
-          <img class="-mt-6 opacity-75" src="./src/image/logoMuseumY.png" alt="">
+          <picture>
+            <source srcset="./src/image/logoMuseumY.avif 2175w" type="image/avif" sizes="100vw">
+            <source srcset="./src/image/logoMuseumY.webp 2175w" type="image/webp" sizes="100vw">
+            <img src="./src/image/logoMuseumY.png" srcset="./src/image/logoMuseumY.png 2175w" alt="Logo museum"
+              sizes="100vw">
+          </picture>
 
         </div>
       </div>
@@ -1261,7 +1535,12 @@
       </div>
       <div
         class="relative w-screen z-0 -left-6 md:-left-8 lg:-left-16 xl:-left-36 -right-6 md:-right-8 lg:-right-16 xl:-right-36">
-        <img class="absolute opacity-50 bottom-0 md:-bottom-4" src="./src/image/footsteps.png" alt="">
+        <picture>
+          <source srcset="./src/image/footsteps-837.avif 837w" type="image/avif" sizes="100vw">
+          <source srcset="./src/image/footsteps-837.webp 837w" type="image/webp" sizes="100vw">
+          <img class="absolute opacity-50 bottom-0 md:-bottom-4" src="./src/image/footsteps-837.png"
+            srcset="./src/image/footsteps-837.png 837w" alt="Footsteps" sizes="100vw">
+        </picture>
 
       </div>
     </section>
