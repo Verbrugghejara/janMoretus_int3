@@ -40,6 +40,7 @@ img {
 
 a {
     text-decoration: none;
+    transition: ease-in-out 0.3s;
 }
 
 html,
@@ -92,7 +93,7 @@ h3 {
     line-height: 120%;
 }
 
-button {
+/* button {
     font-family: var(--font-secondary);
     border-radius: 100px;
     border: 1px solid var(--color-alphaBlack);
@@ -101,6 +102,10 @@ button {
     justify-content: center;
     align-items: center;
     gap: 10px;
+} */
+.disabled {
+    opacity: 0.5;
+    pointer-events: none;
 }
 
 .title-year {

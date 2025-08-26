@@ -4,6 +4,9 @@ gsap.registerPlugin(ScrollTrigger);
 let pageHeight = document.body.scrollHeight;
 let lock1 = 0;
 let lock2 = 0;
+document.getElementById("menu-btn").addEventListener("click", () => {
+  document.getElementById("mobile-menu").classList.toggle("hidden");
+});
 
 document.querySelector(".locked").classList.add("hidden");
 document.querySelector(".footer").classList.add("hidden");
@@ -45,7 +48,7 @@ const moveEyes = (e) => {
 
   eyeRight.style.left = 57.5 + (xPct - 0.3) * maxX + "%";
   eyeRight.style.top = 23.5 + (yPct - 0.3) * maxY + "%";
-}
+};
 
 header.addEventListener("mouseleave", function () {
   eyeLeft.style.left = "47%";
@@ -517,6 +520,8 @@ const stopRotate = () => {
 lockWheel.addEventListener("mousedown", startRotate);
 lockWheel.addEventListener("touchstart", startRotate, { passive: false });
 
+const disabledNav = document.querySelectorAll(".disabled");
+
 const checkCodeStep = () => {
   const tolerance = 10;
   const normalizedAngle = ((currentAngle % 360) + 360) % 360;
@@ -538,6 +543,11 @@ const checkCodeStep = () => {
         "cursor-default",
         "top-[72%]"
       );
+
+      disabledNav.forEach((nav) => {
+        nav.classList.remove("disabled");
+        nav.classList.add("hover:text-alphaYellow");
+      });
 
       const answer3 = document.getElementById("answer-3");
 
@@ -734,7 +744,7 @@ canvas.addEventListener("mouseleave", () => {
     quillEmpty.classList.remove("hidden");
     quillEmpty.style.opacity = "0.5";
     quillEmpty.style.maxWidth = "400px";
-    quillEmpty.style.right = "-400px"; 
+    quillEmpty.style.right = "-400px";
     quillEmpty.style.bottom = "0";
     quillEmpty.style.left = "";
     quillEmpty.style.top = "";
