@@ -24,8 +24,11 @@
         <div class="hidden w-full lg:block">
           <div class="flex justify-between items-center gap-8">
             <div class="h-16 w-16 ">
-              <img src="./src/image/logoMuseum.png" alt="">
-
+              <picture>
+                <source srcset="./src/image/logoMuseum-240.avif 240w" type="image/avif" sizes="100vw">
+                <source srcset="./src/image/logoMuseum-240.webp 240w" type="image/webp" sizes="100vw">
+                <img src="./src/image/logoMuseum.png" srcset="./src/image/logoMuseum-240.png 240w" sizes="100vw">
+              </picture>
             </div>
             <ul class="flex gap-7 text-lg font-serif">
               <li><a href="#early-years" class="hover:text-red-700 transition">My Early Years</a></li>
@@ -42,12 +45,69 @@
       </div>
     </nav>
     <div class="absolute inset-0 w-full h-full overflow-hidden ">
-      <img
+      <!-- <img
         class="xl:hidden absolute w-full h-full object-cover object-bottom sm:-top-8 md:-top-36 lg:-top-48 xl:-top-64 2xl:-top-96"
-        src="./src/image/janMoretus.jpg" alt="">
+        src="./src/image/janMoretus.jpg" alt=""> -->
+      <picture
+        class="xl:hidden absolute w-full h-full object-cover object-bottom sm:-top-8 md:-top-36 lg:-top-48 xl:-top-64 2xl:-top-96">
+        <source srcset="./src/image/janMoretus-300.avif 300w,
+                            ./src/image/janMoretus-721.avif 721w,
+                            ./src/image/janMoretus-320.avif 320w,
+                            ./src/image/janMoretus-1080.avif 1080w,
+                            ./src/image/janMoretus-1300.avif 1300w,
+                            ./src/image/janMoretus-1480.avif 1480w,
+                            ./src/image/janMoretus-1640.avif 1640w,
+                            ./src/image/janMoretus-1789.avif 1789w,
+                            ./src/image/janMoretus-1920.avif 1920w,
+                            ./src/image/janMoretus-2048.avif 2048w,
+                            " type="image/avif" sizes="100vw">
+        <source srcset="./src/image/janMoretus-300.webp 300w,
+                            ./src/image/janMoretus-721.webp 721w,
+                            ./src/image/janMoretus-320.webp 320w,
+                            ./src/image/janMoretus-1080.webp 1080w,
+                            ./src/image/janMoretus-1300.webp 1300w,
+                            ./src/image/janMoretus-1480.webp 1480w,
+                            ./src/image/janMoretus-1640.webp 1640w,
+                            ./src/image/janMoretus-1789.webp 1789w,
+                            ./src/image/janMoretus-1920.webp 1920w,
+                            ./src/image/janMoretus-2048.webp 2048w,
+                            " type="image/webp" sizes="100vw">
+        <img src="./src/image/janMoretus.jpg" srcset="./src/image/janMoretus-300.png 300w,
+                            ./src/image/janMoretus-721.png 721w,
+                            ./src/image/janMoretus-320.png 320w,
+                            ./src/image/janMoretus-1080.png 1080w,
+                            ./src/image/janMoretus-1300.png 1300w,
+                            ./src/image/janMoretus-1480.png 1480w,
+                            ./src/image/janMoretus-1640.png 1640w,
+                            ./src/image/janMoretus-1789.png 1789w,
+                            ./src/image/janMoretus-1920.png 1920w,
+                            ./src/image/janMoretus-2048.png 2048w,
+                            " alt="" sizes="100vw">
+      </picture>
       <div class="relative w-full -top-1/5 2xl:-top-1/3 aspect-[3/4] hidden xl:block">
-        <img id="anchor" class="absolute top-0 left-0 w-full h-full object-cover z-20"
-          src="./src/image/janMoretusEyeless.png" alt="Jan Moretus">
+        <picture class="absolute top-0 left-0 w-full h-full object-cover z-20">
+          <source srcset="./src/image/janMoretusEyeless-1280.avif 1280w,
+                    ./src/image/janMoretusEyeless-1470.avif 1470w,
+                    ./src/image/janMoretusEyeless-1640.avif 1640w,
+                    ./src/image/janMoretusEyeless-1789.avif 1789w,
+                    ./src/image/janMoretusEyeless-1920.avif 1920w,
+                    ./src/image/janMoretusEyeless-2048.avif 2048w,
+                    " type="image/avif" sizes="100vw">
+          <source srcset="./src/image/janMoretusEyeless-1280.webp 1280w,
+                    ./src/image/janMoretusEyeless-1470.webp 1470w,
+                    ./src/image/janMoretusEyeless-1640.webp 1640w,
+                    ./src/image/janMoretusEyeless-1789.webp 1789w,
+                    ./src/image/janMoretusEyeless-1920.webp 1920w,
+                    ./src/image/janMoretusEyeless-2048.webp 2048w,
+                    " type="image/webp" sizes="100vw">
+          <img src="./src/image/janMoretusEyeless.png" srcset="./src/image/janMoretusEyeless-1280.png 1280w,
+                    ./src/image/janMoretusEyeless-1470.png 1470w,
+                    ./src/image/janMoretusEyeless-1640.png 1640w,
+                    ./src/image/janMoretusEyeless-1789.png 1789w,
+                    ./src/image/janMoretusEyeless-1920.png 1920w,
+                    ./src/image/janMoretusEyeless-2048.png 2048w,
+                    " alt="" sizes="100vw">
+        </picture>
         <div class="absolute top-0 left-0 w-full h-full z-10">
           <img id="eye-left" class="absolute top-[24%] left-[47%] -translate-x-1/2 -translate-y-1/2"
             style="height: 5%; width: auto;" src="./src/image/eyes.png" alt="Linker oog">
@@ -67,13 +127,42 @@
         <button class="mt-4" style="border-color: var(--color-white); color: var(--color-white);"><a href=""></a>Let's
           start my Journey</button>
       </div>
-      <img class="absolute left-0 right-0 bottom-0 w-full z-50" src="./src/image/paperRip.png" alt="">
+      <!-- <img class="absolute left-0 right-0 bottom-0 w-full z-50" src="./src/image/paperRip.png" alt=""> -->
+      <picture class="absolute left-0 right-0 bottom-0 w-full z-50">
+        <source srcset="./src/image/paperRip-721.avif 721w,
+                        ./src/image/paperRip-1080.avif 1080w,
+                        ./src/image/paperRip-1560.avif 1560w,
+                        ./src/image/paperRip-1920.avif 1920w" type="image/avif" sizes="100vw">
+        <source srcset="./src/image/paperRip-721.webp 721w,
+                        ./src/image/paperRip-1080.webp 1080w,
+                        ./src/image/paperRip-1560.webp 1560w,
+                        ./src/image/paperRip-1920.webp 1920w" type="image/webp" sizes="100vw">
+        <img src="./src/image/paperRip.png" srcset="./src/image/paperRip-721.png 721w,
+                        ./src/image/paperRip-1080.png 1080w,
+                        ./src/image/paperRip-1560.png 1560w,
+                        ./src/image/paperRip-1920.png 1920w" alt="" sizes="100vw">
+      </picture>
 
   </header>
   <section id="timeline" class="relative w-full h-[500vh] xl:h-[600vh] hidden xl:block">
     <div class="sticky top-0 h-screen flex justify-center items-center">
-      <img id="background" class="absolute w-auto max-w-full max-h-screen object-cover opacity-50 pointer-events-none"
-        src="./src/image/AntwerpmapY.png" alt="Antwerp map" />
+      <!-- <img id="background" class="absolute w-auto max-w-full max-h-screen object-cover opacity-50 pointer-events-none"
+        src="./src/image/AntwerpmapY.png" alt="Antwerp map" /> -->
+      <picture id="background"
+        class="absolute w-auto max-w-full max-h-screen object-cover opacity-50 pointer-events-none">
+        <source srcset="./src/image/antwerpenMapY-1280.avif 1280w,
+                          ./src/image/antwerpenMapY-1630.avif 1630w,
+                          ./src/image/antwerpenMapY-1920.avif 1920w,
+                          ./src/image/antwerpenMapY-2048.avif 2048w" type="image/avif" sizes="100vw">
+        <source srcset="./src/image/antwerpenMapY-1280.webp 1280w,
+                          ./src/image/antwerpenMapY-1630.webp 1630w,
+                          ./src/image/antwerpenMapY-1920.webp 1920w,
+                          ./src/image/antwerpenMapY-2048.webp 2048w" type="image/webp" sizes="100vw">
+        <img src="./src/image/antwerpenMapY.png" srcset="./src/image/antwerpenMapY-1280.png 1280w,
+                          ./src/image/antwerpenMapY-1630.png 1630w,
+                          ./src/image/antwerpenMapY-1920.png 1920w,
+                          ./src/image/antwerpenMapY-2048.png 2048w" alt="" sizes="100vw">
+      </picture>
 
       <div id="year-container" class="flex flex-col items-center justify-center text-center">
       </div>
@@ -83,14 +172,40 @@
 
 
   <section class="relative xl:hidden flex justify-center pl-6 pr-6 md:pl-8 md:pr-8 md:pt-8 lg:px-16 xl:px-36">
-    <img class="w-full h-full object-cover opacity-50 pointer-events-none" style="position:relative;"
-      src="./src/image/AntwerpmapY.png" alt="">
+    <!-- <img class="w-full h-full object-cover opacity-50 pointer-events-none" style="position:relative;"
+      src="./src/image/AntwerpmapY.png" alt=""> -->
+    <picture class="w-full h-full object-cover opacity-50 pointer-events-none relative">
+      <source srcset="./src/image/antwerpenMapY-637.avif 637w,
+                          ./src/image/antwerpenMapY-936.avif 936w,
+                          ./src/image/antwerpenMapY-1470.avif 1470w,
+                          ./src/image/antwerpenMapY-1858.avif 1858w,
+                          ./src/image/antwerpenMapY-2048.avif 2048w" type="image/avif" sizes="100vw">
+      <source srcset="./src/image/antwerpenMapY-637.webp 637w,
+                          ./src/image/antwerpenMapY-936.webp 936w,
+                          ./src/image/antwerpenMapY-1470.webp 1470w,
+                          ./src/image/antwerpenMapY-1858.webp 1858w,
+                          ./src/image/antwerpenMapY-2048.webp 2048w" type="image/webp" sizes="100vw">
+      <img src="./src/image/antwerpenMapY.png" srcset="./src/image/antwerpenMapY-637.png 637w,
+                          ./src/image/antwerpenMapY-936.png 936w,
+                          ./src/image/antwerpenMapY-1470.png 1470w,
+                          ./src/image/antwerpenMapY-1858.png 1858w,
+                          ./src/image/antwerpenMapY-2048.png 2048w" alt="" sizes="100vw">
+    </picture>
     <div class="absolute inset-0 flex flex-col items-center justify-center text-center z-10 gap-8 sm:gap-12">
       <p class="title-year">1543</p>
       <p class="">the year I was born, in the city of&nbsp;<span class="highlight">Antwerp</span>.</p>
     </div>
   </section>
-  <img class="" src="./src/image/paperRip2.png" alt="">
+  <!-- <img class="" src="./src/image/paperRip2.png" alt=""> -->
+  <picture>
+    <source srcset="./src/image/paperRip2-1080.avif 1080w,
+                      ./src/image/paperRip2-1920.avif 1920w" type="image/avif" sizes="100vw">
+    <source srcset="./src/image/paperRip2-1080.webp 1080w,
+                      ./src/image/paperRip2-1920.webp 1920w" type="image/webp" sizes="100vw">
+    <img src="./src/image/paperRip2.png" srcset="./src/image/paperRip2-1080.png 1080w,
+                      ./src/image/paperRip2-1920.png 1920w" alt="" sizes="100vw">
+  </picture>
+
   <section
     class="bg-alphaBeige relative pl-6 pr-6 pt-6 md:pl-8 md:pr-8 md:pt-8 lg:pl-16 lg:pr-16 lg:pt-8 xl:pl-36 xl:pr-36">
     <div class="">
@@ -104,9 +219,30 @@
               class="highlight">Latin</span>. Books were my teachers, and curiosity was my guide.</p>
 
         </div>
-        <img
+        <!-- <img
           class="opacity-50 mr-0 ml-auto -mt-5 w-full max-w-[320px] sm:max-w-[420px] md:max-w-[480px] lg:max-w-[520px]"
-          src="./src/image/booksBlue.png" alt="">
+          src="./src/image/booksBlue.png" alt=""> -->
+        <picture
+          class="opacity-50 mr-0 ml-auto -mt-5 w-full max-w-[320px] sm:max-w-[420px] md:max-w-[480px] lg:max-w-[520px]">
+          <source srcset="./src/image/booksBlue-320.avif 320w,
+                    ./src/image/booksBlue-640.avif 640w,
+                    ./src/image/booksBlue-1040.avif 1040w,
+                    ./src/image/booksBlue-1260.avif 1260w,
+                    ./src/image/booksBlue-1440.avif 1440w,
+                    ./src/image/booksBlue-1560.avif 1560w" type="image/avif" sizes="100vw">
+          <source srcset="./src/image/booksBlue-320.webp 320w,
+                    ./src/image/booksBlue-640.webp 640w,
+                    ./src/image/booksBlue-1040.webp 1040w,
+                    ./src/image/booksBlue-1260.webp 1260w,
+                    ./src/image/booksBlue-1440.webp 1440w,
+                    ./src/image/booksBlue-1560.webp 1560w" type="image/webp" sizes="100vw">
+          <img src="./src/image/booksBlue.png" srcset="./src/image/booksBlue-320.png 320w,
+                    ./src/image/booksBlue-640.png 640w,
+                    ./src/image/booksBlue-1040.png 1040w,
+                    ./src/image/booksBlue-1260.png 1260w,
+                    ./src/image/booksBlue-1440.png 1440w,
+                    ./src/image/booksBlue-1560.png 1560w" alt="" sizes="100vw">
+        </picture>
 
       </div>
       <div class="relative pt-6 w-full h-full">
@@ -126,8 +262,31 @@
   <section
     class="bg-alphaBeige relative pl-6 pr-6 pt-6 pb-12 lg:pb-20 md:pl-8 md:pr-8 md:pt-8 lg:pl-16 lg:pr-16 lg:pt-8 xl:pl-36 xl:pr-36">
 
-    <img class="hidden opacity-50 lg:block lg:absolute right-0 zuil lg:-top-8" src="./src/image/zuilBlue.png" alt="">
-    <img class="hidden opacity-50 lg:block lg:absolute left-0 zuil lg:-top-8" src="./src/image/zuil2Blue.png" alt="">
+    <!-- <img class="hidden opacity-50 lg:block lg:absolute right-0 zuil lg:-top-8" src="./src/image/zuilBlue.png" alt=""> -->
+    <picture class="hidden opacity-50 lg:block lg:absolute right-0 zuil lg:-top-8">
+      <source srcset="./src/image/zuilBlue-170.avif 170w,
+                      ./src/image/zuilBlue-340.avif 340w,
+                      ./src/image/zuilBlue-510.avif 510w" type="image/avif" sizes="100vw">
+      <source srcset="./src/image/zuilBlue-170.webp 170w,
+                      ./src/image/zuilBlue-340.webp 340w,
+                      ./src/image/zuilBlue-510.webp 510w" type="image/webp" sizes="100vw">
+      <img src="./src/image/zuilBlue.png" srcset="./src/image/zuilBlue-170.png 170w,
+                      ./src/image/zuilBlue-340.png 340w,
+                      ./src/image/zuilBlue-510.png 510w" alt="" sizes="100vw">
+    </picture>
+
+    <!-- <img class="hidden opacity-50 lg:block lg:absolute left-0 zuil lg:-top-8" src="./src/image/zuil2Blue.png" alt=""> -->
+    <picture class="hidden opacity-50 lg:block lg:absolute left-0 zuil lg:-top-8">
+      <source srcset="./src/image/zuil2Blue-170.avif 170w,
+                    ./src/image/zuil2Blue-340.avif 340w,
+                    ./src/image/zuil2Blue-510.avif 510w" type="image/avif" sizes="100vw">
+      <source srcset="./src/image/zuil2Blue-170.webp 170w,
+                    ./src/image/zuil2Blue-340.webp 340w,
+                    ./src/image/zuil2Blue-510.webp 510w" type="image/webp" sizes="100vw">
+      <img src="./src/image/zuil2Blue.png" srcset="./src/image/zuil2Blue-170.png 170w,
+                    ./src/image/zuil2Blue-340.png 340w,
+                    ./src/image/zuil2Blue-510.png 510w" alt="" sizes="100vw">
+    </picture>
 
     <h3 class="sm:text-center xl:mb-12">Will you help me with my <span class="highlight">first task</span> in the
       bookshop?</h3>
@@ -211,7 +370,15 @@
       src="./src/image/top.png" alt="">
 
   </section>
-  <img class="rotate-180 w-full" src="./src/image/paperRip2.png" alt="">
+  <!-- <img class="rotate-180 w-full" src="./src/image/paperRip2.png" alt=""> -->
+  <picture class="rotate-180 w-full">
+    <source srcset="./src/image/paperRip2-1080.avif 1080w,
+                        ./src/image/paperRip2-1920.avif 1920w" type="image/avif" sizes="100vw">
+    <source srcset="./src/image/paperRip2-1080.webp 1080w,
+                        ./src/image/paperRip2-1920.webp 1920w" type="image/webp" sizes="100vw">
+    <img src="./src/image/paperRip2.png" srcset="./src/image/paperRip2-1080.png 1080w,
+                        ./src/image/paperRip2-1920.png 1920w" alt="" sizes="100vw">
+  </picture>
   <section class="pl-6 pr-6 relative pt-6 md:pl-8 md:pr-8 md:pt-8 lg:pl-16 lg:pr-16 lg:pt-8 xl:pl-36 xl:pr-36">
     <div class="relative h-[420px] sm:h-[420px] md:h-[480px] lg:h-[550px] xl:h-[600px] 2xl:h-[700px]">
       <div class="flex flex-col items-center h-full text-center">
@@ -228,16 +395,79 @@
         <img
           class="min-w-[100px] max-w-[120px] h-auto absolute bottom-1 sm:max-w-[150px] md:max-w-[200px] lg:max-w-[300px] xl:max-w-[350px] 2xl:max-w-[450px]"
           src="./src/image/janMoretus.png" alt="Jan Moretus">
-        <img class="" src="./src/image/heart.png" alt="">
-        <img
+        <!-- <img class="" src="./src/image/heart.png" alt=""> -->
+        <picture>
+          <source srcset="./src/image/heart-1080.avif 1080w,
+                            ./src/image/heart-1920.avif 1920w" type="image/avif" sizes="100vw">
+          <source srcset="./src/image/heart-1080.webp 1080w,
+                            ./src/image/heart-1920.webp 1920w" type="image/webp" sizes="100vw">
+          <img src="./src/image/heart.png" srcset="./src/image/heart-1080.png 1080w,
+                            ./src/image/heart-1920.png 1920w" alt="" sizes="100vw">
+        </picture>
+        <!-- <img
           class="min-w-[100px] max-w-[120px] h-auto absolute bottom-1 right-0 sm:max-w-[150px] md:max-w-[200px] lg:max-w-[300px] xl:max-w-[350px] 2xl:max-w-[450px]"
-          src="./src/image/martinaPlantin.png" alt="Martine Plantin">
+          src="./src/image/martinaPlantin.png" alt="Martine Plantin"> -->
+        <picture
+          class="min-w-[100px] max-w-[120px] h-auto absolute bottom-1 right-0 sm:max-w-[150px] md:max-w-[200px] lg:max-w-[300px] xl:max-w-[350px] 2xl:max-w-[450px]">
+          <source srcset="./src/image/martinaPlantin-210.avif 210w,
+                              ./src/image/martinaPlantin-450.avif 450w,
+                              ./src/image/martinaPlantin-700.avif 700w,
+                              ./src/image/martinaPlantin-900.avif 900w,
+                              ./src/image/martinaPlantin-1050.avif 1050w,
+                              ./src/image/martinaPlantin-1210.avif 1210w,
+                              ./src/image/martinaPlantin-1350.avif 1350w" type="image/avif" sizes="100vw">
+          <source srcset="./src/image/martinaPlantin-210.webp 210w,
+                              ./src/image/martinaPlantin-450.webp 450w,
+                              ./src/image/martinaPlantin-700.webp 700w,
+                              ./src/image/martinaPlantin-900.webp 900w,
+                              ./src/image/martinaPlantin-1050.webp 1050w,
+                              ./src/image/martinaPlantin-1210.webp 1210w,
+                              ./src/image/martinaPlantin-1350.webp 1350w" type="image/webp" sizes="100vw">
+          <img src="./src/image/martinaPlantin.png" srcset="./src/image/martinaPlantin-210.png 210w,
+                              ./src/image/martinaPlantin-450.png 450w,
+                              ./src/image/martinaPlantin-700.png 700w,
+                              ./src/image/martinaPlantin-900.png 900w,
+                              ./src/image/martinaPlantin-1050.png 1050w,
+                              ./src/image/martinaPlantin-1210.png 1210w,
+                              ./src/image/martinaPlantin-1350.png 1350w" alt="" sizes="100vw">
+        </picture>
+
       </div>
     </div>
     <div class="relative mt-12 lg:mb-32 h-[420px] md:h-[520px] lg:h-[600px] xl:h-[850px] 2xl:h-[1100px]">
       <div
         class="absolute z-0 -top-24 xl:-top-36 2xl:-top-48 -right-56 lg:-right-72 xl:-right-[500px] 2xl:-right-[550px] min-w-[600px] max-w-[700px] lg:max-w-[850px] xl:max-w-[1200px] 2xl:max-w-[1600px]">
-        <img src="./src/image/leidenRed.png" alt="Leiden illustration" class="opacity-30 h-auto" />
+        <!-- <img src="./src/image/leidenRed.png" alt="Leiden illustration" class="opacity-30 h-auto" /> -->
+        <picture class="opacity-30 h-auto">
+          <source srcset="./src/image/leidenRed-850.avif 850w,
+                            ./src/image/leidenRed-1050.avif 1050w,
+                            ./src/image/leidenRed-1200.avif 1200w,
+                            ./src/image/leidenRed-1400.avif 1400w,
+                            ./src/image/leidenRed-1600.avif 1600w,
+                            ./src/image/leidenRed-1700.avif 1700w,
+                            ./src/image/leidenRed-1800.avif 1800w,
+                            ./src/image/leidenRed-1930.avif 1930w,
+                            ./src/image/leidenRed-2048.avif 2048w" type="image/avif" sizes="100vw">
+          <source srcset="./src/image/leidenRed-850.webp 850w,
+                            ./src/image/leidenRed-1050.webp 1050w,
+                            ./src/image/leidenRed-1200.webp 1200w,
+                            ./src/image/leidenRed-1400.webp 1400w,
+                            ./src/image/leidenRed-1600.webp 1600w,
+                            ./src/image/leidenRed-1700.webp 1700w,
+                            ./src/image/leidenRed-1800.webp 1800w,
+                            ./src/image/leidenRed-1930.webp 1930w,
+                            ./src/image/leidenRed-2048.webp 2048w" type="image/webp" sizes="100vw">
+          <img src="./src/image/leidenRed.png" srcset="./src/image/leidenRed-850.png 850w,
+                            ./src/image/leidenRed-1050.png 1050w,
+                            ./src/image/leidenRed-1200.png 1200w,
+                            ./src/image/leidenRed-1400.png 1400w,
+                            ./src/image/leidenRed-1600.png 1600w,
+                            ./src/image/leidenRed-1700.png 1700w,
+                            ./src/image/leidenRed-1800.png 1800w,
+                            ./src/image/leidenRed-1930.png 1930w,
+                            ./src/image/leidenRed-2048.png 2048w" alt="" sizes="100vw">
+        </picture>
+
       </div>
 
       <h3 class="sm:text-center xl:pt-16 2xl:pt-20">An Inheritance in My Hands</h3>
@@ -280,7 +510,36 @@
           the next chapter?</li>
       </ul>
       <div class="h-[100vh] w-fit relative bottom-0 flex justify-center items-center z-10 mx-auto">
-        <img class="h-full w-fit object-contain mx-auto max-h-[100vh]" src="./src/image/door2.png" alt="">
+        <!-- <img class="h-full w-fit object-contain mx-auto max-h-[100vh]" src="./src/image/door2.png" alt=""> -->
+        <picture class="h-full w-fit object-contain mx-auto max-h-[100vh]">
+          <source srcset="./src/image/door2-453.avif 453w,
+                    ./src/image/door2-702.avif 702w,
+                    ./src/image/door2-990.avif 990w,
+                    ./src/image/door2-1220.avif 1220w,
+                    ./src/image/door2-1404.avif 1404w,
+                    ./src/image/door2-1590.avif 1590w,
+                    ./src/image/door2-1760.avif 1760w,
+                    ./src/image/door2-1910.avif 1910w,
+                    ./src/image/door2-2048.avif 2048w" type="image/avif" sizes="100vw">
+          <source srcset="./src/image/door2-453.webp 453w,
+                    ./src/image/door2-702.webp 702w,
+                    ./src/image/door2-990.webp 990w,
+                    ./src/image/door2-1220.webp 1220w,
+                    ./src/image/door2-1404.webp 1404w,
+                    ./src/image/door2-1590.webp 1590w,
+                    ./src/image/door2-1760.webp 1760w,
+                    ./src/image/door2-1910.webp 1910w,
+                    ./src/image/door2-2048.webp 2048w" type="image/webp" sizes="100vw">
+          <img src="./src/image/door2.png" srcset="./src/image/door2-453.png 453w,
+                    ./src/image/door2-702.png 702w,
+                    ./src/image/door2-990.png 990w,
+                    ./src/image/door2-1220.png 1220w,
+                    ./src/image/door2-1404.png 1404w,
+                    ./src/image/door2-1590.png 1590w,
+                    ./src/image/door2-1760.png 1760w,
+                    ./src/image/door2-1910.png 1910w,
+                    ./src/image/door2-2048.png 2048w" alt="" sizes="100vw">
+        </picture>
 
         <div id="lock"
           class="absolute bottom-[30%] sm:bottom-[30%] lg:bottom-[20%] left-1/2 -translate-x-1/2 cursor-pointer">
@@ -293,14 +552,166 @@
           </div>
         </div>
       </div>
-      <img class="absolute min-w-[300px] top-0 scale-x-[-1] opacity-20 z-0 lg:hidden" src="./src/image/wall.png" alt="">
-      <img class="absolute min-w-[300px] bottom-0 opacity-20 z-0 lg:hidden" src="./src/image/wall.png" alt="">
+      <!-- <img class="absolute min-w-[300px] top-0 scale-x-[-1] opacity-20 z-0 lg:hidden" src="./src/image/wall.png" alt=""> -->
+      <picture class="absolute min-w-[300px] top-0 scale-x-[-1] opacity-20 z-0 lg:hidden">
+        <source srcset="./src/image/wall-300.avif 300w,
+                          ./src/image/wall-735.avif 735w,
+                          ./src/image/wall-936.avif 936w,
+                          ./src/image/wall-1190.avif 1190w,
+                          ./src/image/wall-1400.avif 1400w,
+                          ./src/image/wall-1580.avif 1580w,
+                          ./src/image/wall-1740.avif 1740w,
+                          ./src/image/wall-1890.avif 1890w" type="image/avif" sizes="100vw">
+        <source srcset="./src/image/wall-300.webp 300w,
+                          ./src/image/wall-735.webp 735w,
+                          ./src/image/wall-936.webp 936w,
+                          ./src/image/wall-1190.webp 1190w,
+                          ./src/image/wall-1400.webp 1400w,
+                          ./src/image/wall-1580.webp 1580w,
+                          ./src/image/wall-1740.webp 1740w,
+                          ./src/image/wall-1890.webp 1890w" type="image/webp" sizes="100vw">
+        <img src="./src/image/wall.png" srcset="./src/image/wall-300.png 300w,
+                          ./src/image/wall-735.png 735w,
+                          ./src/image/wall-936.png 936w,
+                          ./src/image/wall-1190.png 1190w,
+                          ./src/image/wall-1400.png 1400w,
+                          ./src/image/wall-1580.png 1580w,
+                          ./src/image/wall-1740.png 1740w,
+                          ./src/image/wall-1890.png 1890w" alt="" sizes="100vw">
+      </picture>
 
-      <img class="absolute hidden lg:block left-0 bottom-[80vh] wall opacity-20 " src="./src/image/wall.png" alt="">
-      <img class="absolute hidden lg:block -right-8 bottom-0 wall scale-x-[-1] opacity-20 " src="./src/image/wall.png"
-        alt="">
-      <img class="absolute hidden lg:block -right-12 bottom-[70vh] wall2 opacity-20" src="./src/image/wall2.png" alt="">
-      <img class="absolute hidden lg:block -left-12 bottom-6 wall2 opacity-20" src="./src/image/wall2.png" alt="">
+      <!-- <img class="absolute min-w-[300px] bottom-0 opacity-20 z-0 lg:hidden" src="./src/image/wall.png" alt=""> -->
+      <picture class="absolute min-w-[300px] bottom-0 opacity-20 z-0 lg:hidden">
+        <source srcset="./src/image/wall-300.avif 300w,
+                          ./src/image/wall-735.avif 735w,
+                          ./src/image/wall-936.avif 936w,
+                          ./src/image/wall-1190.avif 1190w,
+                          ./src/image/wall-1400.avif 1400w,
+                          ./src/image/wall-1580.avif 1580w,
+                          ./src/image/wall-1740.avif 1740w,
+                          ./src/image/wall-1890.avif 1890w" type="image/avif" sizes="100vw">
+        <source srcset="./src/image/wall-300.webp 300w,
+                          ./src/image/wall-735.webp 735w,
+                          ./src/image/wall-936.webp 936w,
+                          ./src/image/wall-1190.webp 1190w,
+                          ./src/image/wall-1400.webp 1400w,
+                          ./src/image/wall-1580.webp 1580w,
+                          ./src/image/wall-1740.webp 1740w,
+                          ./src/image/wall-1890.webp 1890w" type="image/webp" sizes="100vw">
+        <img src="./src/image/wall.png" srcset="./src/image/wall-300.png 300w,
+                          ./src/image/wall-735.png 735w,
+                          ./src/image/wall-936.png 936w,
+                          ./src/image/wall-1190.png 1190w,
+                          ./src/image/wall-1400.png 1400w,
+                          ./src/image/wall-1580.png 1580w,
+                          ./src/image/wall-1740.png 1740w,
+                          ./src/image/wall-1890.png 1890w" alt="" sizes="100vw">
+      </picture>
+      <!-- <img class="absolute hidden lg:block left-0 bottom-[80vh] wall opacity-20 " src="./src/image/wall.png" alt=""> -->
+      <picture class="absolute hidden lg:block left-0 bottom-[80vh] wall opacity-20 ">
+        <source srcset="./src/image/wall-515.avif 515w,
+                          ./src/image/wall-735.avif 735w,
+                          ./src/image/wall-890.avif 890w,
+                          ./src/image/wall-1030.avif 1030w,
+                          ./src/image/wall-1245.avif 1245w,
+                          ./src/image/wall-1335.avif 1335w,
+                          ./src/image/wall-1545.avif 1545w" type="image/avif" sizes="100vw">
+        <source srcset="./src/image/wall-515.webp 515w,
+                          ./src/image/wall-735.webp 735w,
+                          ./src/image/wall-890.webp 890w,
+                          ./src/image/wall-1030.webp 1030w,
+                          ./src/image/wall-1245.webp 1245w,
+                          ./src/image/wall-1335.webp 1335w,
+                          ./src/image/wall-1545.webp 1545w" type="image/webp" sizes="100vw">
+        <img src="./src/image/wall.png" srcset="./src/image/wall-515.png 515w,
+                          ./src/image/wall-735.png 735w,
+                          ./src/image/wall-890.png 890w,
+                          ./src/image/wall-1030.png 1030w,
+                          ./src/image/wall-1245.png 1245w,
+                          ./src/image/wall-1335.png 1335w,
+                          ./src/image/wall-1545.png 1545w" alt="" sizes="100vw">
+      </picture>
+
+      <!-- <img class="absolute hidden lg:block -right-8 bottom-0 wall scale-x-[-1] opacity-20 " src="./src/image/wall.png"
+        alt=""> -->
+      <picture class="absolute hidden lg:block -right-8 bottom-0 wall scale-x-[-1] opacity-20 ">
+        <source srcset="./src/image/wall-515.avif 515w,
+                                  ./src/image/wall-735.avif 735w,
+                                  ./src/image/wall-890.avif 890w,
+                                  ./src/image/wall-1030.avif 1030w,
+                                  ./src/image/wall-1245.avif 1245w,
+                                  ./src/image/wall-1335.avif 1335w,
+                                  ./src/image/wall-1545.avif 1545w" type="image/avif" sizes="100vw">
+        <source srcset="./src/image/wall-515.webp 515w,
+                                  ./src/image/wall-735.webp 735w,
+                                  ./src/image/wall-890.webp 890w,
+                                  ./src/image/wall-1030.webp 1030w,
+                                  ./src/image/wall-1245.webp 1245w,
+                                  ./src/image/wall-1335.webp 1335w,
+                                  ./src/image/wall-1545.webp 1545w" type="image/webp" sizes="100vw">
+        <img src="./src/image/wall.png" srcset="./src/image/wall-515.png 515w,
+                                  ./src/image/wall-735.png 735w,
+                                  ./src/image/wall-890.png 890w,
+                                  ./src/image/wall-1030.png 1030w,
+                                  ./src/image/wall-1245.png 1245w,
+                                  ./src/image/wall-1335.png 1335w,
+                                  ./src/image/wall-1545.png 1545w" alt="" sizes="100vw">
+      </picture>
+      <!-- <img class="absolute hidden lg:block -right-12 bottom-[70vh] wall2 opacity-20" src="./src/image/wall2.png" alt=""> -->
+      <picture class="absolute hidden lg:block -right-12 bottom-[70vh] wall2 opacity-20">
+        <source srcset="./src/image/wall2-541.avif 541w,
+                          ./src/image/wall2-817.avif 817w,
+                          ./src/image/wall2-942.avif 942w,
+                          ./src/image/wall2-1082.avif 1082w,
+                          ./src/image/wall2-1323.avif 1323w,
+                          ./src/image/wall2-1413.avif 1413w,
+                          ./src/image/wall2-1520.avif 1520w,
+                          ./src/image/wall2-1623.avif 1623w" type="image/avif" sizes="100vw">
+        <source srcset="./src/image/wall2-541.webp 541w,
+                          ./src/image/wall2-817.webp 817w,
+                          ./src/image/wall2-942.webp 942w,
+                          ./src/image/wall2-1082.webp 1082w,
+                          ./src/image/wall2-1323.webp 1323w,
+                          ./src/image/wall2-1413.webp 1413w,
+                          ./src/image/wall2-1520.webp 1520w,
+                          ./src/image/wall2-1623.webp 1623w" type="image/webp" sizes="100vw">
+        <img src="./src/image/wall2.png" srcset="./src/image/wall2-541.png 541w,
+                          ./src/image/wall2-817.png 817w,
+                          ./src/image/wall2-942.png 942w,
+                          ./src/image/wall2-1082.png 1082w,
+                          ./src/image/wall2-1323.png 1323w,
+                          ./src/image/wall2-1413.png 1413w,
+                          ./src/image/wall2-1520.png 1520w,
+                          ./src/image/wall2-1623.png 1623w" alt="" sizes="100vw">
+      </picture>
+
+      <!-- <img class="absolute hidden lg:block -left-12 bottom-6 wall2 opacity-20" src="./src/image/wall2.png" alt=""> -->
+      <picture class="absolute hidden lg:block -left-12 bottom-6 wall2 opacity-20">
+        <source srcset="./src/image/wall2-541.avif 541w,
+                                ./src/image/wall2-817.avif 817w,
+                                ./src/image/wall2-942.avif 942w,
+                                ./src/image/wall2-1082.avif 1082w,
+                                ./src/image/wall2-1323.avif 1323w,
+                                ./src/image/wall2-1413.avif 1413w,
+                                ./src/image/wall2-1520.avif 1520w,
+                                ./src/image/wall2-1623.avif 1623w" type="image/avif" sizes="100vw">
+        <source srcset="./src/image/wall2-541.webp 541w,
+                                ./src/image/wall2-817.webp 817w,
+                                ./src/image/wall2-942.webp 942w,
+                                ./src/image/wall2-1082.webp 1082w,
+                                ./src/image/wall2-1323.webp 1323w,
+                                ./src/image/wall2-1413.webp 1413w,
+                                ./src/image/wall2-1520.webp 1520w,
+                                ./src/image/wall2-1623.webp 1623w" type="image/webp" sizes="100vw">
+        <img src="./src/image/wall2.png" srcset="./src/image/wall2-541.png 541w,
+                                ./src/image/wall2-817.png 817w,
+                                ./src/image/wall2-942.png 942w,
+                                ./src/image/wall2-1082.png 1082w,
+                                ./src/image/wall2-1323.png 1323w,
+                                ./src/image/wall2-1413.png 1413w,
+                                ./src/image/wall2-1520.png 1520w,
+                                ./src/image/wall2-1623.png 1623w" alt="" sizes="100vw">
+      </picture>
       <div id="unlock-instructions"
         class="absolute left-1/2 -translate-x-1/2 text-center min-w-[300px] xl:min-w-[350px] h-fit lg:text-start top-[5%] z-10 lg:top-auto lg:bottom-[30vh] lg:left-[15%] xl:left-[10%] 2xl:left-[20%]  lg:-right-36  lg:max-w-[320px] 2xl:max-w-[400px]">
         <h3>Unlock the Lock</h3>
@@ -498,8 +909,7 @@
           </div>
 
           <img class="z-1 top-0 opacity-75" src="./src/image/paper.png" alt="">
-          <canvas id="signature-canvas"
-            class="absolute bottom-0 left-0 w-full h-40 z-50"></canvas>
+          <canvas id="signature-canvas" class="absolute bottom-0 left-0 w-full h-40 z-50"></canvas>
           <div class="hidden lg:block">
             <img id="quillEmpty" src="./src/image/quill.png"
               class="quill absolute opacity-50 max-w-[400px] -right-[400px] xl:-right-[30vw] 2xl:-right-[30vw] bottom-0 w-16 cursor-pointer">

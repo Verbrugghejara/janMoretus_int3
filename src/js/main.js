@@ -32,7 +32,7 @@ const header = document.getElementById("eyes");
 const eyeLeft = document.getElementById("eye-left");
 const eyeRight = document.getElementById("eye-right");
 
-function moveEyes(e) {
+const moveEyes = (e) => {
   const rect = header.getBoundingClientRect();
   const xPct = (e.clientX - rect.left) / rect.width;
   const yPct = (e.clientY - rect.top) / rect.height;
@@ -604,7 +604,6 @@ const openQuestions = () => {
 // =====================
 // Signature
 // =====================
-let quill = document.getElementById("quillEmpty");
 const ink = document.getElementById("ink-container");
 const paper = document.getElementById("paper-container");
 const canvas = document.getElementById("signature-canvas");
