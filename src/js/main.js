@@ -1,59 +1,27 @@
 import "../css/style.css";
 gsap.registerPlugin(ScrollTrigger);
 
-// let pageHeight = document.body.scrollHeight;
+let pageHeight = document.body.scrollHeight;
+let lock1 = 0;
+let lock2 = 0;
 
-// let lock1 = 0;
-// let lock2 = 0;
-yearsScroll();
+document.querySelector(".locked").classList.add("hidden");
+document.querySelector(".footer").classList.add("hidden");
 
-document.querySelector(".lock-1").classList.add("hidden");
-document.querySelector(".lock-2").classList.add("hidden");
-document.querySelector(".questions").classList.add("hidden");
+window.addEventListener("resize", () => {
+  document.querySelector(".locked").classList.remove("hidden");
+  document.querySelector(".footer").classList.remove("hidden");
 
-// window.addEventListener("resize", () => {
-//   document.querySelector(".lock-1").classList.remove("hidden");
-//   document.querySelector(".lock-2").classList.remove("hidden");
+  ScrollTrigger.refresh();
 
-//   ScrollTrigger.refresh();
+  pageHeight = document.body.scrollHeight;
 
-//   pageHeight = document.body.scrollHeight;
-
-//   if (lock1 === 0) {
-//     document.querySelector(".lock-1").classList.add("hidden");
-//   }
-//   if (lock2 === 0) {
-//     document.querySelector(".lock-2").classList.add("hidden");
-//   }
-// });
-document.querySelector(".questions-close").addEventListener("click", () => {
-  document.getElementById("question-1").classList.add("hidden");
-  document.getElementById("question-2").classList.add("hidden");
-  document.getElementById("question-3").classList.add("hidden");
-  document.querySelector(".questions-close").classList.add("hidden");
-  document.querySelector(".questions-info").classList.remove("hidden");
-  questions.classList.add("left-0");
-  questions.classList.add("top-12");
-  questions.classList.add("h-12");
-  questions.classList.add("w-12");
-  // questions.classList.add("p-0");
-  questions.classList.remove("py-3");
-  questions.classList.remove("px-6");
-});
-
-document.querySelector(".questions-info").addEventListener("click", () => {
-  document.getElementById("question-1").classList.remove("hidden");
-  document.getElementById("question-2").classList.remove("hidden");
-  document.getElementById("question-3").classList.remove("hidden");
-  document.querySelector(".questions-close").classList.remove("hidden");
-  document.querySelector(".questions-info").classList.add("hidden");
-  questions.classList.remove("left-0");
-  questions.classList.remove("top-12");
-  questions.classList.remove("h-12");
-  questions.classList.remove("w-12");
-  // questions.classList.remove("p-0");
-  questions.classList.add("py-3");
-  questions.classList.add("px-6");
+  if (lock1 === 0) {
+    document.querySelector(".locked").classList.add("hidden");
+  }
+  if (lock2 === 0) {
+    document.querySelector(".footer").classList.add("hidden");
+  }
 });
 
 // =====================
@@ -66,11 +34,10 @@ const eyeRight = document.getElementById("eye-right");
 
 function moveEyes(e) {
   const rect = header.getBoundingClientRect();
-  const xPct = (e.clientX - rect.left) / rect.width; // 0 → links, 1 → rechts
-  const yPct = (e.clientY - rect.top) / rect.height; // 0 → boven, 1 → onder
+  const xPct = (e.clientX - rect.left) / rect.width;
+  const yPct = (e.clientY - rect.top) / rect.height;
 
-  // Laat de ogen echt over de hele container bewegen
-  const maxX = 2; // grotere range in %
+  const maxX = 2;
   const maxY = 1;
 
   eyeLeft.style.left = 47 + (xPct - 0.3) * maxX + "%";
@@ -80,7 +47,6 @@ function moveEyes(e) {
   eyeRight.style.top = 23.5 + (yPct - 0.3) * maxY + "%";
 }
 
-// Reset ogen bij muis leave
 header.addEventListener("mouseleave", function () {
   eyeLeft.style.left = "47%";
   eyeLeft.style.top = "24%";
@@ -94,7 +60,7 @@ header.addEventListener("mousemove", moveEyes);
 // 2. Timeline Years Animation
 // =====================
 
-function yearsScroll() {
+const yearsScroll = () => {
   const years = [1543, 1558, 1570, 1583, 1585, 1589, 1590, 1610, 1543];
   const fonts = [
     "'Playfair Display', serif",
@@ -112,14 +78,13 @@ function yearsScroll() {
   years.forEach((year, i) => {
     const layer = document.createElement("div");
     layer.className =
-      "year-layer absolute flex flex-col items-center justify-center text-center";
+      "year-layer absolute flex flex-col items-center justify-center text-center gap-6";
     layer.style.opacity = 0;
 
     const yearEl = document.createElement("p");
     yearEl.className =
-      "title-year select-none tracking-tight leading-none text-white";
+      "title-year select-none";
     yearEl.style.fontFamily = fonts[i % fonts.length];
-    yearEl.style.fontSize = "clamp(4rem, 16vw, 16rem)";
 
     year
       .toString()
@@ -132,7 +97,7 @@ function yearsScroll() {
       });
 
     const sub = document.createElement("p");
-    sub.className = "text-year mt-6 text-xl md:text-2xl text-white/90";
+    sub.className = "mt-6 text-xl md:text-2xl text-alphaBlack";
     sub.innerHTML =
       i === years.length - 1
         ? "the year I was born, in the city of <span class='highlight'>Antwerp</span>."
@@ -196,7 +161,7 @@ function yearsScroll() {
       ">"
     );
   }
-}
+};
 
 // =====================
 // 2. Books
@@ -205,23 +170,24 @@ function yearsScroll() {
 const container = document.getElementById("book-container");
 let draggedItem = null;
 
-document.querySelectorAll(".draggable").forEach((item) => {
-  item.addEventListener("dragstart", (e) => {
-    draggedItem = item;
+const initDragAndDrop = () => {
+  document.querySelectorAll(".draggable").forEach((item) => {
+    item.addEventListener("dragstart", (e) => {
+      draggedItem = item;
 
-    const emptyImg = new Image();
-    emptyImg.src = "";
-    e.dataTransfer.setDragImage(emptyImg, 0, 0);
-    item.classList.add("scale-110", "rounded-lg");
+      const emptyImg = new Image();
+      emptyImg.src = "";
+      e.dataTransfer.setDragImage(emptyImg, 0, 0);
+      item.classList.add("scale-110", "rounded-lg");
+    });
+
+    item.addEventListener("dragend", () => {
+      item.classList.remove("scale-110", "rounded-lg");
+      draggedItem = null;
+      checkOrder();
+    });
   });
-
-  item.addEventListener("dragend", () => {
-    item.classList.remove("scale-110", "rounded-lg");
-    draggedItem = null;
-    checkOrder();
-  });
-});
-
+};
 container.addEventListener("dragover", (e) => {
   e.preventDefault();
   const afterElement = getDragAfterElement(container, e.clientX);
@@ -232,7 +198,7 @@ container.addEventListener("dragover", (e) => {
   }
 });
 
-function getDragAfterElement(container, x) {
+const getDragAfterElement = (container, x) => {
   const draggableElements = [
     ...container.querySelectorAll(".draggable:not(.opacity-50)"),
   ];
@@ -248,79 +214,88 @@ function getDragAfterElement(container, x) {
     },
     { offset: Number.NEGATIVE_INFINITY }
   ).element;
-}
+};
 
-function checkOrder() {
+const checkOrder = () => {
   const items = [...container.querySelectorAll(".draggable")];
   items.forEach((item, index) => {
     const correctOrder = parseInt(item.dataset.order);
     const img = item.querySelector(".book-img");
 
     if (correctOrder === index + 1) {
-      img.src = "./src/assets/bookY.png";
+      img.src = "src/assets/bookY.png";
     } else {
-      img.src = "./src/assets/bookV2.png";
+      img.src = "src/assets/bookV2.png";
     }
   });
-}
+};
 
 // =====================
 // Mobile drag & drop
 // =====================
-document.querySelectorAll(".draggable").forEach((item) => {
-  let startX, startY;
-  let placeholder = null;
+const initMobileDragAndDrop = () => {
+  document.querySelectorAll(".draggable").forEach((item) => {
+    let startX, startY;
+    let placeholder = null;
 
-  item.addEventListener("touchstart", (e) => {
-    draggedItem = item;
-    startX = e.touches[0].clientX;
-    startY = e.touches[0].clientY;
+    item.addEventListener(
+      "touchstart",
+      (e) => {
+        draggedItem = item;
+        startX = e.touches[0].clientX;
+        startY = e.touches[0].clientY;
 
-    item.classList.add("scale-110", "rounded-lg");
+        item.classList.add("scale-110", "rounded-lg");
 
-    placeholder = document.createElement("div");
-    placeholder.className = "w-[50px] h-[100px]";
-    item.parentNode.insertBefore(placeholder, item.nextSibling);
+        placeholder = document.createElement("div");
+        placeholder.className = "w-[50px] h-[100px]";
+        item.parentNode.insertBefore(placeholder, item.nextSibling);
 
-    item.style.position = "absolute";
-    item.style.zIndex = 1000;
-    moveAt(e.touches[0].clientX, e.touches[0].clientY);
-  });
+        item.style.position = "absolute";
+        item.style.zIndex = 1000;
+        moveAt(e.touches[0].clientX, e.touches[0].clientY);
+      },
+      { passive: false }
+    );
 
-  item.addEventListener("touchmove", (e) => {
-    e.preventDefault();
-    moveAt(e.touches[0].clientX, e.touches[0].clientY);
+    item.addEventListener(
+      "touchmove",
+      (e) => {
+        e.preventDefault();
+        moveAt(e.touches[0].clientX, e.touches[0].clientY);
 
-    const touchX = e.touches[0].clientX;
-    const afterElement = getTouchAfterElement(container, touchX);
-    if (afterElement == null) {
-      container.appendChild(placeholder);
-    } else {
-      container.insertBefore(placeholder, afterElement);
+        const touchX = e.touches[0].clientX;
+        const afterElement = getTouchAfterElement(container, touchX);
+        if (afterElement == null) {
+          container.appendChild(placeholder);
+        } else {
+          container.insertBefore(placeholder, afterElement);
+        }
+      },
+      { passive: false }
+    );
+
+    function moveAt(x, y) {
+      item.style.left = x - item.offsetWidth / 2 + "px";
+      item.style.top = y - item.offsetHeight / 2 + "px";
     }
+
+    item.addEventListener("touchend", () => {
+      placeholder.parentNode.insertBefore(item, placeholder);
+      placeholder.remove();
+
+      item.style.position = "";
+      item.style.left = "";
+      item.style.top = "";
+      item.style.zIndex = "";
+      item.classList.remove("scale-110", "rounded-lg");
+
+      draggedItem = null;
+      checkOrder();
+    });
   });
-
-  function moveAt(x, y) {
-    item.style.left = x - item.offsetWidth / 2 + "px";
-    item.style.top = y - item.offsetHeight / 2 + "px";
-  }
-
-  item.addEventListener("touchend", () => {
-    placeholder.parentNode.insertBefore(item, placeholder);
-    placeholder.remove();
-
-    item.style.position = "";
-    item.style.left = "";
-    item.style.top = "";
-    item.style.zIndex = "";
-    item.classList.remove("scale-110", "rounded-lg");
-
-    draggedItem = null;
-    checkOrder();
-  });
-});
-
-function getTouchAfterElement(container, x) {
+};
+const getTouchAfterElement = (container, x) => {
   const draggableElements = [
     ...container.querySelectorAll(".draggable:not(.dragging)"),
   ];
@@ -337,10 +312,10 @@ function getTouchAfterElement(container, x) {
     },
     { offset: Number.NEGATIVE_INFINITY }
   ).element;
-}
+};
 
 // =====================
-// Maskoverlay & Lockwheel
+// Maskoverlay
 // =====================
 
 const unlockInstructions = document.getElementById("unlock-instructions");
@@ -354,46 +329,69 @@ const questions = document.querySelector(".questions");
 mask.style.webkitMaskImage = "none";
 mask.style.maskImage = "none";
 let lockOpen = false;
-ScrollTrigger.create({
-  trigger: "#chapterBlock",
-  start: "-40% -40%",
-  end: "bottom bottom",
-  onEnter: () => {
-    gsap.to(mask, { opacity: 1, duration: 0.3 });
-  },
-  onLeaveBack: () => {
-    gsap.to(mask, { opacity: 0, duration: 0.3 });
-    console.log(lockOpen);
-    if (!lockOpen) {
-      combinations.classList.add("hidden");
-      unlockInstructions.classList.remove("hidden");
-      gsap.killTweensOf(lock);
-      gsap.to(lock, {
-        scale: 1,
-        duration: 0,
-        overwrite: true,
-      });
-    }
-    // lock.style.pointerEvents = "auto";
-    // lock.style.cursor = "pointer";
-    fadeInDone = false;
-    question1.classList.add("hidden");
-    question2.classList.add("hidden");
-    question3.classList.add("hidden");
-    questions.classList.add("hidden");
-  },
-  onLeave: () => {
-    gsap.to(mask, { opacity: 0, duration: 0.3 });
-  },
-  onEnterBack: () => {
-    gsap.to(mask, { opacity: 1, duration: 0.3 });
-  },
-});
 let lockAnimationActive = false;
 const lock = document.getElementById("lock");
 let fadeInDone = false;
 
-function stopLockAnimation() {
+const scrollTriggerMaskOverlay = () => {
+  ScrollTrigger.create({
+    trigger: "#chapterBlock",
+    start: "-35% -35%",
+    end: "bottom bottom",
+    onEnter: () => {
+      gsap.to(mask, { opacity: 1, duration: 0.3 });
+    },
+    onLeaveBack: () => {
+      gsap.to(mask, { opacity: 0, duration: 0.3 });
+      if (!lockOpen) {
+        combinations.classList.add("hidden");
+        unlockInstructions.classList.remove("hidden");
+        gsap.killTweensOf(lock);
+        gsap.to(lock, {
+          scale: 1,
+          duration: 0,
+          overwrite: true,
+        });
+      }
+      fadeInDone = false;
+      question1.classList.add("hidden");
+      question2.classList.add("hidden");
+      question3.classList.add("hidden");
+      questions.classList.add("hidden");
+    },
+    onLeave: () => {
+      gsap.to(mask, { opacity: 0, duration: 0.3 });
+    },
+    onEnterBack: () => {
+      gsap.to(mask, { opacity: 1, duration: 0.3 });
+    },
+  });
+
+  gsap.to(
+    {},
+    {
+      scrollTrigger: {
+        trigger: "#chapterBlock",
+        start: "-35% -35%",
+        end: "bottom bottom",
+        scrub: true,
+        onUpdate: (self) => {
+          let progress = self.progress;
+          let size = 50 - progress * 50;
+          mask.style.webkitMaskImage = `radial-gradient(circle ${size}vmax at center, transparent 0%, black 100%)`;
+          mask.style.maskImage = `radial-gradient(circle ${size}vmax at center, transparent 0%, black 100%)`;
+        },
+        onLeave: () => {
+          lockAnimationActive = true;
+          if (!fadeInDone && !lockOpen) {
+            animateLock();
+          }
+        },
+      },
+    }
+  );
+};
+const stopLockAnimation = () => {
   lockAnimationActive = false;
   gsap.killTweensOf(lock);
   gsap.to(lock, {
@@ -402,14 +400,13 @@ function stopLockAnimation() {
     duration: 0.2,
     ease: "power2.out",
   });
-}
-function animateLock() {
+};
+const animateLock = () => {
   if (!lockAnimationActive) return;
   gsap.fromTo(
     lock,
     { rotation: -10 },
     {
-      // x: 10,
       rotation: 10,
       duration: 0.5,
       repeat: 10,
@@ -418,7 +415,6 @@ function animateLock() {
       ease: "power1.inOut",
       onComplete: () => {
         gsap.to(lock, {
-          x: 0,
           rotation: 0,
           duration: 0.5,
           ease: "power2.out",
@@ -434,38 +430,22 @@ function animateLock() {
       },
     }
   );
-}
+};
 
-gsap.to(
-  {},
-  {
-    scrollTrigger: {
-      trigger: "#chapterBlock",
-      start: "-40% -40%",
-      end: "bottom bottom",
-      scrub: true,
-      onUpdate: (self) => {
-        let progress = self.progress; // 0 → 1
-        let size = 50 - progress * 50; // van 60vmax → 5vmax
-        mask.style.webkitMaskImage = `radial-gradient(circle ${size}vmax at center, transparent 0%, black 100%)`;
-        mask.style.maskImage = `radial-gradient(circle ${size}vmax at center, transparent 0%, black 100%)`;
-      },
-      onLeave: () => {
-        lockAnimationActive = true;
-        if (!fadeInDone && !lockOpen) {
-          animateLock();
-        }
-
-        // lock.addEventListener("click", stopLockAnimation, { once: true });
-      },
-    },
-  }
-);
+// =====================
+// Lockwheel
+// =====================
+const lockWheel = document.getElementById("lockWheel");
+let isDragging = false;
+let startAngle = 0;
+let currentAngle = 0;
+const correctAngles = [95, 290, 45];
+let currentStep = 0;
 
 lock.addEventListener("click", () => {
   if (fadeInDone) return;
   fadeInDone = true;
-  stopLockAnimation(); // nu werkt dit ook
+  stopLockAnimation();
   gsap.to(lock, {
     scale: 4,
     duration: 0.5,
@@ -474,9 +454,6 @@ lock.addEventListener("click", () => {
     transformOrigin: "bottom center",
   });
 
-  // lock.style.pointerEvents = "none";
-  // lock.style.cursor = "default";
-  // Fade-in animatie met GSAP
   unlockInstructions.classList.add("hidden");
   [combinations, questions, question1, question2, question3].forEach(
     (el, i) => {
@@ -491,16 +468,7 @@ lock.addEventListener("click", () => {
   );
 });
 
-const lockWheel = document.getElementById("lockWheel");
-let isDragging = false;
-let startAngle = 0;
-let currentAngle = 0;
-
-// Combinatiecode
-const correctAngles = [95, 290, 45];
-let currentStep = 0; // Houdt bij welk cijfer van de code we zijn
-
-function getAngle(e, el) {
+const getAngle = (e, el) => {
   const rect = el.getBoundingClientRect();
   const cx = rect.left + rect.width / 2;
   const cy = rect.top + rect.height / 2;
@@ -509,12 +477,9 @@ function getAngle(e, el) {
   const y = (e.touches ? e.touches[0].clientY : e.clientY) - cy;
 
   return (Math.atan2(y, x) * 180) / Math.PI;
-}
+};
 
-lockWheel.addEventListener("mousedown", startRotate);
-lockWheel.addEventListener("touchstart", startRotate);
-
-function startRotate(e) {
+const startRotate = (e) => {
   e.preventDefault();
   isDragging = true;
   startAngle = getAngle(e, lockWheel) - currentAngle;
@@ -523,38 +488,36 @@ function startRotate(e) {
   document.addEventListener("touchmove", rotate);
   document.addEventListener("mouseup", stopRotate);
   document.addEventListener("touchend", stopRotate);
-}
+};
 
-function rotate(e) {
+const rotate = (e) => {
   if (!isDragging) return;
   currentAngle = getAngle(e, lockWheel) - startAngle;
   lockWheel.style.transform = `rotate(${currentAngle}deg)`;
-  console.log("Current angle:", currentAngle);
-}
+};
 
-function stopRotate() {
+const stopRotate = () => {
   isDragging = false;
   document.removeEventListener("mousemove", rotate);
   document.removeEventListener("touchmove", rotate);
 
   checkCodeStep();
-}
+};
+lockWheel.addEventListener("mousedown", startRotate);
+lockWheel.addEventListener("touchstart", startRotate, { passive: false });
 
-function checkCodeStep() {
+const checkCodeStep = () => {
   const tolerance = 10;
   const normalizedAngle = ((currentAngle % 360) + 360) % 360;
 
-  // Check of de huidige hoek overeenkomt met de volgende stap van de code
   if (Math.abs(normalizedAngle - correctAngles[currentStep]) < tolerance) {
     currentStep++;
-    console.log("Correct step! CurrentStep:", currentStep);
-
     if (currentStep === correctAngles.length) {
       const feedback = document.getElementById("scrollingFeedback");
       feedback.classList.remove("hidden");
       feedback.classList.add("flex");
       const lockImg = document.querySelector("#lock img:first-child");
-      lockImg.src = "./src/assets/lockOpen.png";
+      lockImg.src = "src/assets/lockOpen.png";
 
       lockWheel.classList.remove("cursor-grab");
       lockWheel.classList.add(
@@ -572,24 +535,60 @@ function checkCodeStep() {
       question2.classList.add("hidden");
       question3.classList.add("hidden");
       currentStep = 0;
-      document.querySelector(".lock-1").classList.remove("hidden");
-      document.querySelector(".lock-2").classList.remove("hidden");
-      // lock1 = 1;
-      // lock2 = 1;
+      document.querySelector(".locked").classList.remove("hidden");
+      document.querySelector(".footer").classList.remove("hidden");
+      lock1 = 1;
+      lock2 = 1;
       lockOpen = true;
       lock.style.pointerEvents = "none";
       ScrollTrigger.refresh();
     } else if (currentStep == 1) {
       const answer1 = document.getElementById("answer-1");
-      // verwijder class hidden van de child
       answer1.classList.remove("hidden");
     } else if (currentStep == 2) {
       const answer2 = document.getElementById("answer-2");
-      // verwijder class hidden van de child
       answer2.classList.remove("hidden");
     }
   }
-}
+};
+
+// =====================
+// Questions for door
+// =====================
+
+const closeQuestions = () => {
+  document.querySelector(".questions-close").addEventListener("click", () => {
+    document.getElementById("question-1").classList.add("hidden");
+    document.getElementById("question-2").classList.add("hidden");
+    document.getElementById("question-3").classList.add("hidden");
+    document.querySelector(".questions-close").classList.add("hidden");
+    document.querySelector(".questions-info").classList.remove("hidden");
+    questions.classList.add("left-0");
+    questions.classList.add("top-12");
+    questions.classList.add("h-12");
+    questions.classList.add("w-12");
+    // questions.classList.add("p-0");
+    questions.classList.remove("py-3");
+    questions.classList.remove("px-6");
+  });
+};
+
+const openQuestions = () => {
+  document.querySelector(".questions-info").addEventListener("click", () => {
+    document.getElementById("question-1").classList.remove("hidden");
+    document.getElementById("question-2").classList.remove("hidden");
+    document.getElementById("question-3").classList.remove("hidden");
+    document.querySelector(".questions-close").classList.remove("hidden");
+    document.querySelector(".questions-info").classList.add("hidden");
+    questions.classList.remove("left-0");
+    questions.classList.remove("top-12");
+    questions.classList.remove("h-12");
+    questions.classList.remove("w-12");
+    // questions.classList.remove("p-0");
+    questions.classList.add("py-3");
+    questions.classList.add("px-6");
+  });
+};
 
 // =====================
 // Signature
@@ -607,29 +606,22 @@ let hasDrawn = false;
 let quillOffsetX = 0;
 let quillOffsetY = 0;
 
-// =====================
-// Canvas Resize
-// =====================
-function resizeCanvas() {
+const resizeCanvas = () => {
   const rect = paper.getBoundingClientRect();
-  canvas.width = rect.width; // interne resolutie
-  canvas.height = 160; // vaste hoogte
+  canvas.width = rect.width;
+  canvas.height = 200;
   canvas.style.width = rect.width + "px";
-  canvas.style.height = "160px";
+  canvas.style.height = "200px";
   canvas.style.position = "absolute";
   canvas.style.bottom = "0";
   canvas.style.left = "0";
   canvas.style.zIndex = 30;
 
-  // reset tekenstijl
   ctx.lineWidth = 2;
   ctx.lineCap = "round";
   ctx.strokeStyle = "#2C3E50";
-}
+};
 
-// =====================
-// Veer klikken
-// =====================
 quill.addEventListener("click", (e) => {
   window.addEventListener("resize", resizeCanvas);
   resizeCanvas();
@@ -638,15 +630,12 @@ quill.addEventListener("click", (e) => {
   ink.style.opacity = "1";
   quill.style.pointerEvents = "none";
 
-  quillOffsetX = 60; // pas aan op je afbeelding
+  quillOffsetX = 60;
   quillOffsetY = quill.offsetHeight - 5;
 
   e.stopPropagation();
 });
 
-// =====================
-// Veer bewegen over paper
-// =====================
 paper.addEventListener("mousemove", (e) => {
   if (!quillActive) return;
 
@@ -666,14 +655,11 @@ paper.addEventListener("mousemove", (e) => {
   }
 });
 
-// =====================
-// Inktvat klikken
-// =====================
 ink.addEventListener("click", (e) => {
   if (!quillActive) return;
   inkLoaded = true;
 
-  quill.src = "./src/assets/quillInkt.png";
+  quill.src = "src/assets/quillInkt.png";
   ctx.strokeStyle = "#2C3E50";
   ctx.lineWidth = 2;
   ctx.lineCap = "round";
@@ -681,9 +667,6 @@ ink.addEventListener("click", (e) => {
   e.stopPropagation();
 });
 
-// =====================
-// Canvas tekenen
-// =====================
 canvas.addEventListener("mousedown", (e) => {
   if (!inkLoaded || !quillActive) {
     if (quillActive && !inkLoaded) {
@@ -728,7 +711,7 @@ canvas.addEventListener("mouseleave", () => {
     quill.remove();
     const newQuill = document.createElement("img");
     newQuill.id = "quill";
-    newQuill.src = "./src/assets/quill.png";
+    newQuill.src = "src/assets/quill.png";
     newQuill.className =
       "hidden lg:block absolute opacity-50 max-w-[400px] -right-[330px] 2xl:-right-[30vw] bottom-0 w-16 cursor-pointer";
     newQuill.style.pointerEvents = "none";
@@ -750,27 +733,35 @@ canvas.addEventListener("mouseleave", () => {
 // =====================
 const isTouchDevice = "ontouchstart" in window || navigator.maxTouchPoints > 0;
 if (isTouchDevice) {
-  canvas.height = 100; // vaste hoogte
-  canvas.style.height = "100px";
-  canvas.addEventListener("touchstart", (e) => {
-    e.preventDefault();
-    const rect = canvas.getBoundingClientRect();
-    const touch = e.touches[0];
-    const x = touch.clientX - rect.left;
-    const y = touch.clientY - rect.top;
-    ctx.beginPath();
-    ctx.moveTo(x, y);
-  });
+  // canvas.height = 100;
+  // canvas.style.height = "100px";
+  canvas.addEventListener(
+    "touchstart",
+    (e) => {
+      e.preventDefault();
+      const rect = canvas.getBoundingClientRect();
+      const touch = e.touches[0];
+      const x = touch.clientX - rect.left;
+      const y = touch.clientY - rect.top;
+      ctx.beginPath();
+      ctx.moveTo(x, y);
+    },
+    { passive: false }
+  );
 
-  canvas.addEventListener("touchmove", (e) => {
-    e.preventDefault();
-    const rect = canvas.getBoundingClientRect();
-    const touch = e.touches[0];
-    const x = touch.clientX - rect.left;
-    const y = touch.clientY - rect.top;
-    ctx.lineTo(x, y);
-    ctx.stroke();
-  });
+  canvas.addEventListener(
+    "touchmove",
+    (e) => {
+      e.preventDefault();
+      const rect = canvas.getBoundingClientRect();
+      const touch = e.touches[0];
+      const x = touch.clientX - rect.left;
+      const y = touch.clientY - rect.top;
+      ctx.lineTo(x, y);
+      ctx.stroke();
+    },
+    { passive: false }
+  );
 
   canvas.addEventListener("touchend", (e) => {
     e.preventDefault();
@@ -796,16 +787,15 @@ const shelf = document.getElementById("shelf");
 const confirmBtn = document.querySelector(".button-confirm");
 const resultText = confirmBtn.nextElementSibling;
 
-// ---------- Desktop drag & drop ----------
-function drag(ev) {
+const drag = (ev) => {
   ev.dataTransfer.setData("text/plain", ev.target.id);
   ev.dataTransfer.effectAllowed = "move";
-}
+};
 
-function allowDrop(ev) {
+const allowDrop = (ev) => {
   ev.preventDefault();
   ev.dataTransfer.dropEffect = "move";
-}
+};
 
 shelf.addEventListener("dragover", allowDrop);
 shelf.addEventListener("drop", (ev) => {
@@ -829,14 +819,14 @@ cart.addEventListener("drop", (ev) => {
   cart.appendChild(book);
 });
 
-// ---------- Mobile tap only ----------
-document.querySelectorAll("[draggable='true']").forEach((book) => {
-  // Desktop drag
+// =====================
+// Drag & Drop printing house Mobile
+// =====================
+
+const makeDraggablePrintingHouse = (book) => {
   book.addEventListener("dragstart", drag);
 
-  // Mobile tap (touch)
   book.addEventListener("touchend", () => {
-    // Geen preventDefault op touchend
     if (book.parentElement === cart) {
       if (shelf.querySelectorAll("[draggable='true']").length >= 5) {
         alert("Je kunt maar 5 boeken in de shelf zetten!");
@@ -847,8 +837,10 @@ document.querySelectorAll("[draggable='true']").forEach((book) => {
       cart.appendChild(book);
     }
   });
+};
+document.querySelectorAll("[draggable='true']").forEach((book) => {
+  makeDraggablePrintingHouse(book);
 });
-
 // ---------- Confirm button ----------
 confirmBtn.addEventListener("click", () => {
   const booksOnShelf = shelf.querySelectorAll("[draggable='true']");
@@ -872,75 +864,92 @@ confirmBtn.addEventListener("click", () => {
 // =====================
 const segments = Array.from(document.querySelectorAll(".typing"));
 
-segments.forEach((span) => {
+segments.forEach((span, idx) => {
   const text = span.dataset.text || "";
   span.classList.add("relative", "inline-block", "cursor-text", "font-bold");
 
   span.innerHTML = `
-  <span class="ghost text-black/20 font-bold">${text}</span>
-  <span class="typed text-black outline-none bg-transparent font-bold min-w-[1ch]" 
-    contenteditable="true" spellcheck="false"></span>
-`;
+    <span class="ghost text-black/20 font-bold">${text}</span>
+    <span class="typed text-black outline-none bg-transparent font-bold min-w-[1ch]"
+      contenteditable="true" spellcheck="false"></span>
+    <span class="custom-cursor pointer-events-none absolute w-[2px] bg-black"></span>
+  `;
 
   const typedEl = span.querySelector(".typed");
+  const cursorEl = span.querySelector(".custom-cursor");
 
-  span.addEventListener("click", () => setActive(segments.indexOf(span)));
-  typedEl.addEventListener("focus", () => setActive(segments.indexOf(span)));
-  typedEl.addEventListener("beforeinput", (e) =>
-    handleMobileInput(e, typedEl, span)
-  );
+  typedEl.style.whiteSpace = "pre-wrap";
+  typedEl.style.minHeight = "1em";
+
+  span.addEventListener("click", () => setActive(idx));
+  typedEl.addEventListener("focus", () => setActive(idx));
+
+  typedEl.addEventListener("input", () => {
+    positionCursor(typedEl, cursorEl);
+  });
 });
 
 let current = null;
 
-function setActive(i) {
-  current = i;
+const setActive = (i) => {
   segments.forEach((s, idx) => {
-    if (idx === i) {
-      s.classList.add("active");
-    } else {
-      s.classList.remove("active");
-    }
+    const cursorEl = s.querySelector(".custom-cursor");
+    if (cursorEl) cursorEl.style.display = "none";
   });
+
+  current = i;
+  segments.forEach((s, idx) => s.classList.toggle("active", idx === i));
+
   if (current !== null) {
     const typedEl = segments[current].querySelector(".typed");
+    const cursorEl = segments[current].querySelector(".custom-cursor");
     typedEl.focus({ preventScroll: true });
+    placeCaretAtEnd(typedEl);
+    cursorEl.style.display = "block";
+    positionCursor(typedEl, cursorEl);
   }
-}
-function updateCursor(typedEl, cursorEl) {
+};
+
+const placeCaretAtEnd = (el) => {
   const range = document.createRange();
+  range.selectNodeContents(el);
+  range.collapse(false);
   const sel = window.getSelection();
-  range.selectNodeContents(typedEl);
-  range.collapse(false); // cursor aan het einde
-  const rect = range.getBoundingClientRect();
+  sel.removeAllRanges();
+  sel.addRange(range);
+};
+
+const positionCursor = (typedEl, cursorEl) => {
+  if (!cursorEl) return;
+  const sel = window.getSelection();
+  if (!sel || sel.rangeCount === 0) return;
+
+  const range = sel.getRangeAt(0).cloneRange();
+  range.collapse(true);
+
+  const marker = document.createElement("span");
+  marker.textContent = "\u200b";
+  range.insertNode(marker);
+
+  const markerRect = marker.getBoundingClientRect();
   const parentRect = typedEl.getBoundingClientRect();
 
-  cursorEl.style.left = rect.right - parentRect.left + "px";
-  cursorEl.style.top = rect.top - parentRect.top + "px";
-  cursorEl.style.height = rect.height + "px";
-}
-function handleMobileInput(e, typedEl, span) {
-  const targetText = span.dataset.text || "";
-  const typed = typedEl.textContent;
-  const inputChar = e.data;
-  if (!inputChar) return;
+  const left = markerRect.left - parentRect.left;
+  const top = markerRect.top - parentRect.top;
+  const height = markerRect.height || parentRect.height;
 
-  const nextChar = targetText[typed.length];
-  if (!nextChar) return;
+  cursorEl.style.left = left + "px";
+  cursorEl.style.top = top + "px";
+  cursorEl.style.height = height + "px";
 
-  const isMatch = inputChar === nextChar;
+  range.setStartAfter(marker);
+  range.collapse(true);
+  sel.removeAllRanges();
+  sel.addRange(range);
+  marker.remove();
+};
 
-  if (!isMatch) {
-    e.preventDefault();
-    span.classList.add("error");
-    setTimeout(() => span.classList.remove("error"), 200);
-    return;
-  }
-
-  setTimeout(() => checkSegmentComplete(typedEl, span), 0);
-}
-
-function checkSegmentComplete(typedEl, span) {
+const checkSegmentComplete = (typedEl, span) => {
   const targetText = span.dataset.text || "";
   if (typedEl.textContent.length === targetText.length) {
     span.classList.remove("active");
@@ -951,6 +960,11 @@ function checkSegmentComplete(typedEl, span) {
 
     if (allDone) {
       typedEl.blur();
+      segments.forEach((s) => {
+        const cursorEl = s.querySelector(".custom-cursor");
+        if (cursorEl) cursorEl.style.display = "none";
+      });
+
       const quote2 = document.querySelector(".quote-2");
       if (quote2)
         quote2.classList.add("opacity-100", "transition", "duration-500");
@@ -961,36 +975,50 @@ function checkSegmentComplete(typedEl, span) {
       if (nextIndex !== -1) setActive(nextIndex);
     }
   }
-}
-typedEl.addEventListener("input", () => {
-  const cursorEl = typedEl.parentElement.querySelector(".custom-cursor");
-  updateCursor(typedEl, cursorEl);
-});
+};
+
 document.addEventListener("keydown", (e) => {
   if (current === null) return;
   const span = segments[current];
   const typedEl = span.querySelector(".typed");
+  const cursorEl = span.querySelector(".custom-cursor");
 
   if (["Shift", "Alt", "Control", "Meta"].includes(e.key)) return;
 
+  if (!span.contains(document.activeElement)) typedEl.focus();
+
   if (e.key === "Backspace") {
-    typedEl.textContent = typedEl.textContent.slice(0, -1);
     e.preventDefault();
+    typedEl.textContent = typedEl.textContent.slice(0, -1);
+    placeCaretAtEnd(typedEl);
+    positionCursor(typedEl, cursorEl);
     return;
   }
 
-  const targetText = span.dataset.text;
+  const targetText = span.dataset.text || "";
   const nextChar = targetText[typedEl.textContent.length];
   if (!nextChar) return;
 
-  const isMatch = e.key === nextChar;
-
-  if (isMatch) {
-    typedEl.textContent = typedEl.textContent + nextChar;
+  if (e.key.length === 1) {
     e.preventDefault();
-    checkSegmentComplete(typedEl, span);
-  } else {
-    span.classList.add("error");
-    setTimeout(() => span.classList.remove("error"), 200);
+    if (e.key === nextChar) {
+      typedEl.textContent += nextChar;
+      placeCaretAtEnd(typedEl);
+      positionCursor(typedEl, cursorEl);
+      checkSegmentComplete(typedEl, span);
+    } else {
+      span.classList.add("error");
+      setTimeout(() => span.classList.remove("error"), 200);
+    }
   }
 });
+
+const init = () => {
+  yearsScroll();
+  initMobileDragAndDrop();
+  initDragAndDrop();
+  scrollTriggerMaskOverlay();
+  closeQuestions();
+  openQuestions();
+};
+init();
