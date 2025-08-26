@@ -223,9 +223,9 @@ const checkOrder = () => {
     const img = item.querySelector(".book-img");
 
     if (correctOrder === index + 1) {
-      img.src = "src/assets/bookY.png";
+      img.src = "./src/image/bookY.png";
     } else {
-      img.src = "src/assets/bookV2.png";
+      img.src = "./src/image/bookV2.png";
     }
   });
 };
@@ -517,7 +517,7 @@ const checkCodeStep = () => {
       feedback.classList.remove("hidden");
       feedback.classList.add("flex");
       const lockImg = document.querySelector("#lock img:first-child");
-      lockImg.src = "src/assets/lockOpen.png";
+      lockImg.src = "./src/image/lockOpen.png";
 
       lockWheel.classList.remove("cursor-grab");
       lockWheel.classList.add(
@@ -659,7 +659,7 @@ ink.addEventListener("click", (e) => {
   if (!quillActive) return;
   inkLoaded = true;
 
-  quill.src = "src/assets/quillInkt.png";
+  quill.src = "./src/image/quillInkt.png";
   ctx.strokeStyle = "#2C3E50";
   ctx.lineWidth = 2;
   ctx.lineCap = "round";
@@ -711,7 +711,7 @@ canvas.addEventListener("mouseleave", () => {
     quill.remove();
     const newQuill = document.createElement("img");
     newQuill.id = "quill";
-    newQuill.src = "src/assets/quill.png";
+    newQuill.src = "./src/image/quill.png";
     newQuill.className =
       "hidden lg:block absolute opacity-50 max-w-[400px] -right-[330px] 2xl:-right-[30vw] bottom-0 w-16 cursor-pointer";
     newQuill.style.pointerEvents = "none";
