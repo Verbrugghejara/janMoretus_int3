@@ -4,6 +4,22 @@ gsap.registerPlugin(ScrollTrigger);
 let pageHeight = document.body.scrollHeight;
 let lock1 = 0;
 let lock2 = 0;
+
+document.querySelectorAll('nav a[href^="#"]').forEach((link) => {
+  link.addEventListener("click", function (e) {
+    e.preventDefault();
+    const targetId = this.getAttribute("href").replace("#", "");
+    const target = document.getElementById(targetId);
+    if (target) {
+      target.scrollIntoView({ behavior: "smooth" });
+      // Optioneel: leuke animatie toevoegen aan de sectie
+      target.classList.add("section-animate");
+      setTimeout(() => target.classList.remove("section-animate"), 1000);
+    }
+  });
+});
+
+
 document.getElementById("menu-btn").addEventListener("click", () => {
   document.getElementById("mobile-menu").classList.toggle("hidden");
 });

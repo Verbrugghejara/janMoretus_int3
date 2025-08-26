@@ -44,8 +44,8 @@
       </div>
       <!-- </div> -->
       <!-- </div> -->
-      <button class="absolute bg-alphaRed backdrop-blur-sm rounded-full top-0 right-0 z-50 lg:hidden m-2 p-4">
-        <svg id="menu-btn" class="w-6 h-6 md:w-16 md:h-16" viewBox="0 0 33 23" fill="none"
+      <button class="absolute bg-alphaRed backdrop-blur-sm rounded-full top-0 right-0 z-50 lg:hidden m-2 p-4 md:m-4">
+        <svg id="menu-btn" class="w-6 h-6 md:w-10 md:h-10" viewBox="0 0 33 23" fill="none"
           xmlns="http://www.w3.org/2000/svg">
           <line y1="1.5" x2="33" y2="1.5" stroke="#EEE4D3" stroke-width="3" />
           <line y1="11.5" x2="33" y2="11.5" stroke="#EEE4D3" stroke-width="3" />
@@ -54,7 +54,8 @@
       </button>
 
       <!-- Mobile menu (zichtbaar tot lg) -->
-      <div id="mobile-menu" class="lg:hidden flex flex-col text-center items-center bg-alphaBlack/90 backdrop-blur-sm py-6">
+      <div id="mobile-menu"
+        class="lg:hidden flex flex-col text-center items-center bg-alphaBlack/90 backdrop-blur-sm py-6 hidden">
         <a class="h-12 w-12 mb-6" aria-label="Home" href="https://verbrugghejara.github.io/janMoretus_int3/">
           <picture>
             <source srcset="./src/image/logoMuseum-240.avif 240w" type="image/avif">
@@ -96,7 +97,7 @@
                           ./src/image/janMoretus-1789.webp 1789w,
                           ./src/image/janMoretus-1920.webp 1920w,
                           ./src/image/janMoretus-2048.webp 2048w" type="image/webp" sizes="100vw">
-        <img class="xl:hidden absolute w-full h-full object-cover object-bottom sm:-top-8 md:-top-36 lg:-top-48 xl:-top-64
+        <img class="xl:hidden absolute w-full h-full object-cover object-bottom -top-8 sm:-top-20 md:-top-32 lg:-top-48 xl:-top-64
       2xl:-top-96" src="./src/image/janMoretus.jpg" srcset="./src/image/janMoretus-300.jpg 300w,
                           ./src/image/janMoretus-722.jpg 722w,
                           ./src/image/janMoretus-920.jpg 920w,
@@ -151,15 +152,16 @@
         </div>
       </div>
       <div
-        class="absolute z-20 bottom-26 sm:bottom-36 md:bottom-44 lg:bottom-48 xl:bottom-60 left-6 right-6 flex flex-col items-center justify-center">
+        class="absolute z-40 bottom-24 sm:bottom-32 md:bottom-40 lg:bottom-48 xl:bottom-60 left-6 right-6 flex flex-col items-center justify-center">
         <h1 class="">Jan I Moretus</h1>
         <p class="text-alphaWhite text-center mt-2 min-w-[337px] max-w-[480px] sm:max-w-xl text-base sm:text-lg">
           Yes, that’s me. Sorry for the staring, just happy you’re here. Now you can follow me through my story from
           young
           bookshop helper to master printer of the legendary Officina Plantiniana.
         </p>
-        <button class="mt-4" style="border-color: var(--color-white); color: var(--color-white);"><a href=""></a>Let's
-          start my Journey</button>
+        <a href="#timeline" class=" cursor-pointer text-alphaWhite mt-2 border-1 border-solid border-alphaWhite hover:bg-alphaBlack/75 hover:backdrop-blur-sm px-4 py-2 rounded-full">
+          Let's start my Journey
+        </a>
       </div>
       <picture>
         <source srcset="./src/image/paperRip-721.avif 721w,
@@ -178,7 +180,7 @@
                         ./src/image/paperRip-2560.webp 2560w,
                         ./src/image/paperRip-2790.webp 2790w,
                         ./src/image/paperRip-3000.webp 3000w" type="image/webp" sizes="100vw">
-        <img class="absolute left-0 right-0 bottom-0 w-full z-40" src="./src/image/paperRip.png" srcset="./src/image/paperRip-721.png 721w,
+        <img class="absolute left-0 right-0 bottom-0 w-full z-20" src="./src/image/paperRip.png" srcset="./src/image/paperRip-721.png 721w,
                         ./src/image/paperRip-1080.png 1080w,
                         ./src/image/paperRip-1560.png 1560w,
                         ./src/image/paperRip-1920.png 1920w,
