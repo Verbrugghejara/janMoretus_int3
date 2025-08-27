@@ -221,16 +221,9 @@ const checkOrder = () => {
     const correctOrder = parseInt(item.dataset.order, 10);
     const defaultImg = item.querySelector(".book-default");
     const correctImg = item.querySelector(".book-correct");
-    if (!defaultImg || !correctImg) {
-      console.warn("❌ img niet gevonden in item:", item);
-      return;
-    }
     const isCorrect = correctOrder === index + 1;
     defaultImg.classList.toggle("hidden", isCorrect);
     correctImg.classList.toggle("hidden", !isCorrect);
-    console.log(
-      `Boek ${correctOrder}: huidige index=${index + 1}, correct=${isCorrect}`
-    );
   });
 };
 // =====================
