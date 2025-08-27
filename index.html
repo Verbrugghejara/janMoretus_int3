@@ -4,6 +4,16 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Jan I Moretus - A historical exploration">
+  <link rel="apple-touch-icon" sizes="180x180" href="/src/image/favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/src/image/favicon/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="/src/image/favicon/web-app-manifest-192x192.png">
+  <link rel="icon" type="image/png" sizes="512x512" href="/src/image/favicon/web-app-manifest-512x512.png">
+  <link rel="icon" type="image/x-icon" href="/src/image/favicon/favicon.ico">
+
+  <link rel="manifest" href="/src/image/favicon/site.webmanifest">
+  <meta name="theme-color" content="#802F1D">
+
   <link
     href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
     rel="stylesheet">
@@ -12,14 +22,8 @@
 
 <body>
   <header id="eyes" class="relative   h-[481px] sm:h-[600px]  md:h-[700px] lg:h-[800px] xl:h-[900px] 2xl:h-[1050px]">
-    <nav class="fixed text-alphaWhite z-50 w-full bg-alphaBlack/75 backdrop-blur-sm">
-      <!-- <div class="flex justify-center w-full mb-2"> -->
-      <!-- <svg class="w-8 h-8 md:w-16 md:h-16 lg:hidden" viewBox="0 0 33 23" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <line y1="1.5" x2="33" y2="1.5" stroke="#EEE4D3" stroke-width="3" />
-        <line y1="11.5" x2="33" y2="11.5" stroke="#EEE4D3" stroke-width="3" />
-        <line y1="21.5" x2="33" y2="21.5" stroke="#EEE4D3" stroke-width="3" />
-      </svg> -->
-      <!-- <div class="hidden w-full lg:block"> -->
+    <nav
+      class="fixed top-0 left-0 right-0 text-alphaWhite z-50 w-full bg-alphaBlack/75 backdrop-blur-sm transition-transform duration-300">
       <div class="hidden lg:flex justify-between items-center px-6 py-2">
         <a class="h-16 w-16" aria-label="Home" href="https://verbrugghejara.github.io/janMoretus_int3/">
           <picture>
@@ -44,7 +48,8 @@
       </div>
       <!-- </div> -->
       <!-- </div> -->
-      <button class="absolute bg-alphaRed backdrop-blur-sm rounded-full top-0 right-0 z-50 lg:hidden m-2 p-4 md:m-4">
+      <button class="absolute bg-alphaRed backdrop-blur-sm rounded-full top-0 right-0 z-50 lg:hidden m-2 p-4 md:m-4"
+        aria-label="Mobile menu">
         <svg id="menu-btn" class="w-6 h-6 md:w-10 md:h-10" viewBox="0 0 33 23" fill="none"
           xmlns="http://www.w3.org/2000/svg">
           <line y1="1.5" x2="33" y2="1.5" stroke="#EEE4D3" stroke-width="3" />
@@ -58,9 +63,9 @@
         class="lg:hidden flex flex-col text-center items-center bg-alphaBlack/90 backdrop-blur-sm py-6 hidden">
         <a class="h-12 w-12 mb-6" aria-label="Home" href="https://verbrugghejara.github.io/janMoretus_int3/">
           <picture>
-            <source srcset="./src/image/logoMuseum-240.avif 240w" type="image/avif">
-            <source srcset="./src/image/logoMuseum-240.webp 240w" type="image/webp">
-            <img src="./src/image/logoMuseum.png" alt="Museum Logo">
+            <source srcset="./src/image/logoMuseum-240.avif 240w" type="image/avif" sizes="100vw">
+            <source srcset="./src/image/logoMuseum-240.webp 240w" type="image/webp" sizes="100vw">
+            <img src="./src/image/logoMuseum.png" srcset="./src/image/logoMuseum.png 240w" alt="Museum Logo">
           </picture>
         </a>
         <ul class="flex flex-col gap-5 text-lg font-serif">
@@ -159,7 +164,8 @@
           young
           bookshop helper to master printer of the legendary Officina Plantiniana.
         </p>
-        <a href="#timeline" class=" cursor-pointer text-alphaWhite mt-2 border-1 border-solid border-alphaWhite hover:bg-alphaBlack/75 hover:backdrop-blur-sm px-4 py-2 rounded-full">
+        <a href="#timeline"
+          class=" cursor-pointer text-alphaWhite mt-2 border-1 border-solid border-alphaWhite hover:bg-alphaBlack/75 hover:backdrop-blur-sm px-4 py-2 rounded-full">
           Let's start my Journey
         </a>
       </div>
@@ -312,7 +318,7 @@
               <source srcset="./src/image/plantinBlu.webp 552w" type="image/webp"
                 sizes="(min-width: 1040px) 600px, (min-width: 780px) 500px, (min-width: 420px) 400px, calc(84vw + 64px)">
               <img class="opacity-50 sm:scale-x-[-1]" src="./src/image/plantinBlu.png"
-                srcset="./src/image/plantinBlu.png 552w" alt="Christophe Plantin"
+                srcset="./src/image/plantinBlu.png 552w" alt="Christoffel Plantin"
                 sizes="(min-width: 1040px) 600px, (min-width: 780px) 500px, (min-width: 420px) 400px, calc(84vw + 64px)">
             </picture>
 
@@ -580,7 +586,7 @@
       </div>
       <div class="relative mt-12 lg:mb-32 h-[420px] md:h-[520px] lg:h-[600px] xl:h-[850px] 2xl:h-[1100px]">
         <div
-          class="absolute z-0 -top-24 xl:-top-36 2xl:-top-48 -right-56 lg:-right-72 xl:-right-[500px] 2xl:-right-[550px] min-w-[600px] max-w-[700px] lg:max-w-[850px] xl:max-w-[1200px] 2xl:max-w-[1600px]">
+          class="absolute z-0 -top-24 xl:-top-36  -right-56 lg:-right-72 xl:-right-[500px] 2xl:-right-[550px] min-w-[600px] max-w-[700px] lg:max-w-[850px] xl:max-w-[1400px]">
           <picture>
             <source srcset="./src/image/leidenRed-850.avif 850w,
                               ./src/image/leidenRed-1050.avif 1050w,
@@ -591,7 +597,7 @@
                               ./src/image/leidenRed-1800.avif 1800w,
                               ./src/image/leidenRed-1930.avif 1930w,
                               ./src/image/leidenRed-2048.avif 2048w" type="image/avif"
-              sizes="(min-width: 1540px) 1477px, (min-width: 1280px) 1200px, (min-width: 1040px) 850px, (min-width: 800px) 700px, (min-width: 640px) calc(42.86vw + 366px), 581px">
+              sizes="(min-width: 1580px) 1400px, (min-width: 1280px) calc(42.86vw + 731px), (min-width: 1040px) 850px, (min-width: 800px) 700px, (min-width: 640px) calc(42.86vw + 366px), 581px">
             <source srcset="./src/image/leidenRed-850.webp 850w,
                               ./src/image/leidenRed-1050.webp 1050w,
                               ./src/image/leidenRed-1200.webp 1200w,
@@ -601,7 +607,7 @@
                               ./src/image/leidenRed-1800.webp 1800w,
                               ./src/image/leidenRed-1930.webp 1930w,
                               ./src/image/leidenRed-2048.webp 2048w" type="image/webp"
-              sizes="(min-width: 1540px) 1477px, (min-width: 1280px) 1200px, (min-width: 1040px) 850px, (min-width: 800px) 700px, (min-width: 640px) calc(42.86vw + 366px), 581px">
+              sizes="(min-width: 1580px) 1400px, (min-width: 1280px) calc(42.86vw + 731px), (min-width: 1040px) 850px, (min-width: 800px) 700px, (min-width: 640px) calc(42.86vw + 366px), 581px">
             <img class="opacity-30 h-auto" src="./src/image/leidenRed.png" srcset="./src/image/leidenRed-850.png 850w,
                               ./src/image/leidenRed-1050.png 1050w,
                               ./src/image/leidenRed-1200.png 1200w,
@@ -611,34 +617,37 @@
                               ./src/image/leidenRed-1800.png 1800w,
                               ./src/image/leidenRed-1930.png 1930w,
                               ./src/image/leidenRed-2048.png 2048w" alt="Leiden map"
-              sizes="(min-width: 1540px) 1477px, (min-width: 1280px) 1200px, (min-width: 1040px) 850px, (min-width: 800px) 700px, (min-width: 640px) calc(42.86vw + 366px), 581px">
+              sizes="(min-width: 1580px) 1400px, (min-width: 1280px) calc(42.86vw + 731px), (min-width: 1040px) 850px, (min-width: 800px) 700px, (min-width: 640px) calc(42.86vw + 366px), 581px">
           </picture>
 
         </div>
 
-        <h3 class="sm:text-center xl:pt-16 2xl:pt-20">An Inheritance in My Hands</h3>
+        <h3 class="sm:text-center">The Years of Responsibility</h3>
+        <div class="2xl:ml-20">
+          <p class="pt-6 md:pt-8 lg:pt-14 xl:pt-20  max-w-[450px] sm:ml-16">
+            In the years that followed, I became his
+            <span class="highlightY">closest collaborator</span>.
+            I worked with care and determination to strengthen the press.
+          </p>
 
-        <p class="pt-6 md:pt-8 lg:pt-14 xl:pt-20 2xl:pt-28 max-w-[450px] sm:ml-16">
-          In the years that followed, I became his
-          <span class="highlightY">closest collaborator</span>.
-          I worked with care and determination to strengthen the press.
-        </p>
+          <p class="pt-6 lg:pt-14 xl:pt-20  max-w-[450px]">
+            When Plantin <span class="highlightY">moved to Leiden</span> between...
+          </p>
 
-        <p class="pt-6 lg:pt-14 xl:pt-20 2xl:pt-28 max-w-[450px]">
-          When Plantin <span class="highlightY">moved to Leiden</span> between...
-        </p>
+          <p class="pt-2 colab-year text-3xl italic highlightY">1583 & 1585</p>
 
-        <p class="pt-2 colab-year text-3xl italic highlightY">1583 & 1585</p>
+          <p class="pt-2 max-w-[450px]">
+            To work on new projects, my brother-in-law Franciscus Raphelengius and I
+            <span class="highlightY">led the Antwerp printing house</span>.
+          </p>
 
-        <p class="pt-2 max-w-[450px]">
-          To work on new projects, my brother-in-law Franciscus Raphelengius and I
-          <span class="highlightY">led the Antwerp printing house</span>.
-        </p>
+          <p class="pt-6 lg:pt-14 xl:pt-20  max-w-[450px] sm:ml-16">
+            This time taught me what it meant to truly run a business and carry on a
+            <span class="highlightY">legacy</span>.
+          </p>
 
-        <p class="pt-6 lg:pt-14 xl:pt-20 2xl:pt-28 max-w-[450px] sm:ml-16">
-          This time taught me what it meant to truly run a business and carry on a
-          <span class="highlightY">legacy</span>.
-        </p>
+        </div>
+
       </div>
       <div class="relative w-full h-[38/0vh] " id="chapterBlock">
         <div id="maskOverlay" class="lg:block hidden fixed inset-0 bg-black pointer-events-none z-20 opacity-0"></div>
@@ -690,10 +699,10 @@
             class="absolute bottom-[30%] sm:bottom-[30%] lg:bottom-[20%] left-1/2 -translate-x-1/2 cursor-pointer">
             <div class="relative">
               <picture>
-                <source srcset="./src/image/lock.avif 203w" type="image/avif" sizes="(min-width: 1040px) 70px, 50px">
-                <source srcset="./src/image/lock.webp 203w" type="image/webp" sizes="(min-width: 1040px) 70px, 50px">
+                <source srcset="./src/image/lock.avif 203w" type="image/avif" sizes="100vw">
+                <source srcset="./src/image/lock.webp 203w" type="image/webp" sizes="100vw">
                 <img class="lock-closed max-w-[50px] lg:max-w-[70px]" src="./src/image/lock.png"
-                  srcset="./src/image/lock.png 203w" alt="Lock" sizes="(min-width: 1040px) 70px, 50px">
+                  srcset="./src/image/lock.png 203w" alt="Lock" sizes="100vw">
               </picture>
 
               <picture>
@@ -709,7 +718,7 @@
                 <source srcset="./src/image/lockWheel.webp 147w" type="image/webp"
                   sizes="(min-width: 1040px) 50px, 37px">
                 <img id="lockWheel"
-                  class="max-w-[37px] lg:max-w-[50px] absolute top-[68.30%] left-1/2 -translate-x-1/2 -translate-y-1/2 cursor-grab select-none"
+                  class="max-w-[37px]  lg:max-w-[50px] absolute top-[68.30%] left-1/2 -translate-x-1/2 -translate-y-1/2 cursor-grab select-none"
                   src="./src/image/lockWheel.png" draggable="false" srcset="./src/image/lockWheel.png 147w"
                   alt="Lock Wheel" sizes="(min-width: 1040px) 50px, 37px">
               </picture>
@@ -912,7 +921,7 @@
           <div
             class="question-2 absolute hidden z-10 xl:left-[80%] 2xl:left-[75%] lg:-right-16 xl:-right-36 bottom-[40vh] lg:max-w-[300px] xl:max-w-[350px] 2xl:max-w-[400px]">
             <h3 class="mb-4">Second combination:</h3>
-            <p>How <span class="highlightY">young</span> was I when I started working there?</p>
+            <p>How <span class="highlightY">young</span> was I when I started working in his bookshop?</p>
           </div>
           <div
             class="question-3 absolute hidden z-10 lg:left-0 xl:left-[5%] 2xl:left-[10%] bottom-[20vh] lg:max-w-[300px] xl:max-w-[350px] 2xl:max-w-[400px]">
@@ -1010,11 +1019,11 @@
       <section id="inheritance"
         class="pl-6 pr-6 relative pt-6 md:pl-8 md:pr-8 md:pt-8 lg:pl-16 lg:pr-16 lg:pt-8 xl:pl-36 xl:pr-36 bg-alphaBeige">
         <h2 class="text-center">Inheritance</h2>
-        <div class="text-center pt-4 relative max-w-[450px] mx-auto">
+        <div class="text-center pt-4 2xl:pt-6 relative max-w-[450px] mx-auto">
           <p>The city seemed to hold its breath. No clatter of printing presses, no murmur of customers. Only silence
             and
             the soft
-            creak of wooden floors beneath my steps. <span class="highlight">Christophe Plantin died.</span></p>
+            creak of wooden floors beneath my steps. <span class="highlight">Christoffel Plantin died.</span></p>
           <p class="bg-year-dark">1589</p>
         </div>
         <div class="relative h-[250px] sm:h-[300px] md:h-[320px] lg:h-[400px] xl:h-[500px] mt-4">
@@ -1025,7 +1034,7 @@
             father-in-law, the great oak desk stood exactly as he had left it. Upon it
             rested a sheet of
             parchment, its corner pinned beneath a heavy ink pot. It was <span class="highlight">the will </span>of
-            Christophe
+            Christoffel
             Plantin.</p>
           <div
             class="opacity-25 absolute -left-6 -right-6 md:-right-8 md:-left-8 lg:-right-16 lg:-left-16 xl:-right-36 xl:-left-36 bottom-0 z-0">
@@ -1068,12 +1077,13 @@
             </div>
             <div
               class="relative flex flex-col sm:flex-row-reverse sm:items-center sm:mt-8 lg:flex-row lg:absolute lg:bottom-0 lg:right-0 lg:gap-12 lg:-mt-20 2xl:w-fit 2xl:gap-36 2xl:mr-12 2xl:ml-auto">
-              <p class="pt-4 sm:max-w-[300px] md:max-w-[500px] lg:max-w-[450px]">He was not simply leaving me his
+              <p class="pt-4 sm:max-w-[300px] md:max-w-[500px] lg:max-w-[460px]">He was not simply leaving me his
                 printing
                 house. He
                 was
                 entrusting me with <span class="highlight">his life’s work</span>. There was no son to carry it forward.
-                Only a son-in-law who had learned his craft, earned his trust, and now had to bear his legacy.
+                Only a son-in-law who had learned his craft, earned his trust, and now had to bear <span
+                  class="highlight">his legacy</span>.
               </p>
               <div
                 class="max-w-[327px] opacity-30 mx-auto flex justify-center lg:relative lg:-top-6 lg:-right-6 lg:max-w-[450px] xl:max-w-[517px] xl:relative 2xl:max-w-[617px]">
@@ -1088,80 +1098,90 @@
             </div>
 
           </div>
-          <div class="text-center  mt-24 mb-4">
+            <div
+              class="text-center  mt-24 mb-4 xl:hidden">
 
-            <h3 class="mb-2">Certificate of inheritance</h3>
-            <p>Sign the will by placing your signature at the bottom.</p>
-          </div>
-          <div class="min-w-[327px] max-w-[399px] sm:max-w-[570px] relative mx-auto lg:flex" id="paper-container">
-
-            <div id="ink-container"
-              class="hidden lg:block absolute opacity-50 -left-56 2xl:-left-96 bottom-0 max-w-[200px] cursor-pointer">
-              <picture>
-                <source srcset="./src/image/ink.avif 242w" type="image/avif" sizes="100vw">
-                <source srcset="./src/image/ink.webp 242w" type="image/webp" sizes="100vw">
-                <img src="./src/image/ink.png" srcset="./src/image/ink.png 242w" alt="Ink Bottle" sizes="100vw">
-              </picture>
-
+              <h3 class="mb-2">Certificate of inheritance</h3>
+              <p class="">Sign the will by placing your signature at the bottom.</p>
             </div>
+            <div class="min-w-[327px] max-w-[399px] sm:max-w-[570px] relative mx-auto lg:flex" id="paper-container">
+                <div
+                  class="hidden xl:block absolute -left-[450px] top-[10vh] w-[450px]">
 
-            <div class="absolute pt-10 sm:pt-16 pl-12 z-10 pr-12 flex flex-col justify-between h-full">
-              <p class="title-letter">Christophe Plantin's Will</p>
-              <p class="text-letter"><span class="font-bold">Legacy of the Printing
-                  Business:</span>
-                Plantin’s will focused on passing his world-renowned Officina Plantiniana to his son-in-law, Jan
-                Moretus,
-                ensuring
-                its continuity.</p>
-              <p class="text-letter"><span class="font-bold">Financial Provisions:</span>
-                He provided for his family, including daughters and relatives, through various financial arrangements.
-              </p>
-              <p class="text-letter"><span class="font-bold">Religious Affiliation:</span>
-                Committed to the Catholic Church, Plantin wanted his business to remain Catholic, reflecting his
-                previous
-                works
-                like the polyglot Bible and the Index of Prohibited Books.</p>
-              <p class="text-letter"><span class="font-bold">Management and Ownership:</span>
-                The will outlined business management and ownership to ensure a smooth transition.</p>
-              <p class="text-letter"><span class="font-bold">Family Peace:</span>
-                His wife, Jeanne Rivière, waived certain claims to maintain harmony among their children.</p>
-              <p class="text-letter pb-28 sm:pb-48"><span>In the presence of witnesses I
-                  declare my
-                  agreement with the provisions of my father-in-law.<br><br>Autograph:</span></p>
-            </div>
+                  <h3 class="mb-2">Certificate of inheritance</h3>
+                  <p class="lg:hidden">Sign the will by placing your signature at the bottom.</p>
+                  <p class="hidden lg:block">Sign the will at the bottom of the document by clicking on the quill. <br> <span
+                      class="highlight">Remember:</span> Every quill needs ink.</p>
+                </div>
 
-            <picture>
-              <source srcset="./src/image/paper.avif 1005w" type="image/avif" sizes="100vw">
-              <source srcset="./src/image/paper.webp 1005w" type="image/webp" sizes="100vw">
-              <img class="z-1 top-0 opacity-75" src="./src/image/paper.png" srcset="./src/image/paper.png 1005w"
-                alt="Paper" sizes="100vw">
-            </picture>
+                <div id="ink-container"
+                  class="hidden lg:block absolute opacity-50 -left-56 2xl:-left-96 bottom-0 max-w-[200px] cursor-pointer">
+                  <picture>
+                    <source srcset="./src/image/ink.avif 242w" type="image/avif" sizes="100vw">
+                    <source srcset="./src/image/ink.webp 242w" type="image/webp" sizes="100vw">
+                    <img src="./src/image/ink.png" srcset="./src/image/ink.png 242w" alt="Ink Bottle" sizes="100vw">
+                  </picture>
 
-            <canvas id="signature-canvas" class="absolute bottom-0 left-0 w-full h-40 z-50"></canvas>
-            <div class="hidden lg:block">
-              <picture>
-                <source srcset="./src/image/quill.avif 339w" type="image/avif" sizes="100vw">
-                <source srcset="./src/image/quill.webp 339w" type="image/webp" sizes="100vw">
-                <img id="quillEmpty"
-                  class="quill absolute opacity-50 max-w-[400px] -right-[400px] xl:-right-[30vw] 2xl:-right-[30vw] bottom-0 w-16 cursor-pointer"
-                  src="./src/image/quill.png" srcset="./src/image/quill.png 339w" alt="Quill" sizes="100vw">
-              </picture>
+                </div>
+
+              <div class="absolute pt-10 sm:pt-16 pl-12 z-10 pr-12 flex flex-col justify-between h-full">
+                <p class="title-letter">Christoffel Plantin's Will</p>
+                <p class="text-letter"><span class="font-bold">Legacy of the Printing
+                    Business:</span>
+                  Plantin’s will focused on passing his world-renowned Officina Plantiniana to his son-in-law, Jan
+                  Moretus,
+                  ensuring
+                  its continuity.</p>
+                <p class="text-letter"><span class="font-bold">Financial Provisions:</span>
+                  He provided for his family, including daughters and relatives, through various financial arrangements.
+                </p>
+                <p class="text-letter"><span class="font-bold">Religious Affiliation:</span>
+                  Committed to the Catholic Church, Plantin wanted his business to remain Catholic, reflecting his
+                  previous
+                  works
+                  like the polyglot Bible and the Index of Prohibited Books.</p>
+                <p class="text-letter"><span class="font-bold">Management and Ownership:</span>
+                  The will outlined business management and ownership to ensure a smooth transition.</p>
+                <p class="text-letter"><span class="font-bold">Family Peace:</span>
+                  His wife, Jeanne Rivière, waived certain claims to maintain harmony among their children.</p>
+                <p class="text-letter pb-28 sm:pb-48"><span>In the presence of witnesses I
+                    declare my
+                    agreement with the provisions of my father-in-law.<br><br>Autograph:</span></p>
+              </div>
 
               <picture>
-                <source srcset="./src/image/quillInkt.avif 339w" type="image/avif" sizes="100vw">
-                <source srcset="./src/image/quillInkt.webp 339w" type="image/webp" sizes="100vw">
-                <img id="quillInkt"
-                  class="quill hidden absolute max-w-[400px] -right-[400px] xl:-right-[30vw] 2xl:-right-[30vw] bottom-0 w-16 cursor-pointer"
-                  src="./src/image/quillInkt.png" srcset="./src/image/quillInkt.png 339w" alt="Quill with ink"
-                  sizes="100vw">
+                <source srcset="./src/image/paper.avif 1005w" type="image/avif" sizes="100vw">
+                <source srcset="./src/image/paper.webp 1005w" type="image/webp" sizes="100vw">
+                <img class="z-1 top-0 opacity-75" src="./src/image/paper.png" srcset="./src/image/paper.png 1005w"
+                  alt="Paper" sizes="100vw">
               </picture>
 
+              <canvas id="signature-canvas" class="absolute bottom-0 left-0 w-full h-40 z-50"></canvas>
+              <div class="hidden lg:block">
+                <picture>
+                  <source srcset="./src/image/quill.avif 339w" type="image/avif" sizes="100vw">
+                  <source srcset="./src/image/quill.webp 339w" type="image/webp" sizes="100vw">
+                  <img id="quillEmpty"
+                    class="quill absolute opacity-50 max-w-[400px] -right-[400px] xl:-right-[30vw] 2xl:-right-[30vw] bottom-0 w-16 cursor-pointer"
+                    src="./src/image/quill.png" srcset="./src/image/quill.png 339w" alt="Quill" sizes="100vw">
+                </picture>
+
+                <picture>
+                  <source srcset="./src/image/quillInkt.avif 339w" type="image/avif" sizes="100vw">
+                  <source srcset="./src/image/quillInkt.webp 339w" type="image/webp" sizes="100vw">
+                  <img id="quillInkt"
+                    class="quill hidden absolute max-w-[400px] -right-[400px] xl:-right-[30vw] 2xl:-right-[30vw] bottom-0 w-16 cursor-pointer"
+                    src="./src/image/quillInkt.png" srcset="./src/image/quillInkt.png 339w" alt="Quill with ink"
+                    sizes="100vw">
+                </picture>
+
+              </div>
+              <div id="inkFeedback" class="hidden absolute bottom-0 left-0 w-full p-2"
+                style="background-color: var(--color-red); color: var(--color-white);">
+                You need some ink to sign the document.
+              </div>
             </div>
-            <div id="inkFeedback" class="hidden absolute bottom-0 left-0 w-full p-2"
-              style="background-color: var(--color-red); color: var(--color-white);">
-              You need some ink to sign the document.
-            </div>
-          </div>
+
 
         </div>
         <p class="hidden text-center mt-8 max-w-[800px] justify-center mx-auto text-2xl quote-1"
@@ -1241,12 +1261,13 @@
         <div class="relative min-h-[calc(100vh+250px)] lg:min-h-[calc(100vh+400px)] 2xl:min-h-[100vh] mt-8">
 
           <div class="">
-            <p class="max-w-[570px] xl:hidden mx-auto  sm:text-center">
+            <p class="max-w-[580px] xl:hidden mx-auto  sm:text-center">
               <span class="highlight">Manuscripts</span> are arriving at my Officina from every direction. But <span
                 class="highlight">not every idea</span>
               belongs in my printing
               house.
-              <br>Can you help me select the <span class="highlight">right works</span>? <br> Drag the <span
+              <br>Can you help me select the <span class="highlight">right works</span>? <br> <span
+                class="hidden lg:inline-block">Drag</span> <span class="lg:hidden">Click on</span> the <span
                 class="highlight">correct
                 titles</span> into my Printing House. <br>
               Leave
@@ -1568,7 +1589,7 @@
           I <span class="highlight">invite</span> you to walk in <span class="highlight">my
             footsteps</span> and in
           those
-          of my father in law Christophe Plantin and discover what we
+          of my father in law Christoffel Plantin and discover what we
           built
           together. Our <span class="highlight">life’s work</span> and our greatest enterprise <span
             class="highlight">still

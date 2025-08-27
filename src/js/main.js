@@ -4,22 +4,6 @@ gsap.registerPlugin(ScrollTrigger);
 let pageHeight = document.body.scrollHeight;
 let lock1 = 0;
 let lock2 = 0;
-
-document.querySelectorAll('nav a[href^="#"]').forEach((link) => {
-  link.addEventListener("click", function (e) {
-    e.preventDefault();
-    const targetId = this.getAttribute("href").replace("#", "");
-    const target = document.getElementById(targetId);
-    if (target) {
-      target.scrollIntoView({ behavior: "smooth" });
-      // Optioneel: leuke animatie toevoegen aan de sectie
-      target.classList.add("section-animate");
-      setTimeout(() => target.classList.remove("section-animate"), 1000);
-    }
-  });
-});
-
-
 document.getElementById("menu-btn").addEventListener("click", () => {
   document.getElementById("mobile-menu").classList.toggle("hidden");
 });
@@ -43,6 +27,38 @@ window.addEventListener("resize", () => {
   }
 });
 
+// =====================
+// Navigation animation
+// =====================
+document.querySelectorAll('nav a[href^="#"]').forEach((link) => {
+  link.addEventListener("click", function (e) {
+    e.preventDefault();
+    const targetId = this.getAttribute("href").replace("#", "");
+    const target = document.getElementById(targetId);
+    if (target) {
+      target.scrollIntoView({ behavior: "smooth" });
+      // Optioneel: leuke animatie toevoegen aan de sectie
+      target.classList.add("section-animate");
+      setTimeout(() => target.classList.remove("section-animate"), 1000);
+    }
+  });
+});
+let lastScrollTop = 0;
+const navbar = document.querySelector("nav");
+
+setInterval(() => {
+  const scrollTop = document.body.scrollTop; // alleen body.scrollTop
+
+  if (scrollTop > lastScrollTop) {
+    // Scroll naar beneden → navbar verbergen
+    navbar.style.transform = "translateY(-100%)";
+  } else if (scrollTop < lastScrollTop) {
+    // Scroll naar boven → navbar tonen
+    navbar.style.transform = "translateY(0)";
+  }
+
+  lastScrollTop = scrollTop;
+}, 50);
 // =====================
 // 1. Eyes Animation
 // =====================
