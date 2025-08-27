@@ -30,7 +30,20 @@ window.addEventListener("resize", () => {
 // =====================
 // Navigation animation
 // =====================
-document.querySelectorAll('nav a[href^="#"]').forEach((link) => {
+document.querySelectorAll('header a[href^="#"]').forEach((link) => {
+  link.addEventListener("click", function (e) {
+    e.preventDefault();
+    const targetId = this.getAttribute("href").replace("#", "");
+    const target = document.getElementById(targetId);
+    if (target) {
+      target.scrollIntoView({ behavior: "smooth" });
+      // Optioneel: leuke animatie toevoegen aan de sectie
+      target.classList.add("section-animate");
+      setTimeout(() => target.classList.remove("section-animate"), 1000);
+    }
+  });
+});
+document.querySelectorAll('footer a[href^="#"]').forEach((link) => {
   link.addEventListener("click", function (e) {
     e.preventDefault();
     const targetId = this.getAttribute("href").replace("#", "");
@@ -47,13 +60,17 @@ let lastScrollTop = 0;
 const navbar = document.querySelector("nav");
 
 setInterval(() => {
-  const scrollTop = document.body.scrollTop; // alleen body.scrollTop
+  if (window.innerWidth < 1024) {
+    navbar.style.transform = "translateY(0)";
+    lastScrollTop = document.body.scrollTop;
+    return;
+  }
+
+  const scrollTop = document.body.scrollTop;
 
   if (scrollTop > lastScrollTop) {
-    // Scroll naar beneden → navbar verbergen
     navbar.style.transform = "translateY(-100%)";
   } else if (scrollTop < lastScrollTop) {
-    // Scroll naar boven → navbar tonen
     navbar.style.transform = "translateY(0)";
   }
 
@@ -873,7 +890,7 @@ shelf.addEventListener("drop", (ev) => {
   const book = document.getElementById(id);
   if (!book) return;
   if (shelf.querySelectorAll("[draggable='true']").length >= 5) {
-    alert("Je kunt maar 5 boeken in de shelf zetten!");
+    alert("You can only place 5 books on the shelf!");
     return;
   }
   shelf.appendChild(book);
@@ -898,7 +915,7 @@ const makeDraggablePrintingHouse = (book) => {
   book.addEventListener("touchend", () => {
     if (book.parentElement === cart) {
       if (shelf.querySelectorAll("[draggable='true']").length >= 5) {
-        alert("Je kunt maar 5 boeken in de shelf zetten!");
+        alert("You can only place 5 books on the shelf!");
         return;
       }
       shelf.appendChild(book);
