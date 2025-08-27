@@ -41,6 +41,7 @@ img {
 a {
     text-decoration: none;
     transition: ease-in-out 0.3s;
+    scroll-behavior: smooth;
 }
 
 html,
@@ -50,6 +51,7 @@ body {
     background-color: var(--color-alphaWhite);
     /* margin: 0 24px 0 24px; */
     overflow-x: hidden;
+    overflow-y: scroll;
     color: var(--color-alphaBlack);
     font-family: var(--font-primary);
     font-size: var(--font-size-16-20);
@@ -69,7 +71,7 @@ html {
 /* header {
     transition: top 0.5s ease-out;
 } */
- 
+
 
 h1 {
     color: var(--color-alphaWhite);

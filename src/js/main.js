@@ -30,32 +30,26 @@ window.addEventListener("resize", () => {
 // =====================
 // Navigation animation
 // =====================
-document.querySelectorAll('header a[href^="#"]').forEach((link) => {
-  link.addEventListener("click", function (e) {
-    e.preventDefault();
-    const targetId = this.getAttribute("href").replace("#", "");
-    const target = document.getElementById(targetId);
-    if (target) {
-      target.scrollIntoView({ behavior: "smooth" });
-      // Optioneel: leuke animatie toevoegen aan de sectie
-      target.classList.add("section-animate");
-      setTimeout(() => target.classList.remove("section-animate"), 1000);
+function addSmoothScroll(selector) {
+  document.querySelectorAll(selector).forEach((link) => {
+    function handler(e) {
+      e.preventDefault();
+      const targetId = link.getAttribute("href").replace("#", "");
+      const target = document.getElementById(targetId);
+      if (target) {
+        target.scrollIntoView({ behavior: "smooth" });
+        target.classList.add("section-animate");
+        setTimeout(() => target.classList.remove("section-animate"), 1000);
+      }
     }
+    link.addEventListener("click", handler);
   });
-});
-document.querySelectorAll('footer a[href^="#"]').forEach((link) => {
-  link.addEventListener("click", function (e) {
-    e.preventDefault();
-    const targetId = this.getAttribute("href").replace("#", "");
-    const target = document.getElementById(targetId);
-    if (target) {
-      target.scrollIntoView({ behavior: "smooth" });
-      // Optioneel: leuke animatie toevoegen aan de sectie
-      target.classList.add("section-animate");
-      setTimeout(() => target.classList.remove("section-animate"), 1000);
-    }
-  });
-});
+}
+if (window.innerWidth > 1024) {
+  addSmoothScroll('header a[href^="#"]');
+  addSmoothScroll('footer a[href^="#"]');
+}
+
 let lastScrollTop = 0;
 const navbar = document.querySelector("nav");
 
@@ -972,6 +966,19 @@ segments.forEach((span, idx) => {
 
   typedEl.addEventListener("input", () => {
     positionCursor(typedEl, cursorEl);
+    const targetText = text;
+    const typedText = typedEl.textContent;
+    const correctSoFar = targetText.startsWith(typedText);
+
+    if (!correctSoFar && typedText.length > 0) {
+      span.classList.add("error");
+      setTimeout(() => span.classList.remove("error"), 200);
+      // Verwijder de laatste foutieve letter
+      typedEl.textContent = typedText.slice(0, -1);
+      placeCaretAtEnd(typedEl);
+      positionCursor(typedEl, cursorEl);
+    }
+    checkSegmentComplete(typedEl, span);
   });
 });
 
