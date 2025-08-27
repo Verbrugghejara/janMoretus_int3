@@ -43,6 +43,7 @@ function addSmoothScroll(selector) {
       }
     }
     link.addEventListener("click", handler);
+    link.addEventListener("touchstart", handler);
   });
 }
 if (window.innerWidth > 1024) {
